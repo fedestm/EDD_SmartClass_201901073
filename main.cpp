@@ -33,6 +33,10 @@ int main()
             fs.open(ruta,ios::in);
             getline(fs,primer_linea);
 
+            if(!fs){
+                cout<<"Error, no se encontro archivo CSV";
+            }
+
         }
     }
 }
