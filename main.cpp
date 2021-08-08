@@ -21,7 +21,7 @@ int main()
 
         if(op==1){
             string ruta="";
-            string primer_linea;
+            string primer_linea;    //Cadena encargada de guardar primera linea
             string carnet,dpi,nombre,carrera,pass,correo;
             int creditos,edad;
 
@@ -29,12 +29,22 @@ int main()
             cout<<"Ingrese ruta de archivo: ";
             cin>>ruta;
 
-            fstream fs;
-            fs.open(ruta,ios::in);
-            getline(fs,primer_linea);
+            fstream fs;     //Se encarga de leer el archivo de entrada
+            fs.open(ruta,ios::in);  //Abre el contenido
+            getline(fs,primer_linea);   //Ignora la primera linea del archivo
 
-            if(!fs){
+            if(!fs){    //Se verifica que el archivo exista
                 cout<<"Error, no se encontro archivo CSV";
+            }else{
+                while(true)
+                {   
+                    //Finaliza al terminar de leer el archivo
+                    if(fs.eof()){
+                        break;
+                    }
+                    
+                }
+                
             }
 
         }
