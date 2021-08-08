@@ -28,5 +28,6 @@ int main()
             cout<<"-------------Carga de Usuarios----------------"<<endl;
             cout<<"Ingrese ruta de archivo: ";
             cin>>ruta;
-
+        }
+    }
 }
