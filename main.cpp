@@ -1,18 +1,32 @@
 #include <iostream>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
 int main()
 {
-    int op;
+    int op=0;
     while(op!=4){
-        printf("-------------Menu------------------\n");
-        printf("\t1) Carga de Usuarios\n");
-        printf("\t2) Carga de Tareas\n");
-        printf("\t3) Ingreso Manual\n");
-        printf("\t4) Reportes\n\n");
-        printf("Ingrese una opcion: ");
+
+        cout<<"\n\t---------------- Menu---------------------\n";
+        cout<<"\t|\t1) Carga de Usuarios             |\n";
+        cout<<"\t|\t2) Carga de Tareas               |\n";
+        cout<<"\t|\t3) Ingreso Manual                |\n";
+        cout<<"\t|\t4) Reportes                      |\n";
+        cout<<"\t------------------------------------------\n";
+        cout<<"\tIngrese una opcion: ";
         cin>>op;
-    }
-    return 0;
+        cout<<"\n"<<endl;
+
+        if(op==1){
+            string ruta="";
+            string primer_linea;
+            string carnet,dpi,nombre,carrera,pass,correo;
+            int creditos,edad;
+
+            cout<<"-------------Carga de Usuarios----------------"<<endl;
+            cout<<"Ingrese ruta de archivo: ";
+            cin>>ruta;
+
 }
