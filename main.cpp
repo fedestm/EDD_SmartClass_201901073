@@ -28,6 +28,11 @@ int main()
             cout<<"-------------Carga de Usuarios----------------"<<endl;
             cout<<"Ingrese ruta de archivo: ";
             cin>>ruta;
+
+            fstream fs;
+            fs.open(ruta,ios::in);
+            getline(fs,primer_linea);
+
         }
     }
 }
