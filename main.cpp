@@ -55,7 +55,10 @@ int main()
                     getline(fs,edad,',');
                     getline(fs,correo,'\n');
 
-                    if(int(carnet.length())==9){
+                    //Se compara la cantidad de digitos de carnet y dpi
+                    //Carnet: 9 digitos
+                    //DPI: 13 digitos
+                    if(int(carnet.length())==9 && int(dpi.length()==13)){
                         cout<<"*********************************"<<endl;
                         cout<<"Carnet: "<<carnet<<endl;
                         cout<<"DPI: "<<dpi<<endl;
