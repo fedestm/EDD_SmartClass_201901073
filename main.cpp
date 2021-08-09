@@ -54,10 +54,22 @@ int main()
                     getline(fs,creditos,',');
                     getline(fs,edad,',');
                     getline(fs,correo,'\n');
+
+                    if(int(carnet.length())==9){
+                        cout<<"*********************************"<<endl;
+                        cout<<"Carnet: "<<carnet<<endl;
+                        cout<<"DPI: "<<dpi<<endl;
+                        cout<<"Nombre: "<<nombre<<endl;
+                        cout<<"Carrera: "<<carrera<<endl;
+                        cout<<"Password: "<<pass<<endl;
+                        cout<<"Creditos: "<<creditos<<endl;
+                        cout<<"Edad: "<<edad<<endl;
+                        cout<<"Correo: "<<correo<<endl;
+                        cout<<"**********************************\n"<<endl;
+                    }
                 }
-            }
                 
+            }
         }
     }
 }
-
