@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <regex>
 
 using namespace std;
 
@@ -39,12 +40,12 @@ int main()
                 cout<<"Error, no se encontro archivo CSV";
             }else{
                 while(true)
-                {   
+                {
                     //Finaliza al terminar de leer el archivo
                     if(fs.eof()){
                         break;
                     }
-                    //Se separan los datos por medio comas 
+                    //Se separan los datos por medio comas
                     //Las variables asignadas almacenan los datos separados por columnas
                     getline(fs,carnet,',');
                     getline(fs,dpi,',');
@@ -59,19 +60,20 @@ int main()
                     //Carnet: 9 digitos
                     //DPI: 13 digitos
                     if(int(carnet.length())==9 && int(dpi.length()==13)){
-                        cout<<"*********************************"<<endl;
-                        cout<<"Carnet: "<<carnet<<endl;
-                        cout<<"DPI: "<<dpi<<endl;
-                        cout<<"Nombre: "<<nombre<<endl;
-                        cout<<"Carrera: "<<carrera<<endl;
-                        cout<<"Password: "<<pass<<endl;
-                        cout<<"Creditos: "<<creditos<<endl;
-                        cout<<"Edad: "<<edad<<endl;
-                        cout<<"Correo: "<<correo<<endl;
-                        cout<<"**********************************\n"<<endl;
+                        if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
+                            cout<<"*********************************"<<endl;
+                            cout<<"Carnet: "<<carnet<<endl;
+                            cout<<"DPI: "<<dpi<<endl;
+                            cout<<"Nombre: "<<nombre<<endl;
+                            cout<<"Carrera: "<<carrera<<endl;
+                            cout<<"Password: "<<pass<<endl;
+                            cout<<"Creditos: "<<creditos<<endl;
+                            cout<<"Edad: "<<edad<<endl;
+                            cout<<"Correo: "<<correo<<endl;
+                            cout<<"**********************************\n"<<endl;
+                        }
                     }
                 }
-                
             }
         }
     }
