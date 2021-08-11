@@ -11,6 +11,11 @@ class nodo_circular
         string carnet,dpi,nombre,carrera,pass;
         int creditos,edad;
 
+        //Apuntadores de nodos
+        //nodo-><-nodo-><-nodo
+        nodo_circular *siguiente;
+        nodo_circular *anterior;
+
     protected:
 
     private:
