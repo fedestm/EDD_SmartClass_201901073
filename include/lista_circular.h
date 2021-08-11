@@ -14,7 +14,7 @@ class lista_circular
 
         //Metodos para insertar datos en nodo
         //---Lista Circular Doble--------
-        void insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad);
+        void insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad,string correo);
 
         //Graficar Lista
         void graficar();

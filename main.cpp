@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include <regex>
+#include "include/lista_circular.h"
 
 using namespace std;
 
