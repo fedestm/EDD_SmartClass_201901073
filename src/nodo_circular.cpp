@@ -1,4 +1,4 @@
-#include "nodo_circular.h"
+#include "../include/nodo_circular.h"
 
 nodo_circular::nodo_circular()
 {
