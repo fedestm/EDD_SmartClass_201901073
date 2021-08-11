@@ -12,6 +12,17 @@ class lista_circular
         nodo_circular *primero;
         nodo_circular *ultimo;
 
+        //Metodos para insertar datos en nodo
+        //---Lista Circular Doble--------
+        void insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad);
+
+        //Graficar Lista
+        void graficar();
+
+        //Mostrar Lista en Consola
+        void mostrar();
+
+
     protected:
 
     private:
