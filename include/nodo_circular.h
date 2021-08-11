@@ -8,7 +8,7 @@ class nodo_circular
     public:
         nodo_circular();
         virtual ~nodo_circular();
-        string carnet,dpi,nombre,carrera,pass;
+        string carnet,dpi,nombre,carrera,pass,correo;
         int creditos,edad;
 
         //Apuntadores de nodos
