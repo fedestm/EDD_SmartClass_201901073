@@ -1,4 +1,4 @@
-#include "lista_circular.h"
+#include "../include/lista_circular.h"
 
 lista_circular::lista_circular()
 {
