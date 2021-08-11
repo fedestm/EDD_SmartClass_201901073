@@ -2,7 +2,8 @@
 
 lista_circular::lista_circular()
 {
-    //ctor
+    this->primero=NULL;
+    this->ultimo=NULL;
 }
 
 lista_circular::~lista_circular()
