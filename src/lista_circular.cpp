@@ -18,6 +18,13 @@ void lista_circular::insertar(string carnet,string dpi,string nombre,string carr
     nuevo->correo=correo;
     nuevo->siguiente=NULL;
     nuevo->anterior=NULL;
+
+    if(this->primero==NULL){
+        nuevo->siguiente=nuevo;
+        nuevo->anterior=nuevo;
+        primero=nuevo;
+        cout<<"Se inserto estudiante"<<endl;
+    }
 }
 
 lista_circular::~lista_circular()
