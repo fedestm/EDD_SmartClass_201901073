@@ -8,6 +8,7 @@ using namespace std;
 
 int main()
 {
+    lista_circular *lista=new lista();
     int op=0;
     while(op!=4){
 
