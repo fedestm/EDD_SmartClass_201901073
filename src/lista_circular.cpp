@@ -47,6 +47,14 @@ void lista_circular::insertar(string carnet,string dpi,string nombre,string carr
 
 void lista_circular::graficar(){
     ofstream fs("lista_circular_doble.dot");
+    //Sintaxis inicial de archivos dot
+    fs<<"digraph G{"<<endl;
+    //Posicion Horizontal de nodos
+    fs<<"rankdir = LR;"<<endl;
+    //Nodos con forma cuadrada, color verde
+    fs<<"node [shape=record,color=black fillcolor=\"#00ff005f\"];"<<endl;
+    fs<<"label=\"Lista doble circular\""<<endl;
+    fs<<"color=black"<<endl;
 }
 
 lista_circular::~lista_circular()
