@@ -57,9 +57,24 @@ void lista_circular::graficar(){
     fs<<"color=black"<<endl;
 
     //Se declara una variable auxiliar para recorrer los nodos
-    //por medio del apuntador siguiente
+    //por medio del apuntador siguiente 
     //Hara uso tanto de dichos apuntadores como de los datos del estudiante
     nodo_circular *aux=this->primero;
+
+    //Se declara contador para la cantidad de nodos
+    int cont=0;
+    //Se verifica si el nodo siguiente no se encuentre primero
+    while(aux->siguiente!=primero){
+        //Se crea codigo unico de cada nodo
+        //Se guardan los datos en un label
+        fs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
+        <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
+        <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];\n"<<endl;
+        //Se recorren los nodos
+        aux=aux->siguiente;
+    }
+    
+
 }
 
 lista_circular::~lista_circular()
