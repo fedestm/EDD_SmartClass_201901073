@@ -69,10 +69,16 @@ void lista_circular::graficar(){
         //Se guardan los datos en un label
         fs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
         <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
-        <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];\n"<<endl;
+        <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];"<<endl;
         //Se recorren los nodos
         aux=aux->siguiente;
+        cont++;
     }
+
+    //Nodo en la ultima posicion
+    fs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
+    <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
+    <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];"<<endl;
     
 
 }
