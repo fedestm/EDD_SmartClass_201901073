@@ -1,4 +1,5 @@
 #include "../include/lista_circular.h"
+#include <fstream>
 
 lista_circular::lista_circular()
 {
@@ -39,10 +40,13 @@ void lista_circular::insertar(string carnet,string dpi,string nombre,string carr
         nuevo->correo=correo;
         nuevo->siguiente=primero;
         primero->anterior=nuevo;    //El puntero anterior se va al primero
-        nuevo->anterior=ultimo;     //El puntero anterior se convierte en un nodo nuevo
+        nuevo->anterior=ultimo;     //El puntero que se encuentra antes del ultimo se convierte en un nodo nuevo
         ultimo->siguiente=nuevo;    //El puntero siguiente se convierte en un nodo nuevo despues del puntero anterior
-
     }
+}
+
+void lista_circular::graficar(){
+    ofstream fs("lista_circular_doble.dot");
 }
 
 lista_circular::~lista_circular()
