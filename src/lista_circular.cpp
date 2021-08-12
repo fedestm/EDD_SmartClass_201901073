@@ -55,6 +55,11 @@ void lista_circular::graficar(){
     fs<<"node [shape=record,color=black fillcolor=\"#00ff005f\"];"<<endl;
     fs<<"label=\"Lista doble circular\""<<endl;
     fs<<"color=black"<<endl;
+
+    //Se declara una variable auxiliar para recorrer los nodos
+    //por medio del apuntador siguiente
+    //Hara uso tanto de dichos apuntadores como de los datos del estudiante
+    nodo_circular *aux=this->primero;
 }
 
 lista_circular::~lista_circular()
