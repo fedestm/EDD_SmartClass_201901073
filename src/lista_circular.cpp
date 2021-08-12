@@ -84,6 +84,7 @@ void lista_circular::graficar(){
 
     //Se recorren los nodos a los que van a apuntar
     for(int i=0;i<cont-1;i++){
+        ofs<<"n_"<<i<<"->"<<i+1<<";"<<endl;
     }
     
 
