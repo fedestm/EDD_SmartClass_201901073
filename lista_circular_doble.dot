@@ -1,0 +1,21 @@
+digraph G{
+rankdir = LR;
+node [style=filled,color="#63EA30"];
+label="Lista doble circular"
+color=black
+n_0[label="Carnet:2019\nDPI: 89654\nNombre: Alvaro\nCarrera: Ing\nPassword: 12\nCreditos: 2\nEdad: 2\nCorreo: fdfdfd",shape=box];
+n_1[label="Carnet:2018\nDPI: 2626\nNombre: David\nCarrera: Ing\nPassword: 12\nCreditos: 2\nEdad: 2\nCorreo: fdfdfd",shape=box];
+n_2[label="Carnet:2017\nDPI: 12546\nNombre: Luis\nCarrera: iNG\nPassword: 12\nCreditos: 2\nEdad: 2\nCorreo: fdfdfd",shape=box];
+n_3[label="Carnet:2017\nDPI: 12546\nNombre: Luis\nCarrera: iNG\nPassword: 12\nCreditos: 2\nEdad: 2\nCorreo: fdfdfd",shape=box];
+n_4[label="Carnet:2017\nDPI: 12546\nNombre: Luis\nCarrera: iNG\nPassword: 12\nCreditos: 2\nEdad: 2\nCorreo: fdfdfd",shape=box];
+n_0->n_1;
+n_1->n_0;
+n_1->n_2;
+n_2->n_1;
+n_2->n_3;
+n_3->n_2;
+n_3 ->n_4;
+n_4 ->n_3;
+n_0 ->n_4:n;
+n_4 ->n_0:s;
+}

@@ -52,12 +52,12 @@ void lista_circular::graficar(){
     //Posicion Horizontal de nodos
     ofs<<"rankdir = LR;"<<endl;
     //Nodos con forma cuadrada, color verde
-    ofs<<"node [shape=record,color=black fillcolor=\"#00ff005f\"];"<<endl;
+    ofs<<"node [style=filled,color=\"#63EA30\"];"<<endl;
     ofs<<"label=\"Lista doble circular\""<<endl;
     ofs<<"color=black"<<endl;
 
     //Se declara una variable auxiliar para recorrer los nodos
-    //por medio del apuntador siguiente 
+    //por medio del apuntador siguiente
     //Hara uso tanto de dichos apuntadores como de los datos del estudiante
     nodo_circular *aux=this->primero;
 
@@ -67,31 +67,35 @@ void lista_circular::graficar(){
     while(aux->siguiente!=primero){
         //Se crea codigo unico de cada nodo
         //Se guardan los datos en un label
-        ofs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
-        <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
-        <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];"<<endl;
+        ofs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\\nDPI: "<<aux->dpi<<"\\nNombre: "<<aux->nombre
+        <<"\\nCarrera: "<<aux->carrera<<"\\nPassword: "<<aux->pass<<"\\nCreditos: "<<aux->edad
+        <<"\\nEdad: "<<aux->edad<<"\\nCorreo: "<<aux->correo<<"\",shape=box];"<<endl;
         //Se recorren los nodos
         aux=aux->siguiente;
         cont++;
     }
 
     //Nodo en la ultima posicion
-    ofs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
-    <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
-    <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];"<<endl;
-
-    int cont_ultimo;
+    ofs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\\nDPI: "<<aux->dpi<<"\\nNombre: "<<aux->nombre
+    <<"\\nCarrera: "<<aux->carrera<<"\\nPassword: "<<aux->pass<<"\\nCreditos: "<<aux->edad
+    <<"\\nEdad: "<<aux->edad<<"\\nCorreo: "<<aux->correo<<"\",shape=box];"<<endl;
 
     //Se recorren los nodos a los que van a apuntar
     for(int i=0;i<cont-1;i++){
-        ofs<<"n_"<<i<<"->"<<i+1<<";"<<endl;
-        ofs<<"n_"<<i+1<<"->"<<i<<";"<<endl;
-        cont_ultimo+=1;
+        ofs<<"n_"<<i<<"->"<<"n_"<<i+1<<";"<<endl;
+        ofs<<"n_"<<i+1<<"->"<<"n_"<<i<<";"<<endl;
     }
 
-    ofs<<"n_"<<cont_ultimo<<"->"<<"n_"<<cont<<";"<<endl;
-    ofs<<"n_"<<cont<<"->"<<"n_"<<cont_ultimo<<";"<<endl;
-    
+    ofs<<"n_"<<cont-1<<" ->"<<"n_"<<cont<<";"<<endl;
+    ofs<<"n_"<<cont<<" ->"<<"n_"<<cont-1<<";"<<endl;
+
+    ofs<<"n_0"<<" ->"<<"n_"<<cont<<":n"<<";"<<endl;
+    ofs<<"n_"<<cont<<" ->"<<"n_0:s"<<";"<<endl;
+    cout<<cont;
+
+    ofs<<"}"<<endl;
+    ofs.close();
+
 
 }
 
