@@ -46,15 +46,15 @@ void lista_circular::insertar(string carnet,string dpi,string nombre,string carr
 }
 
 void lista_circular::graficar(){
-    ofstream fs("lista_circular_doble.dot");
+    ofstream ofs("lista_circular_doble.dot");
     //Sintaxis inicial de archivos dot
-    fs<<"digraph G{"<<endl;
+    ofs<<"digraph G{"<<endl;
     //Posicion Horizontal de nodos
-    fs<<"rankdir = LR;"<<endl;
+    ofs<<"rankdir = LR;"<<endl;
     //Nodos con forma cuadrada, color verde
-    fs<<"node [shape=record,color=black fillcolor=\"#00ff005f\"];"<<endl;
-    fs<<"label=\"Lista doble circular\""<<endl;
-    fs<<"color=black"<<endl;
+    ofs<<"node [shape=record,color=black fillcolor=\"#00ff005f\"];"<<endl;
+    ofs<<"label=\"Lista doble circular\""<<endl;
+    ofs<<"color=black"<<endl;
 
     //Se declara una variable auxiliar para recorrer los nodos
     //por medio del apuntador siguiente 
@@ -67,7 +67,7 @@ void lista_circular::graficar(){
     while(aux->siguiente!=primero){
         //Se crea codigo unico de cada nodo
         //Se guardan los datos en un label
-        fs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
+        ofs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
         <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
         <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];"<<endl;
         //Se recorren los nodos
@@ -76,9 +76,15 @@ void lista_circular::graficar(){
     }
 
     //Nodo en la ultima posicion
-    fs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
+    ofs<<"n_"<<cont<<"[label=\"Carnet:"<<aux->carnet<<"\nDPI: "<<aux->dpi<<"\nNombre: "<<aux->nombre
     <<"\nCarrera: "<<aux->carrera<<"\nPassword: "<<aux->pass<<"\nCreditos: "<<aux->edad
     <<"\nEdad: "<<aux->edad<<"\nCorreo: "<<aux->correo<<"\"];"<<endl;
+
+    int cont_ultimo;
+
+    //Se recorren los nodos a los que van a apuntar
+    for(int i=0;i<cont-1;i++){
+    }
     
 
 }
