@@ -88,6 +88,9 @@ void lista_circular::graficar(){
         ofs<<"n_"<<i+1<<"->"<<i<<";"<<endl;
         cont_ultimo+=1;
     }
+
+    ofs<<"n_"<<cont_ultimo<<"->"<<"n_"<<cont<<";"<<endl;
+    ofs<<"n_"<<cont<<"->"<<"n_"<<cont_ultimo<<";"<<endl;
     
 
 }
