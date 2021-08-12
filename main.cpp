@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-    lista_circular *lista=new lista();
+    lista_circular *lista=new lista_circular();
     int op=0;
     while(op!=4){
 
@@ -73,6 +73,8 @@ int main()
                             cout<<"Edad: "<<edad<<endl;
                             cout<<"Correo: "<<correo<<endl;
                             cout<<"**********************************\n"<<endl;
+                            lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
+                            lista->graficar();
                         }
                     }
                 }
