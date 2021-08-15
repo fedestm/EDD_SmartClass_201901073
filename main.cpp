@@ -93,6 +93,10 @@ int main()
             fs.open(ruta_tarea,ios::in);
             getline(fs,linea);
 
+
+            //Matriz Estatica
+            string matriz[5][9][32];
+
             if(!fs){
                 cout<<"Error, no se encontro archivo CSV";
 
