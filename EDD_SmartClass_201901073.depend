@@ -2,14 +2,14 @@
 1627934312 source:c:\users\user\desktop\proyectos estructuras de datos\lista simple c++\edd_smartclass_201901073\main.cpp
 	<iostream>
 
-1628731955 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
+1629055935 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
 	<iostream>
 	<string>
 	<fstream>
 	<regex>
 	"include/lista_circular.h"
 
-1628724079 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_circular.cpp
+1628732332 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_circular.cpp
 	"../include/nodo_circular.h"
 
 1628724912 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_circular.h
@@ -21,4 +21,9 @@
 
 1628724581 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_circular.h
 	"nodo_circular.h"
+
+1628875484 source:c:\users\user\documents\github\edd_smartclass_201901073\src\matriz.cpp
+	"matriz.h"
+
+1629045379 c:\users\user\documents\github\edd_smartclass_201901073\include\matriz.h
 

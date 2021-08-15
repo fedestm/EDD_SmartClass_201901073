@@ -80,5 +80,43 @@ int main()
                 }
             }
         }
+        else if(op==2){
+            string ruta_tarea="";
+            string linea;
+            string mes,dia,hora,carnet,nombre,desc,materia,fecha,estado;
+
+            cout<<"-------------Carga de Tareas----------------"<<endl;
+            cout<<"Ingrese ruta de archivo: ";
+            cin>>ruta_tarea;
+
+            fstream fs;
+            fs.open(ruta_tarea,ios::in);
+            getline(fs,linea);
+
+            if(!fs){
+                cout<<"Error, no se encontro archivo CSV";
+
+            }else{
+                while(true){
+                    if(fs.eof()){
+                        break;
+                    }
+                    getline(fs,mes,',');
+                    getline(fs,dia,',');
+                    getline(fs,hora,',');
+                    getline(fs,carnet,',');
+                    getline(fs,nombre,',');
+                    getline(fs,desc,',');
+                    getline(fs,materia,',');
+                    getline(fs,fecha,',');
+                    getline(fs,estado,'\n');
+                }
+            }
+
+        }
+
+
+
+
     }
 }
