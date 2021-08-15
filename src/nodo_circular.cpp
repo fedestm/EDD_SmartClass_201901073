@@ -10,6 +10,7 @@ nodo_circular::nodo_circular()
     this->pass="";
     this->creditos=0;
     this->edad=0;
+    this->correo="";
 
     //Apuntadores
     this->siguiente=NULL;
