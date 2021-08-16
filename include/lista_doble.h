@@ -11,7 +11,13 @@ class lista_doble
 
         //Apuntadores
         nodo_doble *primero;
-        nodo_doble *ultimo;  
+        nodo_doble *ultimo;
+
+        void insertar_tarea(string tarea);
+
+        void mostrar();
+
+        void graficar_tarea(string tarea);  
 
     protected:
 
