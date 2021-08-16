@@ -2,8 +2,8 @@
 
 nodo_doble::nodo_doble()
 {
-    this->anterior=NULL;
-    this->siguiente=NULL;
+    this->anterior=nullptr;
+    this->siguiente=nullptr;
     this->tarea="";
 }
 

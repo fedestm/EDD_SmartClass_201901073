@@ -3,8 +3,8 @@
 
 lista_circular::lista_circular()
 {
-    this->primero=NULL;
-    this->ultimo=NULL;
+    this->primero=nullptr;
+    this->ultimo=nullptr;
 }
 
 void lista_circular::insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad,string correo){
@@ -17,11 +17,11 @@ void lista_circular::insertar(string carnet,string dpi,string nombre,string carr
     nuevo->creditos=creditos;
     nuevo->edad=edad;
     nuevo->correo=correo;
-    nuevo->siguiente=NULL;
-    nuevo->anterior=NULL;
+    nuevo->siguiente=nullptr;
+    nuevo->anterior=nullptr;
 
     //Se valida sin el primer nodo esta vacio
-    if(this->primero==NULL){
+    if(this->primero==nullptr){
         nuevo->siguiente=nuevo;
         nuevo->anterior=nuevo;
         primero=nuevo;

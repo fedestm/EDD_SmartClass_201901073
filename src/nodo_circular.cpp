@@ -13,8 +13,8 @@ nodo_circular::nodo_circular()
     this->correo="";
 
     //Apuntadores
-    this->siguiente=NULL;
-    this->anterior=NULL;
+    this->siguiente=nullptr;
+    this->anterior=nullptr;
 }
 
 nodo_circular::~nodo_circular()
