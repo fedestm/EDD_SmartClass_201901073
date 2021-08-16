@@ -136,7 +136,7 @@ int main()
 
 
                     //Se recorre la matriz y se insertan los valores
-                   for(int i=0;i<5;i++){
+                    for(int i=0;i<5;i++){
                         for(int j=0;j<9;j++){
                             for(int k=0;k<32;k++){
                                 //Se insertan los datos correspondientes a su indice
@@ -145,13 +145,8 @@ int main()
                             }
                         }
                     }
-
-
-
-
-
                 }
-                    cout<<"Se cargaron los datos a la matriz estatica"<<endl;
+                cout<<"Se cargaron los datos a la matriz estatica"<<endl;
 
             }
         }
@@ -161,7 +156,18 @@ int main()
 
         else if(op==4){
             cout<<"\n****************************Reportes*****************************"<<endl;
+            int opcion=0;
+            while(opcion=!3){
+                cout<<"\t1) Lista Usuarios\n";
+                cout<<"\t2) Linealización de Tareas\n";
+                cin>>opcion;
+                cout<<"\n";
+                if(opcion==1){
 
+                }else if(opcion==2){
+                    
+                }
+            }
 
         }else if(op==5){
             cout<<"Saliendo..."<<endl;
