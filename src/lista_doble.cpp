@@ -64,6 +64,7 @@ void lista_doble::graficar_tarea(){
 
     ofs<<"}"<<endl;
     ofs.close();
+    system("dot -Tpng lista_doblemente_enlazada.dot -o lista_doble_tareas.png")
 }
 
 lista_doble::~lista_doble()
