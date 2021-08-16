@@ -25,6 +25,10 @@ void lista_doble::insertar_tarea(string tarea){
             this->primero->siguiente=nuevo;
             nuevo->anterior=this->primero;
             this->ultimo=nuevo;
+        }else{
+            nuevo->anterior=this->ultimo;
+            this->ultimo->siguiente=nuevo;
+            this->ultimo=nuevo;
         }
     }
 }
