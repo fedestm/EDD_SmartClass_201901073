@@ -14,6 +14,12 @@ void lista_doble::insertar_tarea(string tarea){
     nuevo->tarea=tarea;
     nuevo->siguiente=nullptr;
     nuevo->anterior=nullptr;
+
+    //Se valida si el primero nodo esta vacio
+    if(this->primero==nullptr){
+        this->primero=nuevo;
+        this->ultimo=nuevo;
+    }
 }
 
 lista_doble::~lista_doble()
