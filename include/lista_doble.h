@@ -9,6 +9,10 @@ class lista_doble
         lista_doble();
         virtual ~lista_doble();
 
+        //Apuntadores
+        nodo_doble *primero;
+        nodo_doble *ultimo;  
+
     protected:
 
     private:
