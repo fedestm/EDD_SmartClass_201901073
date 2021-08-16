@@ -8,7 +8,9 @@ lista_circular::lista_circular()
 }
 
 void lista_circular::insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad,string correo){
+    //Se crea un nuevo nodo
     nodo_circular *nuevo=new nodo_circular();
+    //Se instancian las variables
     nuevo->carnet=carnet;
     nuevo->dpi=dpi;
     nuevo->nombre=nombre;
@@ -20,7 +22,7 @@ void lista_circular::insertar(string carnet,string dpi,string nombre,string carr
     nuevo->siguiente=nullptr;
     nuevo->anterior=nullptr;
 
-    //Se valida sin el primer nodo esta vacio
+    //Se valida si el primer nodo esta vacio
     if(this->primero==nullptr){
         nuevo->siguiente=nuevo;
         nuevo->anterior=nuevo;
