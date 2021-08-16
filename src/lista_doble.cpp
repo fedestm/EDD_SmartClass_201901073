@@ -6,6 +6,16 @@ lista_doble::lista_doble()
     this->ultimo=nullptr;
 }
 
+void lista_doble::insertar_tarea(string tarea){
+
+    //Se crea un nodo nuevo
+    nodo_doble *nuevo=new nodo_doble();
+    //Se instancian con las variables de dicho nodo
+    nuevo->tarea=tarea;
+    nuevo->siguiente=nullptr;
+    nuevo->anterior=nullptr;
+}
+
 lista_doble::~lista_doble()
 {
     //dtor
