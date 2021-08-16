@@ -1,4 +1,5 @@
 #include "lista_doble.h"
+#include <fstream>
 
 lista_doble::lista_doble()
 {
@@ -7,7 +8,6 @@ lista_doble::lista_doble()
 }
 
 void lista_doble::insertar_tarea(string tarea){
-
     //Se crea un nodo nuevo
     nodo_doble *nuevo=new nodo_doble();
     //Se instancian con las variables de dicho nodo
@@ -31,6 +31,19 @@ void lista_doble::insertar_tarea(string tarea){
             this->ultimo=nuevo;
         }
     }
+}
+
+void lista_doble::graficar_tarea(){
+
+    ofstream ofs("lista_doblemente_enlazada.dot");
+    //Sintaxis basica de archivos dot
+    ofs<<"digraph Lista_Doble{\n"<<endl;
+    ofs<<"rankdir = LR;"<<endl;
+    ofs<<"node [style=filled];"<<endl;
+    ofs<<"label=\"Lista Doblemente Enlazada\""<<endl;
+    ofs<<"color=black"<<endl;
+    ofs<<"}"<<endl;
+    ofs.close();
 }
 
 lista_doble::~lista_doble()

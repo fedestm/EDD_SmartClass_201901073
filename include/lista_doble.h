@@ -17,7 +17,7 @@ class lista_doble
 
         void mostrar();
 
-        void graficar_tarea(string tarea);  
+        void graficar_tarea();  
 
     protected:
 
