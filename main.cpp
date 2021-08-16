@@ -67,6 +67,7 @@ int main()
                     //DPI: 13 digitos
                     if(int(carnet.length())==9 && int(dpi.length()==13)){
                         if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
+                            /*
                             cout<<"*********************************"<<endl;
                             cout<<"Carnet: "<<carnet<<endl;
                             cout<<"DPI: "<<dpi<<endl;
@@ -77,11 +78,13 @@ int main()
                             cout<<"Edad: "<<edad<<endl;
                             cout<<"Correo: "<<correo<<endl;
                             cout<<"**********************************\n"<<endl;
+                            */
                             lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
-                            lista->graficar();
+
                         }
                     }
                 }
+                cout<<"Se insertaron correctamente los estudiantes"<<endl;
             }
         }
         else if(op==2){
@@ -144,12 +147,12 @@ int main()
                                 //Se insertan los datos correspondientes a su indice
                                 //Se ignoran los valores nulos
                                 matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
-                                cout<<"Cargando estudiantes...\n";
+                                cout<<"Insertando tareas...\n";
                             }
                         }
                     }
                 }
-                cout<<"Se cargaron los datos a la matriz estatica"<<endl;
+                cout<<"Se insertaron las tareas en la matriz estatica"<<endl;
 
             }
         }
@@ -175,9 +178,13 @@ int main()
                         for(int j=0;j<(sizeof(matriz[0])/sizeof(*matriz[0]));j++){
                             for(int k=0;k<(sizeof(matriz)/sizeof(*matriz));k++){
                                 cout<<"Linealizando....\n";
-                                cout<<"Datos: "<<matriz[k][j][i]<<"\n";
                                 cont++;
-                                l_doble->insertar_tarea(matriz[k][j][i]);
+                                if(matriz[k][j][i]==""){
+                                    l_doble->insertar_tarea("-1");
+                                }else{
+                                    l_doble->insertar_tarea(matriz[k][j][i]);
+                                }
+                                
                             }
                         }
                     }

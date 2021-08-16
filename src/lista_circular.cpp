@@ -99,6 +99,7 @@ void lista_circular::graficar(){
     ofs.close();
 
     system("dot -Tpng lista_circular_doble.dot -o lista_circular_estudiantes.png");
+    system("lista_circular_estudiantes.png &");
 
 }
 
