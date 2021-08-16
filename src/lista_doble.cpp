@@ -57,6 +57,9 @@ void lista_doble::graficar_tarea(){
         cont++;
         temp=temp->siguiente;
     }
+    for(int i=0;i<cont-1;i++){
+        ofs<<"n_"<<i<<"->"<<"n_"<<i+1<<endl;
+    }
 
     ofs<<"}"<<endl;
     ofs.close();
