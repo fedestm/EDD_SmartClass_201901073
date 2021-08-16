@@ -2,7 +2,8 @@
 
 lista_doble::lista_doble()
 {
-
+    this->primero=nullptr;
+    this->ultimo=nullptr;
 }
 
 lista_doble::~lista_doble()
