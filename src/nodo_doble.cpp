@@ -2,7 +2,9 @@
 
 nodo_doble::nodo_doble()
 {
-    //ctor
+    this->anterior=NULL;
+    this->siguiente=NULL;
+    this->tarea="";
 }
 
 nodo_doble::~nodo_doble()

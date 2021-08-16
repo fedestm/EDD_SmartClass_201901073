@@ -10,11 +10,10 @@ class nodo_doble
         nodo_doble();
         virtual ~nodo_doble();
         string tarea;
-        
         //Apuntadores
         nodo_doble *anterior;
         nodo_doble *siguiente;
-        
+
 
     protected:
 

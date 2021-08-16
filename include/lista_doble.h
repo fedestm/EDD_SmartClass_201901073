@@ -1,5 +1,6 @@
 #ifndef LISTA_DOBLE_H
 #define LISTA_DOBLE_H
+#include "nodo_doble.h"
 
 
 class lista_doble
