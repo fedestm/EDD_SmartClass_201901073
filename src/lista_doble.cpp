@@ -49,10 +49,15 @@ void lista_doble::graficar_tarea(){
     while(temp!=nullptr){
         if(temp==this->primero){
             ofs<<"n_"<<cont<<"[label=\""<<temp->tarea<<"\",shape=box,color=\"#3396FF\"];"<<endl;
+        }else if(temp==this->ultimo){
+            ofs<<"n_"<<cont<<"[label=\""<<temp->tarea<<"\",shape=box,color=\"#3396FF\"];"<<endl;
+        }else{
+            ofs<<"n_"<<cont<<"[label=\""<<temp->tarea<<"\",shape=box,color=\"#3396FF\"];"<<endl;
         }
         cont++;
         temp=temp->siguiente;
     }
+
     ofs<<"}"<<endl;
     ofs.close();
 }
