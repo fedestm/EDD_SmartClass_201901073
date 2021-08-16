@@ -19,6 +19,13 @@ void lista_doble::insertar_tarea(string tarea){
     if(this->primero==nullptr){
         this->primero=nuevo;
         this->ultimo=nuevo;
+    }else{
+        //Si ya se encuentra un dato se guarda en el ultimo nodo
+        if(this->primero==this->ultimo){
+            this->primero->siguiente=nuevo;
+            nuevo->anterior=this->primero;
+            this->ultimo=nuevo;
+        }
     }
 }
 
