@@ -10,13 +10,15 @@ int main()
 {
     lista_circular *lista=new lista_circular();
     int op=0;
-    while(op!=4){
+    string matriz[5][9][32];
+    while(true){
 
         cout<<"\n\t---------------- Menu---------------------\n";
         cout<<"\t|\t1) Carga de Usuarios             |\n";
         cout<<"\t|\t2) Carga de Tareas               |\n";
         cout<<"\t|\t3) Ingreso Manual                |\n";
         cout<<"\t|\t4) Reportes                      |\n";
+        cout<<"\t|\t5) Salir                         |\n";
         cout<<"\t------------------------------------------\n";
         cout<<"\tIngrese una opcion: ";
         cin>>op;
@@ -30,10 +32,10 @@ int main()
 
             cout<<"-------------Carga de Usuarios----------------"<<endl;
             cout<<"Ingrese ruta de archivo: ";
-            cin>>ruta;
+            //cin>>ruta;
 
             fstream fs;     //Se encarga de leer el archivo de entrada
-            fs.open(ruta,ios::in);  //Abre el contenido
+            fs.open("C:/Users/User/Documents/GitHub/EDD_SmartClass_201901073/Estudiantes.csv",ios::in);  //Abre el contenido
             getline(fs,primer_linea);   //Ignora la primera linea del archivo
 
             //cout<<primer_linea;
@@ -86,16 +88,17 @@ int main()
             string mes,dia,hora,carnet,nombre,desc,materia,fecha,estado;
 
             cout<<"-------------Carga de Tareas----------------"<<endl;
-            cout<<"Ingrese ruta de archivo: ";
-            cin>>ruta_tarea;
+            //cout<<"Ingrese ruta de archivo: ";
+            //cin>>ruta_tarea;
 
             fstream fs;
-            fs.open(ruta_tarea,ios::in);
+            fs.open("C:/Users/User/Documents/GitHub/EDD_SmartClass_201901073/Tareas.csv",ios::in);
             getline(fs,linea);
+            string datos="";
 
 
             //Matriz Estatica
-            string matriz[5][9][32];
+
 
             if(!fs){
                 cout<<"Error, no se encontro archivo CSV";
@@ -114,9 +117,58 @@ int main()
                     getline(fs,materia,',');
                     getline(fs,fecha,',');
                     getline(fs,estado,'\n');
-                }
-            }
 
+                    /*
+                    cout<<"*********************************"<<endl;
+                    cout<<"Mes: "<<mes<<endl;
+                    cout<<"Dia: "<<dia<<endl;
+                    cout<<"Hora: "<<hora<<endl;
+                    cout<<"Carnet: "<<carnet<<endl;
+                    cout<<"Nombre: "<<nombre<<endl;
+                    cout<<"Descripcion: "<<desc<<endl;
+                    cout<<"Materia: "<<materia<<endl;
+                    cout<<"Fecha: "<<fecha<<endl;
+                    cout<<"Estado: "<<estado<<endl;
+                    cout<<"**********************************\n"<<endl;
+                    */
+
+                    datos=carnet+"\n"+nombre+"\n"+desc+"\n"+materia+"\n"+fecha+"\n"+estado;
+
+
+                    //Se recorre la matriz y se insertan los valores
+                   for(int i=0;i<5;i++){
+                        for(int j=0;j<9;j++){
+                            for(int k=0;k<32;k++){
+                                //Se insertan los datos correspondientes a su indice
+                                //Se ignoran los valores nulos
+                                matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
+                            }
+                        }
+                    }
+
+
+
+
+
+                }
+                    cout<<"Se cargaron los datos a la matriz estatica"<<endl;
+
+            }
+        }
+        else if(op==3){
+
+        }
+
+        else if(op==4){
+            cout<<"\n****************************Reportes*****************************"<<endl;
+
+
+        }else if(op==5){
+            cout<<"Saliendo..."<<endl;
+            exit(-1);
+        }
+        else{
+            cout<<"\nOpcion invalida"<<endl;
         }
 
 
