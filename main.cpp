@@ -3,12 +3,14 @@
 #include <fstream>
 #include <regex>
 #include "include/lista_circular.h"
+#include "include/lista_doble.h"
 
 using namespace std;
 
 int main()
 {
     lista_circular *lista=new lista_circular();
+    lista_doble *l_doble=new lista_doble();
     int op=0;
     string matriz[5][9][32];
     while(true){
@@ -132,7 +134,7 @@ int main()
                     cout<<"**********************************\n"<<endl;
                     */
 
-                    datos=carnet+"\n"+nombre+"\n"+desc+"\n"+materia+"\n"+fecha+"\n"+estado;
+                    datos="Carnet: "+carnet+"\n"+"Nombre: "+nombre+"\n"+"Descripción: "+desc+"\n"+"Materia: "+materia+"\n"+"Fecha: "+fecha+"\n"+"Estado: "+estado;
 
 
                     //Se recorre la matriz y se insertan los valores
@@ -152,21 +154,21 @@ int main()
             }
         }
         else if(op==3){
-
         }
 
         else if(op==4){
             cout<<"\n****************************Reportes*****************************"<<endl;
             int opcion=0;
-            while(opcion!=3){
+            while(opcion!=4){
                 cout<<"\t1) Lista Usuarios\n";
                 cout<<"\t2) Linealización de Tareas\n";
-                cout<<"\t3) Regresar";
+                cout<<"\t3) Reporte Linealización\n";
+                cout<<"\t4) Regresar\n";
                 cout<<"\tIngrese una opción: ";
                 cin>>opcion;
                 cout<<"\n";
                 if(opcion==1){
-
+                    lista->graficar();
                 }else if(opcion==2){
                     int cont=0;
                     for(int i=0;i<(sizeof(matriz[0][0])/sizeof(*matriz[0][0]));i++){
@@ -175,9 +177,12 @@ int main()
                                 cout<<"Linealizando....\n";
                                 cout<<"Datos: "<<matriz[k][j][i]<<"\n";
                                 cont++;
+                                l_doble->insertar_tarea(matriz[k][j][i]);
                             }
                         }
                     }
+                }else if(opcion==3){
+                    l_doble->graficar_tarea();
                 }
             }
 
