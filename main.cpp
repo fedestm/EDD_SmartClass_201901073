@@ -142,6 +142,7 @@ int main()
                                 //Se insertan los datos correspondientes a su indice
                                 //Se ignoran los valores nulos
                                 matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
+                                cout<<"Cargando estudiantes...\n";
                             }
                         }
                     }
@@ -157,15 +158,26 @@ int main()
         else if(op==4){
             cout<<"\n****************************Reportes*****************************"<<endl;
             int opcion=0;
-            while(opcion=!3){
+            while(opcion!=3){
                 cout<<"\t1) Lista Usuarios\n";
                 cout<<"\t2) Linealización de Tareas\n";
+                cout<<"\t3) Regresar";
+                cout<<"\tIngrese una opción: ";
                 cin>>opcion;
                 cout<<"\n";
                 if(opcion==1){
 
                 }else if(opcion==2){
-                    
+                    int cont=0;
+                    for(int i=0;i<(sizeof(matriz[0][0])/sizeof(*matriz[0][0]));i++){
+                        for(int j=0;j<(sizeof(matriz[0])/sizeof(*matriz[0]));j++){
+                            for(int k=0;k<(sizeof(matriz)/sizeof(*matriz));k++){
+                                cout<<"Linealizando....\n";
+                                cout<<"Datos: "<<matriz[k][j][i]<<"\n";
+                                cont++;
+                            }
+                        }
+                    }
                 }
             }
 
@@ -176,9 +188,5 @@ int main()
         else{
             cout<<"\nOpcion invalida"<<endl;
         }
-
-
-
-
     }
 }
