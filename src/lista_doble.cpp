@@ -42,6 +42,17 @@ void lista_doble::graficar_tarea(){
     ofs<<"node [style=filled];"<<endl;
     ofs<<"label=\"Lista Doblemente Enlazada\""<<endl;
     ofs<<"color=black"<<endl;
+    //Contador 
+    int cont=0;
+    //Se declara una variable auxiliar para recorrer los nodos
+    nodo_doble *temp=this->primero;
+    while(temp!=nullptr){
+        if(temp==this->primero){
+            ofs<<"n_"<<cont<<"[label=\""<<temp->tarea<<"\",shape=box,color=\"#3396FF\"];"<<endl;
+        }
+        cont++;
+        temp=temp->siguiente;
+    }
     ofs<<"}"<<endl;
     ofs.close();
 }
