@@ -83,4 +83,3 @@ cola::~cola()
 {
     //dtor
 }
-fs <<"\t\tn_"<<cont_g<< "[label = \"Dato: "<< temp->dato<<"\",shape=box,color=\"#63EA30\"];\n" <<endl;
