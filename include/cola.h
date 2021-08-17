@@ -11,7 +11,7 @@ class cola
         nodo_cola *ultimo;
         int cont;
 
-        //Función que verifica que la cola no este vacía
+        //Funciï¿½n que verifica que la cola no este vacï¿½a
         int cola_vacia();
 
         //Metodo para encolar
@@ -21,7 +21,7 @@ class cola
         void desencolar();
 
         //Metodo para graficar
-        void graficar_colar();
+        void graficar_cola();
 
     protected:
 

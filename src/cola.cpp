@@ -1,4 +1,5 @@
-#include "cola.h"
+#include "include/cola.h"
+#include <fstream>
 
 cola::cola()
 {
@@ -33,6 +34,23 @@ void cola::desencolar(){
         this->primero=temp->siguiente;
         temp=nullptr;
         this->cont--;
+    }
+}
+
+void cola::graficar_cola(){
+    nodo_cola *temp;
+    if(this->cola_vacia()){
+        cout<<"No hay datos en la cola"<<endl;
+    }else{
+        ofstream fs("cola.dot");
+        fs<<"digraph Cola {"<<"\n"<<endl;
+        fs << "rankdir = LR;\n" <<endl;
+        fs << "\tnode [style=filled];" <<endl;
+        fs << "label = \"Cola de Errores\"; \n"<<endl;
+        fs << "color= black \n"<<endl;
+
+        fs<<"\t}\n"<<endl;
+        fs.close();
     }
 }
 

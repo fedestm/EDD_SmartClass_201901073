@@ -34,16 +34,20 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/cola.h" />
 		<Unit filename="include/lista_circular.h" />
 		<Unit filename="include/lista_doble.h" />
 		<Unit filename="include/matriz.h" />
 		<Unit filename="include/nodo_circular.h" />
+		<Unit filename="include/nodo_cola.h" />
 		<Unit filename="include/nodo_doble.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/cola.cpp" />
 		<Unit filename="src/lista_circular.cpp" />
 		<Unit filename="src/lista_doble.cpp" />
 		<Unit filename="src/matriz.cpp" />
 		<Unit filename="src/nodo_circular.cpp" />
+		<Unit filename="src/nodo_cola.cpp" />
 		<Unit filename="src/nodo_doble.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
