@@ -53,7 +53,16 @@ void lista_doble::graficar_tarea(){
     //Se declara una variable auxiliar para recorrer los nodos
     nodo_doble *temp=this->primero;
     while(temp!=nullptr){
-        if(temp==this->primero){
+        if(temp->materia=="-1"){
+            if(temp==this->primero){
+                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box];"<<endl;
+            }else if(temp==this->ultimo){
+                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box];"<<endl;
+            }else{
+                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box];"<<endl;
+        }
+        }else{
+            if(temp==this->primero){
             ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
             <<"\\nEstado: "<<temp->estado<<"\",shape=box];"<<endl;
@@ -66,6 +75,8 @@ void lista_doble::graficar_tarea(){
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
             <<"\\nEstado: "<<temp->estado<<"\",shape=box];"<<endl;
         }
+        }
+        
         cont++;
         temp=temp->siguiente;
     }
