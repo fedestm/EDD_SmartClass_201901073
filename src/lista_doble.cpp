@@ -1,4 +1,4 @@
-#include "lista_doble.h"
+#include "../include/lista_doble.h"
 #include <fstream>
 
 lista_doble::lista_doble()
