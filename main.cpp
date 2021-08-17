@@ -13,6 +13,8 @@ int main()
     lista_doble *l_doble=new lista_doble();
     int op=0;
     string matriz[5][9][32];
+    string carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,estado_tarea,hora_tarea;
+
     while(true){
 
         cout<<"\n\t---------------- Menu---------------------\n";
@@ -90,6 +92,7 @@ int main()
         else if(op==2){
             string ruta_tarea="";
             string linea;
+            string datos;
             string mes,dia,hora,carnet,nombre,desc,materia,fecha,estado;
 
             cout<<"-------------Carga de Tareas----------------"<<endl;
@@ -99,11 +102,6 @@ int main()
             fstream fs;
             fs.open("C:/Users/User/Documents/GitHub/EDD_SmartClass_201901073/Tareas.csv",ios::in);
             getline(fs,linea);
-            string datos="";
-
-
-            //Matriz Estatica
-
 
             if(!fs){
                 cout<<"Error, no se encontro archivo CSV";
@@ -136,17 +134,15 @@ int main()
                     cout<<"Estado: "<<estado<<endl;
                     cout<<"**********************************\n"<<endl;
                     */
-
-                    datos="Carnet: "+carnet+"\n"+"Nombre: "+nombre+"\n"+"Descripción: "+desc+"\n"+"Materia: "+materia+"\n"+"Fecha: "+fecha+"\n"+"Estado: "+estado;
-
-
                     //Se recorre la matriz y se insertan los valores
+                    datos=carnet+","+nombre+","+desc+","+materia+","+fecha+","+hora+","+estado;
                     for(int i=0;i<5;i++){
                         for(int j=0;j<9;j++){
                             for(int k=0;k<32;k++){
                                 //Se insertan los datos correspondientes a su indice
                                 //Se ignoran los valores nulos
                                 matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
+                                
                                 cout<<"Insertando tareas...\n";
                             }
                         }
@@ -157,6 +153,7 @@ int main()
             }
         }
         else if(op==3){
+
         }
 
         else if(op==4){
@@ -177,14 +174,30 @@ int main()
                     for(int i=0;i<(sizeof(matriz[0][0])/sizeof(*matriz[0][0]));i++){
                         for(int j=0;j<(sizeof(matriz[0])/sizeof(*matriz[0]));j++){
                             for(int k=0;k<(sizeof(matriz)/sizeof(*matriz));k++){
-                                cout<<"Linealizando....\n";
+                                //cout<<"Linealizando....\n";
                                 cont++;
+                                cout<<matriz[k][j][i]<<endl;
                                 if(matriz[k][j][i]==""){
-                                    l_doble->insertar_tarea("-1");
+                                    l_doble->insertar_tarea("","","","-1","","","");
                                 }else{
-                                    l_doble->insertar_tarea(matriz[k][j][i]);
+                                    //l_doble->insertar_tarea(matriz[k][j][i]);
+                                    istringstream is(matriz[k][j][i]);
+                                    while(true){
+                                        if(is.eof()){
+                                            break;
+                                        }
+                                        getline(is,carnet_tarea,',');
+                                        getline(is,nombre_tarea,',');
+                                        getline(is,desc_tarea,',');
+                                        getline(is,materia_tarea,',');
+                                        getline(is,fecha_tarea,',');
+                                        getline(is,hora_tarea,',');
+                                        getline(is,estado_tarea,'\n');
+                                        l_doble->insertar_tarea(carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
+                                    }
+
                                 }
-                                
+
                             }
                         }
                     }

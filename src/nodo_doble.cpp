@@ -4,7 +4,13 @@ nodo_doble::nodo_doble()
 {
     this->anterior=nullptr;
     this->siguiente=nullptr;
-    this->tarea="";
+    this->carnet="";
+    this->nombre="";
+    this->descripcion="";
+    this->materia="";
+    this->fecha="";
+    this->hora="";
+    this->estado="";
 }
 
 nodo_doble::~nodo_doble()

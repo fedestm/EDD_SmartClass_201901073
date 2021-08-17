@@ -13,7 +13,7 @@ class lista_doble
         nodo_doble *primero;
         nodo_doble *ultimo;
 
-        void insertar_tarea(string tarea);
+        void insertar_tarea(string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
 
         void mostrar();
 

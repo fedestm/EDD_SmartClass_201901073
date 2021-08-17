@@ -9,7 +9,7 @@ class nodo_doble
     public:
         nodo_doble();
         virtual ~nodo_doble();
-        string tarea;
+        string carnet,nombre,descripcion,materia,fecha,hora,estado;
         //Apuntadores
         nodo_doble *anterior;
         nodo_doble *siguiente;
