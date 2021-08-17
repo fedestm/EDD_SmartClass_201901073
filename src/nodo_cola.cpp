@@ -2,7 +2,10 @@
 
 nodo_cola::nodo_cola()
 {
-    //ctor
+    this->siguiente=nullptr;
+    this->id=0;
+    this->tipo="";
+    this->descripcion="";
 }
 
 nodo_cola::~nodo_cola()
