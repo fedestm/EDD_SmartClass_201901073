@@ -24,6 +24,18 @@ void cola::encolar(int id,string tipo,string descripcion){
     this->cont++;
 }
 
+void cola::desencolar(){
+    nodo_cola *temp;
+    if(this->cola()){
+        cout<<"No hay datos en la cola"<<endl;
+    }else{
+        temp=this->primero;
+        this->primero=temp->siguiente;
+        temp=nullptr;
+        this->cont--;
+    }
+}
+
 cola::~cola()
 {
     //dtor
