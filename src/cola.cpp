@@ -26,7 +26,7 @@ void cola::encolar(int id,string tipo,string descripcion){
 
 void cola::desencolar(){
     nodo_cola *temp;
-    if(this->cola()){
+    if(this->cola_vacia()){
         cout<<"No hay datos en la cola"<<endl;
     }else{
         temp=this->primero;

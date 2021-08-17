@@ -12,7 +12,7 @@ nodo_cola::nodo_cola(nodo_cola *siguiente,int id,string tipo,string descripcion)
     this->siguiente=siguiente;
     this->id=id;
     this->tipo=tipo;
-    this->descripcion=descripion;
+    this->descripcion=descripcion;
 }
 
 nodo_cola::~nodo_cola()

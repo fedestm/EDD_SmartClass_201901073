@@ -1,6 +1,6 @@
 #ifndef COLA_H
 #define COLA_H
-
+#include "nodo_cola.h"
 
 class cola
 {

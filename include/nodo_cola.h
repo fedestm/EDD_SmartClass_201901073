@@ -1,6 +1,8 @@
 #ifndef NODO_COLA_H
 #define NODO_COLA_H
+#include <iostream>
 
+using namespace std;
 
 class nodo_cola
 {

@@ -41,3 +41,12 @@
 	"lista_doble.h"
 	<fstream>
 
+1629163909 source:c:\users\user\documents\github\edd_smartclass_201901073\src\cola.cpp
+	"cola.h"
+
+1629163899 c:\users\user\documents\github\edd_smartclass_201901073\include\cola.h
+	"nodo_cola.h"
+
+1629163872 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_cola.h
+	<iostream>
+
