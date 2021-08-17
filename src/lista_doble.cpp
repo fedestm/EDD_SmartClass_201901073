@@ -55,25 +55,25 @@ void lista_doble::graficar_tarea(){
     while(temp!=nullptr){
         if(temp->materia=="-1"){
             if(temp==this->primero){
-                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box];"<<endl;
+                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
             }else if(temp==this->ultimo){
-                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box];"<<endl;
+                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
             }else{
-                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box];"<<endl;
+                ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }
         }else{
             if(temp==this->primero){
             ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
-            <<"\\nEstado: "<<temp->estado<<"\",shape=box];"<<endl;
+            <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }else if(temp==this->ultimo){
             ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
-            <<"\\nEstado: "<<temp->estado<<"\",shape=box];"<<endl;
+            <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }else{
             ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
-            <<"\\nEstado: "<<temp->estado<<"\",shape=box];"<<endl;
+            <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }
         }
         
