@@ -4,6 +4,7 @@
 #include <regex>
 #include "include/lista_circular.h"
 #include "include/lista_doble.h"
+#include "include/cola.h"
 
 using namespace std;
 
@@ -11,9 +12,12 @@ int main()
 {
     lista_circular *lista=new lista_circular();
     lista_doble *l_doble=new lista_doble();
+    cola *col=new cola();
     int op=0;
     string matriz[5][9][32];
     string carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,estado_tarea,hora_tarea;
+
+    int cont=0;
 
     while(true){
 
@@ -33,6 +37,7 @@ int main()
             string primer_linea;    //Cadena encargada de guardar primera linea
             string carnet,dpi,nombre,carrera,pass,correo;
             string creditos,edad;
+
 
             cout<<"-------------Carga de Usuarios----------------"<<endl;
             cout<<"Ingrese ruta de archivo: ";
@@ -68,23 +73,30 @@ int main()
                     //Carnet: 9 digitos
                     //DPI: 13 digitos
                     if(int(carnet.length())==9 && int(dpi.length()==13)){
-                        if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
-                            /*
-                            cout<<"*********************************"<<endl;
-                            cout<<"Carnet: "<<carnet<<endl;
-                            cout<<"DPI: "<<dpi<<endl;
-                            cout<<"Nombre: "<<nombre<<endl;
-                            cout<<"Carrera: "<<carrera<<endl;
-                            cout<<"Password: "<<pass<<endl;
-                            cout<<"Creditos: "<<creditos<<endl;
-                            cout<<"Edad: "<<edad<<endl;
-                            cout<<"Correo: "<<correo<<endl;
-                            cout<<"**********************************\n"<<endl;
-                            */
-                            lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
-
-                        }
+                        lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
+                    }else{
+                        col->encolar(cont,"Estudiante","El carnet: "+carnet+"\n no tiene el rango correcto");
                     }
+                    if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
+                        lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
+                        /*
+                        cout<<"*********************************"<<endl;
+                        cout<<"Carnet: "<<carnet<<endl;
+                        cout<<"DPI: "<<dpi<<endl;
+                        cout<<"Nombre: "<<nombre<<endl;
+                        cout<<"Carrera: "<<carrera<<endl;
+                        cout<<"Password: "<<pass<<endl;
+                        cout<<"Creditos: "<<creditos<<endl;
+                        cout<<"Edad: "<<edad<<endl;
+                        cout<<"Correo: "<<correo<<endl;
+                        cout<<"**********************************\n"<<endl;
+                        */
+                    }else{
+
+                        col->encolar(cont,"Estudiante","El DPI: "+dpi+"\n no tiene el rango correcto");
+                    }
+                    cont++;
+
                 }
                 cout<<"Se insertaron correctamente los estudiantes"<<endl;
             }
@@ -142,7 +154,7 @@ int main()
                                 //Se insertan los datos correspondientes a su indice
                                 //Se ignoran los valores nulos
                                 matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
-                                
+
                                 cout<<"Insertando tareas...\n";
                             }
                         }
@@ -153,17 +165,32 @@ int main()
             }
         }
         else if(op==3){
+            while(op!=3){
+                cout<<"1) Usuarios\n";
+                cout<<"2) Tareas\n";
+                cout<<"3) Regresar\n";
+                int op=0;
+                cout<<"Ingrese opción: ";
+                cin>>op;
+
+                if(op==1){
+
+                }else if(op==2){
+
+                }
+            }
 
         }
 
         else if(op==4){
             cout<<"\n****************************Reportes*****************************"<<endl;
             int opcion=0;
-            while(opcion!=4){
+            while(opcion!=5){
                 cout<<"\t1) Lista Usuarios\n";
                 cout<<"\t2) Linealización de Tareas\n";
                 cout<<"\t3) Reporte Linealización\n";
-                cout<<"\t4) Regresar\n";
+                cout<<"\t4) Reporte de Errores\n";
+                cout<<"\t5) Regresar\n";
                 cout<<"\tIngrese una opción: ";
                 cin>>opcion;
                 cout<<"\n";
@@ -203,6 +230,8 @@ int main()
                     }
                 }else if(opcion==3){
                     l_doble->graficar_tarea();
+                }else if(opcion==4){
+                    col->graficar_cola();
                 }
             }
 
