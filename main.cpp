@@ -174,6 +174,22 @@ int main()
                 cin>>op;
 
                 if(op==1){
+                    while(op!=4){
+                        cout<<"1) Ingresar\n";
+                        cout<<"2) Modificar\n";
+                        cout<<"3) Eliminar\n";
+                        cout<<"4) Salir\n";
+                        int op=0;
+                        cout<<"Ingrese opción: ";
+                        cin>>op;
+                        if(op==1){
+                            cout<<"-----Ingrese de estudiantes manualmente-----"<<endl;
+                        }else if(op==2){
+                            cout<<"-----Modificar estudiante-----"<<endl;
+                        }else if(op==3){
+                            cout<<"-----Eliminar estudiante------"<<endl;
+                        }
+                    }
 
                 }else if(op==2){
 
