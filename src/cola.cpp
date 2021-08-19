@@ -1,4 +1,4 @@
-#include "include/cola.h"
+#include "cola.h"
 #include <fstream>
 
 cola::cola()
@@ -14,7 +14,7 @@ int cola::cola_vacia(){
 }
 
 void cola::encolar(int id,string tipo,string descripcion){
-    nodo_cola *nuevo=new nodo_cola(nullptr,id,tipo,descripcion);
+    nodo_cola *nuevo=new nodo_cola(nullptr,cont+1,tipo,descripcion);
     if(this->cola_vacia()){
         this->primero=nuevo;
         this->ultimo=nuevo;
@@ -54,19 +54,19 @@ void cola::graficar_cola(){
         while(temp!=nullptr){
             //Mostrar el primer nodo
             if(temp==this->primero){
-                fs<<"\t\n_"<<cont_cola<<"[label=\"Id: "<<temp->id<<"\\nTipo: "<<temp->tipo<<
+                fs<<"\tn_"<<cont_cola<<"[label=\"Id: "<<temp->id<<"\\nTipo: "<<temp->tipo<<
                 "\\nDescripción: "<<temp->descripcion<<"\",shape=box,color=\"#F1350C\",fontcolor=white];\n"<<endl;
             }else if(temp==this->ultimo){   //Mostrar el ultimo nodo
-                fs<<"\t\n_"<<cont_cola<<"[label=\"Id: "<<temp->id<<"\\nTipo: "<<temp->tipo<<
+                fs<<"\tn_"<<cont_cola<<"[label=\"Id: "<<temp->id<<"\\nTipo: "<<temp->tipo<<
                 "\\nDescripción: "<<temp->descripcion<<"\",shape=box,color=\"#F1350C\",fontcolor=white];\n"<<endl;
             }else{  //Mostrar los nodos que estan en medio
-                fs<<"\t\n_"<<cont_cola<<"[label=\"Id: "<<temp->id<<"\\nTipo: "<<temp->tipo<<
+                fs<<"\tn_"<<cont_cola<<"[label=\"Id: "<<temp->id<<"\\nTipo: "<<temp->tipo<<
                 "\\nDescripción: "<<temp->descripcion<<"\",shape=box,color=\"#F1350C\",fontcolor=white];\n"<<endl;
             }
             temp=temp->siguiente;
             cont_cola++;
         }
-        
+
         for(int i=0;i<cont_cola-1;i++){
             fs<<"n_"<<i<<"->"<<"n_"<<i+1<<endl;
         }
@@ -74,7 +74,7 @@ void cola::graficar_cola(){
         fs<<"\t}\n"<<endl;
         fs.close();
 
-        system("dot Tpng cola.dot -o cola_errores.png");
+        system("dot -Tpng cola.dot -o cola_errores.png");
         system("cola_errores.png &");
     }
 }

@@ -2,15 +2,16 @@
 1627934312 source:c:\users\user\desktop\proyectos estructuras de datos\lista simple c++\edd_smartclass_201901073\main.cpp
 	<iostream>
 
-1629160489 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
+1629229527 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
 	<iostream>
 	<string>
 	<fstream>
 	<regex>
 	"include/lista_circular.h"
 	"include/lista_doble.h"
+	"include/cola.h"
 
-1629137619 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_circular.cpp
+1629229201 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_circular.cpp
 	"../include/nodo_circular.h"
 
 1628724912 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_circular.h
@@ -23,7 +24,7 @@
 1628724581 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_circular.h
 	"nodo_circular.h"
 
-1628875484 source:c:\users\user\documents\github\edd_smartclass_201901073\src\matriz.cpp
+1629216451 source:c:\users\user\documents\github\edd_smartclass_201901073\src\matriz.cpp
 	"matriz.h"
 
 1629045379 c:\users\user\documents\github\edd_smartclass_201901073\include\matriz.h
@@ -34,19 +35,23 @@
 1629147176 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_doble.h
 	<iostream>
 
-1629147334 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_doble.cpp
-	"nodo_doble.h"
+1629216457 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_doble.cpp
+	"../include/nodo_doble.h"
 
-1629161267 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
-	"lista_doble.h"
+1629214222 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
+	"../include/lista_doble.h"
 	<fstream>
 
-1629163909 source:c:\users\user\documents\github\edd_smartclass_201901073\src\cola.cpp
+1629228749 source:c:\users\user\documents\github\edd_smartclass_201901073\src\cola.cpp
 	"cola.h"
+	<fstream>
 
-1629163899 c:\users\user\documents\github\edd_smartclass_201901073\include\cola.h
+1629214347 c:\users\user\documents\github\edd_smartclass_201901073\include\cola.h
 	"nodo_cola.h"
 
 1629163872 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_cola.h
 	<iostream>
+
+1629163914 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_cola.cpp
+	"nodo_cola.h"
 
