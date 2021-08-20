@@ -103,6 +103,23 @@ void lista_circular::graficar(){
 
 }
 
+nodo_circular *lista_circular::buscar_estudiante(string dpi){
+    if(this->primero==nullptr){
+        cout<<"No hay datos en la lista"<<endl;
+        return nullptr;
+    }else{
+        nodo_circular *temp=this->primero;
+        while(temp!=nullptr){
+            if(temp->dpi==dpi){
+                cout<<"Carnet: "<<temp->carnet<<endl;
+            else{
+                temp=temp->siguiente;
+            }
+        }
+        cout<<"No se encontro el estudiante"<<endl;
+    }
+}
+
 lista_circular::~lista_circular()
 {
     //dtor

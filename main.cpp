@@ -165,6 +165,7 @@ int main()
             }
         }
         else if(op==3){
+            int op=0;
             while(op!=3){
                 cout<<"1) Usuarios\n";
                 cout<<"2) Tareas\n";
@@ -175,6 +176,8 @@ int main()
 
                 if(op==1){
                     while(op!=4){
+                        string carnet,dpi,nombre,carrera,pass,correo;
+                        int creditos,edad;
                         cout<<"1) Ingresar\n";
                         cout<<"2) Modificar\n";
                         cout<<"3) Eliminar\n";
@@ -183,15 +186,50 @@ int main()
                         cout<<"Ingrese opción: ";
                         cin>>op;
                         if(op==1){
-                            cout<<"-----Ingrese de estudiantes manualmente-----"<<endl;
+                            cout<<"-----Ingreso de estudiantes manualmente-----"<<endl;
+                            cout<<"Ingrese carnet: ";
+                            cin>>carnet;
+                            cout<<"Ingrese dpi: ";
+                            cin>>dpi;
+                            cout<<"Ingrese nombre: ";
+                            cin.ignore();
+                            getline(cin,nombre);
+                            cout<<"Ingrese carrera: ";
+                            getline(cin,carrera);
+                            cout<<"Ingrese contraseña: ";
+                            cin>>pass;
+                            cout<<"Ingrese creditos: ";
+                            cin>>creditos;
+                            cout<<"Ingrese edad: ";
+                            cin>>edad;
+                            cout<<"Ingrese correo: ";
+                            cin>>correo;
+                            lista->insertar(carnet,dpi,nombre,carrera,pass,creditos,edad,correo);
+                            cout<<"\nSe inserto estudiante"<<endl;
                         }else if(op==2){
-                            cout<<"-----Modificar estudiante-----"<<endl;
+                            cout<<"\n-----Modificar estudiante-----"<<endl;
                         }else if(op==3){
-                            cout<<"-----Eliminar estudiante------"<<endl;
+                            cout<<"\n-----Eliminar estudiante------"<<endl;
                         }
                     }
 
                 }else if(op==2){
+                    while(op!=4){
+                        cout<<"1) Ingresar\n";
+                        cout<<"2) Modificar\n";
+                        cout<<"3) Eliminar\n";
+                        cout<<"4) Salir\n";
+                        int op=0;
+                        cout<<"Ingrese opción: ";
+                        cin>>op;
+                        if(op==1){
+                            cout<<"\n------Ingreso de tareas manualmente----------"<<endl;
+                        }else if(op==2){
+                            cout<<"\n------Modificar tarea------"<<endl;
+                        }else if(op==3){
+                            cout<<"\n------Eliminar tarea--------"<<endl;
+                        }
+                    }
 
                 }
             }

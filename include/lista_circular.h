@@ -21,6 +21,11 @@ class lista_circular
 
         //Mostrar Lista en Consola
         void mostrar();
+        //Eliminar
+        void eliminar_estudiante(string dpi);
+
+        //Buscar Estudiante
+        nodo_circular * buscar_estudiante(string dpi);
 
 
     protected:
