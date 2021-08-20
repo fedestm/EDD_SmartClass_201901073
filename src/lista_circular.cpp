@@ -112,11 +112,38 @@ nodo_circular *lista_circular::buscar_estudiante(string dpi){
         while(temp!=nullptr){
             if(temp->dpi==dpi){
                 cout<<"Carnet: "<<temp->carnet<<endl;
-            else{
+            }else{
                 temp=temp->siguiente;
             }
         }
         cout<<"No se encontro el estudiante"<<endl;
+        }
+}
+
+void lista_circular::eliminar_estudiante(int dpi){
+    //Se crea un nuevo nodo
+    nodo_circular *temp=this->buscar_estudiante(dpi);
+
+    if(temp!=nullptr){
+        if(this->primero==this->ultimo){
+            this->primero=nullptr;
+            this->ultimo=nullptr;
+        }else if(temp==this->primero){ //Se valida si el primero
+            this->primero=temp->siguiente;
+            //Se elimina la variable temporal
+            temp->siguiente->anterior=nullptr;
+        }else if(temp==this->ultimo){   //Se valida si es el ultimo
+            this->ultimo=temp->anterior;
+            temp->anterior->siguiente=nullptr;
+        }else{
+            temp->anterior->siguiente=temp->siguiente;
+            temp->siguiente->anterior=temp->anterior;
+        }
+
+        temp->siguiente=nullptr;
+        temp->anterior=nullptr;
+        delete(temp);
+        cout<<"Se borro el estudiante "<<dpi<<endl;
     }
 }
 

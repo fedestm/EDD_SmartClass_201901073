@@ -210,6 +210,11 @@ int main()
                             cout<<"\n-----Modificar estudiante-----"<<endl;
                         }else if(op==3){
                             cout<<"\n-----Eliminar estudiante------"<<endl;
+                            cout<<"Ingrese DPI: ";
+                            cin>>dpi;
+                            cout<<"\n-----Buscado------------------"<<endl;
+                            lista->buscar_estudiante(dpi);
+
                         }
                     }
 
