@@ -61,6 +61,37 @@ nodo_doble * lista_doble::buscar_tarea(int id){
     }
 }
 
+void lista_doble::modificar_tarea(int id,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado){
+    nodo_doble *nuevo=this->buscar_tarea(id);
+    if(nuevo==this->primero){
+        nuevo->carnet=carnet;
+        nuevo->nombre=nombre;
+        nuevo->descripcion=desc;
+        nuevo->materia=materia;
+        nuevo->fecha=fecha;
+        nuevo->hora=hora;
+        nuevo->estado=estado;
+    }else if(this->primero==this->ultimo){
+        nuevo->carnet=carnet;
+        nuevo->nombre=nombre;
+        nuevo->descripcion=desc;
+        nuevo->materia=materia;
+        nuevo->fecha=fecha;
+        nuevo->hora=hora;
+        nuevo->estado=estado;
+    }else{
+        nuevo->carnet=carnet;
+        nuevo->nombre=nombre;
+        nuevo->descripcion=desc;
+        nuevo->materia=materia;
+        nuevo->fecha=fecha;
+        nuevo->hora=hora;
+        nuevo->estado=estado;
+    }
+}
+
+
+
 void lista_doble::eliminar_tarea(int id){
     nodo_doble *temp=this->buscar_tarea(id);
     if(temp!=nullptr){
@@ -108,15 +139,15 @@ void lista_doble::graficar_tarea(){
         }
         }else{
             if(temp==this->primero){
-            ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
+            ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->id<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
             <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }else if(temp==this->ultimo){
-            ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
+            ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->id<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
             <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }else{
-            ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->carnet<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
+            ofs<<"n_"<<cont<<"[label=\"Carnet: "<<temp->id<<"\\nNombre: "<<temp->nombre<<"\\nDescripcion: "<<temp->descripcion
             <<"\\nMateria: "<<temp->materia<<"\\nFecha: "<<temp->fecha<<"\\nHora: "<<temp->hora
             <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }

@@ -276,12 +276,31 @@ int main()
                         col->encolar(0,"Tarea","Carnet: "+carnet+"\n no encontrado");
                     }
                         }else if(op==2){
-
                             int id;
+                            string carnet,nombre,desc,materia,fecha,hora,estado;
                             cout<<"\n------Modificar tarea------"<<endl;
                             cout<<"Ingrese id a buscar: ";
                             cin>>id;
-                            l_doble->buscar_tarea(id);
+                            if(l_doble->buscar_tarea(id)){
+                                cout<<"Ingrese carnet: ";
+                                cin>>carnet;
+                                cout<<"Ingrese nombre: ";
+                                cin.ignore();
+                                getline(cin,nombre);
+                                cout<<"Ingrese descripcion: ";
+                                getline(cin,desc);
+                                cout<<"Ingrese materia: ";
+                                getline(cin,materia);
+                                cout<<"Ingrese fecha: ";
+                                cin>>fecha;
+                                cout<<"Ingrese hora: ";
+                                cin>>hora;
+                                cout<<"Ingrese estado: ";
+                                cin>>estado;
+                                l_doble->modificar_tarea(id,carnet,nombre,desc,materia,fecha,hora,estado);
+                            }else{
+                                cout<<"No se encontro la tarea"<<endl;
+                            }
                         }else if(op==3){
                             int id;
                             cout<<"\n------Eliminar tarea--------"<<endl;

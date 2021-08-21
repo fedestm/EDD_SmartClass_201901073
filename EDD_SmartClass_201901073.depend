@@ -2,7 +2,7 @@
 1627934312 source:c:\users\user\desktop\proyectos estructuras de datos\lista simple c++\edd_smartclass_201901073\main.cpp
 	<iostream>
 
-1629563794 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
+1629569157 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
 	<iostream>
 	<string>
 	<fstream>
@@ -29,7 +29,7 @@
 
 1629045379 c:\users\user\documents\github\edd_smartclass_201901073\include\matriz.h
 
-1629563114 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_doble.h
+1629565223 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_doble.h
 	"nodo_doble.h"
 
 1629562394 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_doble.h
@@ -38,7 +38,7 @@
 1629561783 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_doble.cpp
 	"../include/nodo_doble.h"
 
-1629563518 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
+1629568913 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
 	"../include/lista_doble.h"
 	<fstream>
 

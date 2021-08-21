@@ -26,6 +26,9 @@ class lista_doble
         //Eliminar tarea por id
         void eliminar_tarea(int id);
 
+        //Modificar Tarea
+        void modificar_tarea(int id,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
+
     protected:
 
     private:
