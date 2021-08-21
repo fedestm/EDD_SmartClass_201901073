@@ -11,6 +11,7 @@ nodo_doble::nodo_doble()
     this->fecha="";
     this->hora="";
     this->estado="";
+    this->id=0;
 }
 
 nodo_doble::~nodo_doble()

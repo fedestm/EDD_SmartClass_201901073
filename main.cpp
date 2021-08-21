@@ -310,7 +310,7 @@ int main()
                                 cont++;
                                 cout<<matriz[k][j][i]<<endl;
                                 if(matriz[k][j][i]==""){
-                                    l_doble->insertar_tarea("","","","-1","","","");
+                                    l_doble->insertar_tarea(0,"","","","-1","","","");
                                 }else{
                                     //l_doble->insertar_tarea(matriz[k][j][i]);
                                     istringstream is(matriz[k][j][i]);
@@ -325,7 +325,7 @@ int main()
                                         getline(is,fecha_tarea,',');
                                         getline(is,hora_tarea,',');
                                         getline(is,estado_tarea,'\n');
-                                        l_doble->insertar_tarea(carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
+                                        l_doble->insertar_tarea(0,carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
                                     }
 
                                 }

@@ -5,12 +5,14 @@ lista_doble::lista_doble()
 {
     this->primero=nullptr;
     this->ultimo=nullptr;
+    this->cont=0;
 }
 
-void lista_doble::insertar_tarea(string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado){
+void lista_doble::insertar_tarea(int id,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado){
     //Se crea un nodo nuevo
     nodo_doble *nuevo=new nodo_doble();
     //Se instancian con las variables de dicho nodo
+    nuevo->id=cont+1;
     nuevo->carnet=carnet;
     nuevo->nombre=nombre;
     nuevo->descripcion=desc;
@@ -37,6 +39,7 @@ void lista_doble::insertar_tarea(string carnet,string nombre,string desc,string 
             this->ultimo=nuevo;
         }
     }
+    this->cont++;
 }
 
 void lista_doble::graficar_tarea(){
@@ -76,7 +79,7 @@ void lista_doble::graficar_tarea(){
             <<"\\nEstado: "<<temp->estado<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
         }
         }
-        
+
         cont++;
         temp=temp->siguiente;
     }

@@ -12,12 +12,13 @@ class lista_doble
         //Apuntadores
         nodo_doble *primero;
         nodo_doble *ultimo;
+        int cont;
 
-        void insertar_tarea(string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
+        void insertar_tarea(int id,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
 
         void mostrar();
 
-        void graficar_tarea();  
+        void graficar_tarea();
 
     protected:
 
