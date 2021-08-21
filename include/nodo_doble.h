@@ -9,8 +9,8 @@ class nodo_doble
     public:
         nodo_doble();
         virtual ~nodo_doble();
-        int id,mes,dia;
-        string carnet,nombre,descripcion,materia,fecha,hora,estado;
+        int id;
+        string carnet,nombre,descripcion,materia,fecha,hora,estado,mes,dia;
         //Apuntadores
         nodo_doble *anterior;
         nodo_doble *siguiente;

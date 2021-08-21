@@ -12,8 +12,8 @@ nodo_doble::nodo_doble()
     this->hora="";
     this->estado="";
     this->id=0;
-    this->mes=0;
-    this->dia=0;
+    this->mes="";
+    this->dia="";
 }
 
 nodo_doble::~nodo_doble()

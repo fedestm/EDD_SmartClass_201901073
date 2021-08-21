@@ -407,14 +407,14 @@ int main()
         else if(op==4){
             cout<<"\n****************************Reportes*****************************"<<endl;
             int opcion=0;
-            while(opcion!=5){
+            while(opcion!=8){
                 cout<<"\t1) Lista de estudiantes\n";
                 cout<<"\t2) Linealización de Tareas\n";
                 cout<<"\t3) Reporte Linealización\n";
                 cout<<"\t4) Busqueda de estructura linealizada\n";
                 cout<<"\t5) Busqueda de posicion en lista linelizada\n";
-                cout<<"\t4) Reporte de Errores\n";
-                cout<<"\t5) Regresar\n";
+                cout<<"\t6) Reporte de Errores\n";
+                cout<<"\t7) Codigo generado de Salida\n";
                 cout<<"\tIngrese una opción: ";
                 cin>>opcion;
                 cout<<"\n";
@@ -429,7 +429,7 @@ int main()
                                 cont++;
                                 cout<<matriz[k][j][i]<<endl;
                                 if(matriz[k][j][i]==""){
-                                    l_doble->insertar_tarea(0,0,0,"","","-1","","","","");
+                                    l_doble->insertar_tarea(0,"","","","","-1","","","","");
                                 }else{
                                     //l_doble->insertar_tarea(matriz[k][j][i]);
                                     istringstream is(matriz[k][j][i]);
@@ -446,7 +446,7 @@ int main()
                                         getline(is,fecha_tarea,',');
                                         getline(is,hora_tarea,',');
                                         getline(is,estado_tarea,'\n');
-                                        l_doble->insertar_tarea(0,stoi(mes_tarea),stoi(dia_tarea),carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
+                                        l_doble->insertar_tarea(0,mes_tarea,dia_tarea,carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
                                     }
 
                                 }
@@ -457,6 +457,19 @@ int main()
                 }else if(opcion==3){
                     l_doble->graficar_tarea();
                 }else if(opcion==4){
+                    cout<<"\n-------------------Busqueda de Estructura Linealizada------------"<<endl;
+                    string mes,dia,hora;
+                    cout<<"Ingrese mes";
+                    cin>>mes;
+                    cout<<"\nIngrese dia";
+                    cin>>dia;
+                    cout<<"\nIngrese hora";
+                    cin>>hora;
+                    l_doble->buscar_estructura(mes,dia,hora);
+
+                }else if(opcion==5){
+
+                }else if(opcion==6){
                     col->graficar_cola();
                 }
             }

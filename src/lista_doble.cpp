@@ -8,7 +8,7 @@ lista_doble::lista_doble()
     this->cont=0;
 }
 
-void lista_doble::insertar_tarea(int id,int mes,int dia,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado){
+void lista_doble::insertar_tarea(int id,string mes,string dia,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado){
     //Se crea un nodo nuevo
     nodo_doble *nuevo=new nodo_doble();
     //Se instancian con las variables de dicho nodo
@@ -62,8 +62,7 @@ nodo_doble * lista_doble::buscar_tarea(int id){
         return nullptr;
     }
 }
-carnet,nombre,descripcion,materia,fecha,hora,estado;
-nodo_doble *lista_doble::buscar_estructura(int mes,int dia,int hora){
+nodo_doble *lista_doble::buscar_estructura(string mes,string dia,string hora){
     if(this->primero==nullptr){
         cout<<"No hay tareas en la lista"<<endl;
         return nullptr;
@@ -71,7 +70,8 @@ nodo_doble *lista_doble::buscar_estructura(int mes,int dia,int hora){
         nodo_doble *temp=this->primero;
         while(temp!=nullptr){
             if(temp->mes==mes && temp->dia==dia && temp->hora==hora){
-                cout<<"\n----------Informacion de Tarea------------\nCarnet: "<<temp->carnet<<"\n;
+
+                cout<<"\n----------Informacion de Tarea------------\nCarnet: "<<temp->carnet<<"\n";
                 cout<<"Nombre: "<<temp->nombre<<"\n";
                 cout<<"Descripcion: "<<temp->descripcion<<"\n";
                 cout<<"Materia: "<<temp->materia<<"\n";
@@ -79,6 +79,7 @@ nodo_doble *lista_doble::buscar_estructura(int mes,int dia,int hora){
                 cout<<"Hora: "<<temp->hora<<"\n";
                 cout<<"Estado: "<<temp->estado<<"\n";
                 cout<<"************************************************************"<<endl;
+                return temp;
             }else{
                 temp=temp->siguiente;
             }

@@ -14,7 +14,7 @@ class lista_doble
         nodo_doble *ultimo;
         int cont;
 
-        void insertar_tarea(int id,int mes,int dia,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
+        void insertar_tarea(int id,string mes,string dia,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
 
         void mostrar();
 
@@ -36,7 +36,7 @@ class lista_doble
         void modificar_tarea_estado(int id,string estado);
 
         //Busqueda en estructura linealizada
-        nodo_doble *buscar_estructura(int mes,int dia,int hora);
+        nodo_doble *buscar_estructura(string mes,string dia,string hora);
 
     protected:
 
