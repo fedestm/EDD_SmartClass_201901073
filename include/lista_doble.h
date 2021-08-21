@@ -14,7 +14,7 @@ class lista_doble
         nodo_doble *ultimo;
         int cont;
 
-        void insertar_tarea(int id,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
+        void insertar_tarea(int id,int mes,int dia,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
 
         void mostrar();
 
@@ -27,7 +27,16 @@ class lista_doble
         void eliminar_tarea(int id);
 
         //Modificar Tarea
-        void modificar_tarea(int id,string carnet,string nombre,string desc,string materia,string fecha,string hora,string estado);
+        void modificar_tarea_carnet(int id,string carnet);
+        void modificar_tarea_nombre(int id,string nombre);
+        void modificar_tarea_desc(int id,string desc);
+        void modificar_tarea_materia(int id,string materia);
+        void modificar_tarea_fecha(int id,string fecha);
+        void modificar_tarea_hora(int id,string hora);
+        void modificar_tarea_estado(int id,string estado);
+
+        //Busqueda en estructura linealizada
+        nodo_doble *buscar_estructura(int mes,int dia,int hora);
 
     protected:
 

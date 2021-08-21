@@ -158,13 +158,6 @@ void lista_circular::eliminar_estudiante(string dpi){
             temp->anterior->siguiente=temp->siguiente;
             temp->siguiente->anterior=temp->anterior;
             temp->carnet=nullptr;
-        temp->dpi=nullptr;
-        temp->nombre=nullptr;
-        temp->carrera=nullptr;
-        temp->pass=nullptr;
-        temp->creditos=0;
-        temp->edad=0;
-        temp->correo=nullptr;
         }
 
         temp->siguiente=nullptr;
@@ -173,6 +166,71 @@ void lista_circular::eliminar_estudiante(string dpi){
         cout<<"Se borro el estudiante "<<dpi<<endl;
     }
 }
+
+void lista_circular::modificar_estudiante_carnet(string dpi,string carnet){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->carnet=carnet;
+    }else{
+        nuevo->carnet=carnet;
+    }
+}
+
+void lista_circular::modificar_estudiante_nombre(string dpi,string nombre){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->nombre=nombre;
+    }else{
+        nuevo->nombre=nombre;
+    }
+}
+
+void lista_circular::modificar_estudiante_carrera(string dpi,string carrera){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->carrera=carrera;
+    }else{
+        nuevo->carrera=carrera;
+    }
+}
+
+void lista_circular::modificar_estudiante_pass(string dpi,string pass){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->pass=pass;
+    }else{
+        nuevo->pass=pass;
+    }
+}
+
+void lista_circular::modificar_estudiante_creditos(string dpi,int creditos){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->creditos=creditos;
+    }else{
+        nuevo->creditos=creditos;
+    }
+}
+
+void lista_circular::modificar_estudiante_edad(string dpi,int edad){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->edad=edad;
+    }else{
+        nuevo->edad=edad;
+    }
+}
+
+void lista_circular::modificar_estudiante_correo(string dpi,string correo){
+    nodo_circular *nuevo=this->buscar_estudiante(dpi);
+    if(nuevo==this->primero){
+        nuevo->correo=correo;
+    }else{
+        nuevo->correo=correo;
+    }
+}
+
+
 
 lista_circular::~lista_circular()
 {

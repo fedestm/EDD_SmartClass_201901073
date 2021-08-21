@@ -30,6 +30,15 @@ class lista_circular
         //Buscar por carnet
         nodo_circular * buscar_carnet(string carnet);
 
+        //Modificar por dpi
+        void modificar_estudiante_carnet(string dpi,string carnet);
+        void modificar_estudiante_nombre(string dpi,string nombre);
+        void modificar_estudiante_carrera(string dpi,string carrera);
+        void modificar_estudiante_pass(string dpi,string pass);
+        void modificar_estudiante_creditos(string dpi,int creditos);
+        void modificar_estudiante_edad(string dpi,int edad);
+        void modificar_estudiante_correo(string dpi,string correo);
+
 
     protected:
 
