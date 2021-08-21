@@ -121,6 +121,24 @@ nodo_circular *lista_circular::buscar_estudiante(string dpi){
         }
 }
 
+nodo_circular *lista_circular::buscar_carnet(string carnet){
+    if(this->primero==nullptr){
+        cout<<"No hay datos en la lista"<<endl;
+        return nullptr;
+    }else{
+        nodo_circular *temp=this->primero;
+        while(temp->siguiente!=primero){
+            if(temp->carnet==carnet){
+                return temp;
+            }else{
+                temp=temp->siguiente;
+            }
+        }
+        cout<<"No se encontro el estudiante"<<endl;
+        return nullptr;
+        }
+}
+
 void lista_circular::eliminar_estudiante(string dpi){
     //Se crea un nuevo nodo
     nodo_circular *temp=this->buscar_estudiante(dpi);

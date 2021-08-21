@@ -27,6 +27,9 @@ class lista_circular
         //Buscar Estudiante
         nodo_circular * buscar_estudiante(string dpi);
 
+        //Buscar por carnet
+        nodo_circular * buscar_carnet(string carnet);
+
 
     protected:
 

@@ -144,20 +144,27 @@ int main()
                     cout<<"Estado: "<<estado<<endl;
                     cout<<"**********************************\n"<<endl;
                     */
-                    //Se recorre la matriz y se insertan los valores
-                    datos=carnet+","+nombre+","+desc+","+materia+","+fecha+","+hora+","+estado;
-                    for(int i=0;i<5;i++){
-                        for(int j=0;j<9;j++){
-                            for(int k=0;k<32;k++){
-                                //Se insertan los datos correspondientes a su indice
-                                //Se ignoran los valores nulos
-                                matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
+                    if(lista->buscar_carnet(carnet)){
+                        //Se recorre la matriz y se insertan los valores
+                        datos=carnet+","+nombre+","+desc+","+materia+","+fecha+","+hora+","+estado;
+                        for(int i=0;i<5;i++){
+                            for(int j=0;j<9;j++){
+                                for(int k=0;k<32;k++){
+                                    //Se insertan los datos correspondientes a su indice
+                                    //Se ignoran los valores nulos
+                                    matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos;
 
-                                cout<<"Insertando tareas...\n";
+                                    //cout<<"Insertando tareas...\n";
+                                }
                             }
                         }
+
+                    }else{
+                        col->encolar(0,"Tarea","Carnet: "+carnet+" no encontrado");
                     }
-                }
+
+                    }
+
                 cout<<"Se insertaron las tareas en la matriz estatica"<<endl;
 
             }
