@@ -39,6 +39,9 @@ class lista_circular
         void modificar_estudiante_edad(string dpi,int edad);
         void modificar_estudiante_correo(string dpi,string correo);
 
+        //Codigo salida estudiantes
+        void salida_estudiantes();
+
 
     protected:
 

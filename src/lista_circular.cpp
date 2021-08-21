@@ -232,6 +232,7 @@ void lista_circular::modificar_estudiante_correo(string dpi,string correo){
 
 
 
+
 lista_circular::~lista_circular()
 {
     //dtor
