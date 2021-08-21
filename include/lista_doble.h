@@ -20,6 +20,12 @@ class lista_doble
 
         void graficar_tarea();
 
+        //Buscar tarea por medio de id
+        nodo_doble *buscar_tarea(int id);
+
+        //Eliminar tarea por id
+        void eliminar_estudiante(int id);
+
     protected:
 
     private:
