@@ -89,6 +89,26 @@ nodo_doble *lista_doble::buscar_estructura(string mes,string dia,string hora){
     }
 }
 
+nodo_doble *lista_doble::buscar_posicion(string mes,string dia,string hora){
+    if(this->primero==nullptr){
+        cout<<"No hay tareas en la lista"<<endl;
+        return nullptr;
+    }else{
+        nodo_doble *temp=this->primero;
+        while(temp!=nullptr){
+            if(temp->mes==mes && temp->dia==dia &&temp->hora==hora){
+                cout<<"\n-----------Posicion----------------------"<<endl;
+                cout<<"\nPosicion: "<<temp->id<<endl;
+                return temp;
+            }else{
+                temp=temp->siguiente;
+            }
+        }
+        cout<<"No existe la tarea"<<endl;
+        return nullptr;
+    }
+}
+
 void lista_doble::modificar_tarea_carnet(int id,string carnet){
     nodo_doble *nuevo=this->buscar_tarea(id);
     if(nuevo==this->primero){

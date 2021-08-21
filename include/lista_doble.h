@@ -38,6 +38,9 @@ class lista_doble
         //Busqueda en estructura linealizada
         nodo_doble *buscar_estructura(string mes,string dia,string hora);
 
+        //Busqueda de posicion en estructura linealizada
+        nodo_doble *buscar_posicion(string mes,string dia,string hora);
+
     protected:
 
     private:

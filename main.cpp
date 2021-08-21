@@ -459,18 +459,31 @@ int main()
                 }else if(opcion==4){
                     cout<<"\n-------------------Busqueda de Estructura Linealizada------------"<<endl;
                     string mes,dia,hora;
-                    cout<<"Ingrese mes";
+                    cout<<"Ingrese mes: ";
                     cin>>mes;
-                    cout<<"\nIngrese dia";
+                    cout<<"\nIngrese dia: ";
                     cin>>dia;
-                    cout<<"\nIngrese hora";
+                    cout<<"\nIngrese hora: ";
                     cin>>hora;
                     l_doble->buscar_estructura(mes,dia,hora);
+                    cout<<"\n"<<endl;
 
                 }else if(opcion==5){
+                    cout<<"\n-------------------Busqueda de Posicion en Estructura Linealizada------------"<<endl;
+                    string mes,dia,hora;
+                    cout<<"Ingrese mes: ";
+                    cin>>mes;
+                    cout<<"\nIngrese dia: ";
+                    cin>>dia;
+                    cout<<"\nIngrese hora: ";
+                    cin>>hora;
+                    l_doble->buscar_posicion(mes,dia,hora);
+                    cout<<"\n"<<endl;
 
                 }else if(opcion==6){
                     col->graficar_cola();
+                }else if(opcion==7){
+                    cout<<"\n---------------------Codigo de Salida------------------------------"<<endl;
                 }
             }
 
