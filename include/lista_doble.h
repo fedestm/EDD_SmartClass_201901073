@@ -24,7 +24,7 @@ class lista_doble
         nodo_doble *buscar_tarea(int id);
 
         //Eliminar tarea por id
-        void eliminar_estudiante(int id);
+        void eliminar_tarea(int id);
 
     protected:
 

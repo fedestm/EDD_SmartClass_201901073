@@ -42,15 +42,16 @@ void lista_doble::insertar_tarea(int id,string carnet,string nombre,string desc,
     this->cont++;
 }
 
-void lista_doble::buscar_tarea(int id){
+nodo_doble * lista_doble::buscar_tarea(int id){
     if(this->primero==nullptr){
         cout<<"No hay tareas en la lista"<<endl;
         return nullptr;
     }else{
         nodo_doble *temp=this->primero;
         while(temp!=nullptr){
-            if(temp->id=id){
-                cout<<"Carnet: "<<temp->carnet<<endl;
+            if(temp->id==id){
+                cout<<"Carnet: "<<temp->materia<<endl;
+                return temp;
             }else{
                 temp=temp->siguiente;
             }
@@ -59,6 +60,29 @@ void lista_doble::buscar_tarea(int id){
         return nullptr;
     }
 }
+
+void lista_doble::eliminar_tarea(int id){
+    nodo_doble *temp=this->buscar_tarea(id);
+    if(temp!=nullptr){
+        if(this->primero==this->ultimo){
+            this->primero=nullptr;
+            this->ultimo=nullptr;
+        }else if(temp==this->primero){
+            this->primero=temp->siguiente;
+            temp->siguiente->anterior=nullptr;
+        }else if(temp==this->ultimo){
+            this->ultimo=temp->anterior;
+            temp->anterior->siguiente=nullptr;
+        }else{
+            temp->anterior->siguiente=temp->siguiente;
+            temp->siguiente->anterior=temp->anterior;
+        }
+        temp->siguiente=nullptr;
+        temp->anterior=nullptr;
+        delete(temp);
+    }
+}
+
 
 void lista_doble::graficar_tarea(){
 

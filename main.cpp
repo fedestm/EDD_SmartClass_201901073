@@ -276,9 +276,18 @@ int main()
                         col->encolar(0,"Tarea","Carnet: "+carnet+"\n no encontrado");
                     }
                         }else if(op==2){
+
+                            int id;
                             cout<<"\n------Modificar tarea------"<<endl;
+                            cout<<"Ingrese id a buscar: ";
+                            cin>>id;
+                            l_doble->buscar_tarea(id);
                         }else if(op==3){
+                            int id;
                             cout<<"\n------Eliminar tarea--------"<<endl;
+                            cout<<"Ingrese id a eliminar: ";
+                            cin>>id;
+                            l_doble->eliminar_tarea(id);
                         }
                     }
 
