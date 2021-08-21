@@ -17,8 +17,6 @@ int main()
     string matriz[5][9][32];
     string carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,estado_tarea,hora_tarea;
 
-    int cont=0;
-
     while(true){
 
         cout<<"\n\t---------------- Menu---------------------\n";
@@ -72,14 +70,18 @@ int main()
                     //Se compara la cantidad de digitos de carnet y dpi
                     //Carnet: 9 digitos
                     //DPI: 13 digitos
-                    if(int(carnet.length())==9 && int(dpi.length()==13)){
-                        lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
-                    }else{
-                        col->encolar(cont,"Estudiante","El carnet: "+carnet+"\n no tiene el rango correcto");
+                   if(int(carnet.length())==9){
+                        if(int(dpi.length())==13){
+                            if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
+                                lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
+
+                            }else{
+                                col->encolar(0,"Estudiante","Carnet: "+carnet+"\nError en correo");
                     }
-                    if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
-                        lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
-                        /*
+                        }else{
+                        col->encolar(0,"Estudiante","Carnet: "+carnet+"\nError en el rango de dpi");
+                    }
+/*
                         cout<<"*********************************"<<endl;
                         cout<<"Carnet: "<<carnet<<endl;
                         cout<<"DPI: "<<dpi<<endl;
@@ -90,13 +92,9 @@ int main()
                         cout<<"Edad: "<<edad<<endl;
                         cout<<"Correo: "<<correo<<endl;
                         cout<<"**********************************\n"<<endl;
-                        */
-                    }else{
-
-                        col->encolar(cont,"Estudiante","El DPI: "+dpi+"\n no tiene el rango correcto");
+*/                   }else{
+                        col->encolar(0,"Estudiante","Carnet: "+carnet+"\nError en rango de carnet");
                     }
-                    cont++;
-
                 }
                 cout<<"Se insertaron correctamente los estudiantes"<<endl;
             }
@@ -170,7 +168,6 @@ int main()
                 cout<<"1) Usuarios\n";
                 cout<<"2) Tareas\n";
                 cout<<"3) Regresar\n";
-                int op=0;
                 cout<<"Ingrese opción: ";
                 cin>>op;
 
@@ -182,8 +179,7 @@ int main()
                         cout<<"2) Modificar\n";
                         cout<<"3) Eliminar\n";
                         cout<<"4) Salir\n";
-                        int op=0;
-                        cout<<"Ingrese opción: ";
+                        cout<<"\n\nIngrese opción: ";
                         cin>>op;
                         if(op==1){
                             cout<<"-----Ingreso de estudiantes manualmente-----"<<endl;
@@ -211,14 +207,15 @@ int main()
                         }else if(op==3){
                             cout<<"\n-----Eliminar estudiante------"<<endl;
                             cout<<"Ingrese DPI: ";
-                            cin>>dpi;
+                            cin.ignore();
+                            getline(cin,dpi);
                             cout<<"\n-----Buscado------------------"<<endl;
                             lista->buscar_estudiante(dpi);
-
                         }
                     }
 
                 }else if(op==2){
+                    int op=0;
                     while(op!=4){
                         cout<<"1) Ingresar\n";
                         cout<<"2) Modificar\n";

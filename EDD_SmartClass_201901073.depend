@@ -2,7 +2,7 @@
 1627934312 source:c:\users\user\desktop\proyectos estructuras de datos\lista simple c++\edd_smartclass_201901073\main.cpp
 	<iostream>
 
-1629474614 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
+1629507264 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
 	<iostream>
 	<string>
 	<fstream>
@@ -17,7 +17,7 @@
 1628724912 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_circular.h
 	<iostream>
 
-1629492184 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_circular.cpp
+1629503975 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_circular.cpp
 	"../include/lista_circular.h"
 	<fstream>
 
