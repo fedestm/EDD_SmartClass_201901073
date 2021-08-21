@@ -157,6 +157,14 @@ void lista_circular::eliminar_estudiante(string dpi){
         }else{
             temp->anterior->siguiente=temp->siguiente;
             temp->siguiente->anterior=temp->anterior;
+            temp->carnet=nullptr;
+        temp->dpi=nullptr;
+        temp->nombre=nullptr;
+        temp->carrera=nullptr;
+        temp->pass=nullptr;
+        temp->creditos=0;
+        temp->edad=0;
+        temp->correo=nullptr;
         }
 
         temp->siguiente=nullptr;

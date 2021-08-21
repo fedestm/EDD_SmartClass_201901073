@@ -160,7 +160,7 @@ int main()
                         }
 
                     }else{
-                        col->encolar(0,"Tarea","Carnet: "+carnet+" no encontrado");
+                        col->encolar(0,"Tarea","Carnet: "+carnet+"\n no encontrado");
                     }
 
                     }
@@ -211,28 +211,70 @@ int main()
                             cout<<"\nSe inserto estudiante"<<endl;
                         }else if(op==2){
                             cout<<"\n-----Modificar estudiante-----"<<endl;
+                            cin.ignore();
+                            getline(cin,dpi);
+                            lista->buscar_estudiante(dpi);
                         }else if(op==3){
                             cout<<"\n-----Eliminar estudiante------"<<endl;
                             cout<<"Ingrese DPI: ";
                             cin.ignore();
                             getline(cin,dpi);
-                            cout<<"\n-----Buscado------------------"<<endl;
-                            lista->buscar_estudiante(dpi);
+                            if(lista->buscar_estudiante(dpi)){
+                                lista->eliminar_estudiante(dpi);
+                            }
                         }
                     }
 
                 }else if(op==2){
-                    int op=0;
                     while(op!=4){
                         cout<<"1) Ingresar\n";
                         cout<<"2) Modificar\n";
                         cout<<"3) Eliminar\n";
                         cout<<"4) Salir\n";
-                        int op=0;
                         cout<<"Ingrese opción: ";
                         cin>>op;
                         if(op==1){
                             cout<<"\n------Ingreso de tareas manualmente----------"<<endl;
+
+                        string mes,dia,hora,carnet,nombre,descripcion,materia,fecha,estado;
+                        cout<<"\nIngrese mes: ";
+                        cin>>mes;
+                        cout<<"\nIngrese dia: ";
+                        cin>>dia;
+                        cout<<"\nIngrese hora: ";
+                        cin>>hora;
+                        cout<<"\nIngrese carnet: ";
+                        cin>>carnet;
+                        cout<<"\nIngrese nombre: ";
+                        cin>>nombre;
+                        cout<<"\nIngrese descripcion: ";
+                        cin.ignore();
+                        getline(cin,descripcion);
+                        cout<<"\nIngrese materia: ";
+                        getline(cin,materia);
+                        cout<<"\nFecha: ";
+                        cin>>fecha;
+                        cout<<"\nEstado: ";
+                        cin>>estado;
+
+                        if(lista->buscar_carnet(carnet)){
+                        //Se recorre la matriz y se insertan los valores
+                        string datos_manual=carnet+","+nombre+","+descripcion+","+materia+","+fecha+","+estado;
+                        for(int i=0;i<5;i++){
+                            for(int j=0;j<9;j++){
+                                for(int k=0;k<32;k++){
+                                    //Se insertan los datos correspondientes a su indice
+                                    //Se ignoran los valores nulos
+                                    matriz[stoi(mes)-7][stoi(hora)-8][stoi(dia)-1]=datos_manual;
+
+                                    //cout<<"Insertando tareas...\n";
+                                }
+                            }
+                        }
+
+                    }else{
+                        col->encolar(0,"Tarea","Carnet: "+carnet+"\n no encontrado");
+                    }
                         }else if(op==2){
                             cout<<"\n------Modificar tarea------"<<endl;
                         }else if(op==3){
