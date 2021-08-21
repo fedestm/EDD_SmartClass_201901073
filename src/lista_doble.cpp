@@ -42,6 +42,24 @@ void lista_doble::insertar_tarea(int id,string carnet,string nombre,string desc,
     this->cont++;
 }
 
+void lista_doble::buscar_tarea(int id){
+    if(this->primero==nullptr){
+        cout<<"No hay tareas en la lista"<<endl;
+        return nullptr;
+    }else{
+        nodo_doble *temp=this->primero;
+        while(temp!=nullptr){
+            if(temp->id=id){
+                cout<<"Carnet: "<<temp->carnet<<endl;
+            }else{
+                temp=temp->siguiente;
+            }
+        }
+        cout<<"No existe la tarea"<<endl;
+        return nullptr;
+    }
+}
+
 void lista_doble::graficar_tarea(){
 
     ofstream ofs("lista_doblemente_enlazada.dot");
