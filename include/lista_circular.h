@@ -14,7 +14,7 @@ class lista_circular
 
         //Metodos para insertar datos en nodo
         //---Lista Circular Doble--------
-        void insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad,string correo);
+        void insertar(string carnet,string dpi,string nombre,string carrera,string pass,string creditos,string edad,string correo);
 
         //Graficar Lista
         void graficar();
@@ -35,12 +35,12 @@ class lista_circular
         void modificar_estudiante_nombre(string dpi,string nombre);
         void modificar_estudiante_carrera(string dpi,string carrera);
         void modificar_estudiante_pass(string dpi,string pass);
-        void modificar_estudiante_creditos(string dpi,int creditos);
-        void modificar_estudiante_edad(string dpi,int edad);
+        void modificar_estudiante_creditos(string dpi,string creditos);
+        void modificar_estudiante_edad(string dpi,string edad);
         void modificar_estudiante_correo(string dpi,string correo);
 
         //Codigo salida estudiantes
-        void salida_estudiantes();
+        string salida_estudiantes();
 
 
     protected:

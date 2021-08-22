@@ -5,6 +5,7 @@
 #include "include/lista_circular.h"
 #include "include/lista_doble.h"
 #include "include/cola.h"
+#include "include/lista_salida_tareas.h"
 
 using namespace std;
 
@@ -12,6 +13,7 @@ int main()
 {
     lista_circular *lista=new lista_circular();
     lista_doble *l_doble=new lista_doble();
+    lista_salida_tareas *l_tareas=new lista_salida_tareas();
     cola *col=new cola();
     int op=0;
     string matriz[5][9][32];
@@ -70,10 +72,10 @@ int main()
                     //Se compara la cantidad de digitos de carnet y dpi
                     //Carnet: 9 digitos
                     //DPI: 13 digitos
-                   if(int(carnet.length())==9){
+                    if(int(carnet.length())==9){
                         if(int(dpi.length())==13){
                             if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
-                                lista->insertar(carnet,dpi,nombre,carrera,pass,stoi(creditos),stoi(edad),correo);
+                                lista->insertar(carnet,dpi,nombre,carrera,pass,creditos,edad,correo);
 
                             }else{
                                 col->encolar(0,"Estudiante","Carnet: "+carnet+"\nError en correo");
@@ -180,8 +182,7 @@ int main()
 
                 if(op==1){
                     while(op!=4){
-                        string carnet,dpi,nombre,carrera,pass,correo;
-                        int creditos,edad;
+                        string carnet,dpi,nombre,carrera,pass,correo,creditos,edad;
                         cout<<"1) Ingresar\n";
                         cout<<"2) Modificar\n";
                         cout<<"3) Eliminar\n";
@@ -249,23 +250,20 @@ int main()
                                         cout<<"Ingrese creditos: ";
                                         cin>>creditos;
                                         lista->modificar_estudiante_creditos(dpi,creditos);
+                                    }else if(op==6){
+                                        cout<<"Ingrese edad: ";
+                                        cin>>edad;
+                                        lista->modificar_estudiante_edad(dpi,edad);
+                                    }else if(op==7){
+                                        cout<<"Ingrese correo: ";
+                                        cin>>correo;
+                                        lista->modificar_estudiante_correo(dpi,correo);
                                     }
                                 }
-
-
-
-                                cout<<"Ingrese edad: ";
-                                cin>>edad;
-                                cout<<"Ingrese correo: ";
-                                cin>>correo;
 
                             }else{
                                 cout<<"No se encontro estudiante"<<endl;
                             }
-
-
-
-
 
                         }else if(op==3){
                             cout<<"\n-----Eliminar estudiante------"<<endl;
@@ -274,6 +272,7 @@ int main()
                             getline(cin,dpi);
                             if(lista->buscar_estudiante(dpi)){
                                 lista->eliminar_estudiante(dpi);
+                                cout<<"Se elimino estudiante"<<endl;
                             }
                         }
                     }
@@ -299,9 +298,9 @@ int main()
                         cout<<"\nIngrese carnet: ";
                         cin>>carnet;
                         cout<<"\nIngrese nombre: ";
-                        cin>>nombre;
-                        cout<<"\nIngrese descripcion: ";
                         cin.ignore();
+                        getline(cin,nombre);
+                        cout<<"\nIngrese descripcion: ";
                         getline(cin,descripcion);
                         cout<<"\nIngrese materia: ";
                         getline(cin,materia);
@@ -312,7 +311,7 @@ int main()
 
                         if(lista->buscar_carnet(carnet)){
                         //Se recorre la matriz y se insertan los valores
-                        string datos_manual=carnet+","+nombre+","+descripcion+","+materia+","+fecha+","+estado;
+                        string datos_manual=mes+","+dia+","+carnet+","+nombre+","+descripcion+","+materia+","+fecha+","+hora+","+estado;
                         for(int i=0;i<5;i++){
                             for(int j=0;j<9;j++){
                                 for(int k=0;k<32;k++){
@@ -396,6 +395,7 @@ int main()
                             cout<<"Ingrese id a eliminar: ";
                             cin>>id;
                             l_doble->eliminar_tarea(id);
+                            cout<<"Se elimino tarea"<<endl;
                         }
                     }
 
@@ -447,6 +447,7 @@ int main()
                                         getline(is,hora_tarea,',');
                                         getline(is,estado_tarea,'\n');
                                         l_doble->insertar_tarea(0,mes_tarea,dia_tarea,carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
+                                        l_tareas->insertar_tarea(0,mes_tarea,dia_tarea,carnet_tarea,nombre_tarea,desc_tarea,materia_tarea,fecha_tarea,hora_tarea,estado_tarea);
                                     }
 
                                 }
@@ -484,6 +485,13 @@ int main()
                     col->graficar_cola();
                 }else if(opcion==7){
                     cout<<"\n---------------------Codigo de Salida------------------------------"<<endl;
+                    ofstream ofs("Estudiantes.txt");
+                    ofs<<"¿Elements?"<<endl;
+                    ofs<<lista->salida_estudiantes();
+                    ofs<<l_tareas->salida_tarea()<<endl;
+                    ofs<<"¿$Elements?"<<endl;
+                    ofs.close();
+                    cout<<"Se genero archivo de salida\n"<<endl;
                 }
             }
 

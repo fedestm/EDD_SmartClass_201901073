@@ -7,7 +7,7 @@ lista_circular::lista_circular()
     this->ultimo=nullptr;
 }
 
-void lista_circular::insertar(string carnet,string dpi,string nombre,string carrera,string pass,int creditos,int edad,string correo){
+void lista_circular::insertar(string carnet,string dpi,string nombre,string carrera,string pass,string creditos,string edad,string correo){
     //Se crea un nuevo nodo
     nodo_circular *nuevo=new nodo_circular();
     //Se instancian las variables
@@ -203,7 +203,7 @@ void lista_circular::modificar_estudiante_pass(string dpi,string pass){
     }
 }
 
-void lista_circular::modificar_estudiante_creditos(string dpi,int creditos){
+void lista_circular::modificar_estudiante_creditos(string dpi,string creditos){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
         nuevo->creditos=creditos;
@@ -212,7 +212,7 @@ void lista_circular::modificar_estudiante_creditos(string dpi,int creditos){
     }
 }
 
-void lista_circular::modificar_estudiante_edad(string dpi,int edad){
+void lista_circular::modificar_estudiante_edad(string dpi,string edad){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
         nuevo->edad=edad;
@@ -230,8 +230,29 @@ void lista_circular::modificar_estudiante_correo(string dpi,string correo){
     }
 }
 
+string lista_circular::salida_estudiantes(){
 
-
+    string salida="";
+    nodo_circular *temp=this->primero;
+    //Se declara contador para la cantidad de nodos
+    int cont=0;
+    //Se verifica si el nodo siguiente no se encuentre primero
+    while(temp->siguiente!=primero){
+        salida+="\t¿element type=\"user\"?\n";
+        salida+="\t\t¿item Carnet = \""+temp->carnet+"\" $?\n";
+        salida+="\t\t¿item DPI = \""+temp->dpi+"\" $?\n";
+        salida+="\t\t¿item Nombre = \""+temp->nombre+"\" $?\n";
+        salida+="\t\t¿item Carrera = \""+temp->carrera+"\" $?\n";
+        salida+="\t\t¿item Password = \""+temp->pass+"\" $?\n";
+        salida+="\t\t¿item Creditos = \""+temp->creditos+"\" $?\n";
+        salida+="\t\t¿item Edad = \""+temp->edad+"\" $?\n";
+        salida+="\t¿$element?\n";
+        //Se recorren los nodos
+        temp=temp->siguiente;
+        cont++;
+    }
+    return salida;
+}
 
 lista_circular::~lista_circular()
 {

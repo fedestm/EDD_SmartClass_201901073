@@ -41,6 +41,8 @@ class lista_doble
         //Busqueda de posicion en estructura linealizada
         nodo_doble *buscar_posicion(string mes,string dia,string hora);
 
+        string salida_tarea();
+
     protected:
 
     private:

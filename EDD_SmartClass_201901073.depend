@@ -2,7 +2,7 @@
 1627934312 source:c:\users\user\desktop\proyectos estructuras de datos\lista simple c++\edd_smartclass_201901073\main.cpp
 	<iostream>
 
-1629583666 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
+1629598736 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
 	<iostream>
 	<string>
 	<fstream>
@@ -10,18 +10,19 @@
 	"include/lista_circular.h"
 	"include/lista_doble.h"
 	"include/cola.h"
+	"include/lista_salida_tareas.h"
 
-1629229201 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_circular.cpp
+1629588904 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_circular.cpp
 	"../include/nodo_circular.h"
 
-1628724912 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_circular.h
+1629588295 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_circular.h
 	<iostream>
 
-1629576150 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_circular.cpp
+1629597070 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_circular.cpp
 	"../include/lista_circular.h"
 	<fstream>
 
-1629574725 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_circular.h
+1629596600 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_circular.h
 	"nodo_circular.h"
 
 1629216451 source:c:\users\user\documents\github\edd_smartclass_201901073\src\matriz.cpp
@@ -29,7 +30,7 @@
 
 1629045379 c:\users\user\documents\github\edd_smartclass_201901073\include\matriz.h
 
-1629584047 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_doble.h
+1629596477 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_doble.h
 	"nodo_doble.h"
 
 1629583426 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_doble.h
@@ -38,7 +39,7 @@
 1629583415 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_doble.cpp
 	"../include/nodo_doble.h"
 
-1629584327 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
+1629597574 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
 	"../include/lista_doble.h"
 	<fstream>
 
@@ -54,4 +55,16 @@
 
 1629163914 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_cola.cpp
 	"nodo_cola.h"
+
+1629597800 c:\users\user\documents\github\edd_smartclass_201901073\include\lista_salida_tareas.h
+	"nodo_tareas.h"
+
+1629597833 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_tareas.h
+	<iostream>
+
+1629597598 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_tareas.cpp
+	"nodo_tareas.h"
+
+1629598175 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_salida_tareas.cpp
+	"lista_salida_tareas.h"
 
