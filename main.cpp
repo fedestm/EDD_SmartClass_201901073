@@ -74,7 +74,7 @@ int main()
                     //DPI: 13 digitos
                     if(int(carnet.length())==9){
                         if(int(dpi.length())==13){
-                            if(regex_match(correo,regex("([a-z]+)([_.a-z_0-9])([a-z_0-9]+)(@)([a-z]+)(.org|.com|.es)"))){
+                            if(regex_match(correo,regex("([a-zA-Z]+)([_.a-zA-Z_0-9]*)([a-zA-Z_0-9]+)(@)([a-zA-Z]+)([.a-zA-Z]+)(.org|.com|.es)"))){
                                 lista->insertar(carnet,dpi,nombre,carrera,pass,creditos,edad,correo);
 
                             }else{
