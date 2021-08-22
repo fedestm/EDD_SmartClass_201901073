@@ -41,10 +41,10 @@ int main()
 
             cout<<"-------------Carga de Usuarios----------------"<<endl;
             cout<<"Ingrese ruta de archivo: ";
-            //cin>>ruta;
+            cin>>ruta;
 
             fstream fs;     //Se encarga de leer el archivo de entrada
-            fs.open("C:/Users/User/Documents/GitHub/EDD_SmartClass_201901073/Estudiantes.csv",ios::in);  //Abre el contenido
+            fs.open(ruta,ios::in);  //Abre el contenido
             getline(fs,primer_linea);   //Ignora la primera linea del archivo
 
             //cout<<primer_linea;
@@ -108,11 +108,11 @@ int main()
             string mes,dia,hora,carnet,nombre,desc,materia,fecha,estado;
 
             cout<<"-------------Carga de Tareas----------------"<<endl;
-            //cout<<"Ingrese ruta de archivo: ";
-            //cin>>ruta_tarea;
+            cout<<"Ingrese ruta de archivo: ";
+            cin>>ruta_tarea;
 
             fstream fs;
-            fs.open("C:/Users/User/Documents/GitHub/EDD_SmartClass_201901073/Tareas.csv",ios::in);
+            fs.open(ruta_tarea,ios::in);
             getline(fs,linea);
 
             if(!fs){
@@ -212,22 +212,22 @@ int main()
                             cout<<"\nSe inserto estudiante"<<endl;
                         }else if(op==2){
                             cout<<"\n-----Modificar estudiante-----"<<endl;
-                            cin.ignore();
-                            getline(cin,dpi);
-                            if(lista->buscar_estudiante(dpi)){
+                            cout<<"Ingrese dpi: ";
+                            cin>>dpi;
+                            cout<<"\n";
 
-                                while(op!=8){
-                                    cout<<"\n1) Carnet\n";
-                                    cout<<"2) Nombre\n";
-                                    cout<<"3) Carrera\n";
-                                    cout<<"4) Contraseña\n";
-                                    cout<<"5) Creditos\n";
-                                    cout<<"6) Edad\n";
-                                    cout<<"7) Correo\n";
-                                    cout<<"8) No deseo modificar\n";
-                                    cout<<"Ingrese una opcion: ";
-                                    cin>>op;
-                                    cout<<"\n"<<endl;
+                            while(op!=8){
+                                cout<<"\n1) Carnet\n";
+                                cout<<"2) Nombre\n";
+                                cout<<"3) Carrera\n";
+                                cout<<"4) Contraseña\n";
+                                cout<<"5) Creditos\n";
+                                cout<<"6) Edad\n";
+                                cout<<"7) Correo\n";
+                                cout<<"8) No deseo modificar\n";
+                                cout<<"Ingrese una opcion: ";
+                                cin>>op;
+                                cout<<"\n"<<endl;
 
                                     if(op==1){
                                         cout<<"Ingrese carnet: ";
@@ -260,10 +260,6 @@ int main()
                                         lista->modificar_estudiante_correo(dpi,correo);
                                     }
                                 }
-
-                            }else{
-                                cout<<"No se encontro estudiante"<<endl;
-                            }
 
                         }else if(op==3){
                             cout<<"\n-----Eliminar estudiante------"<<endl;
@@ -415,6 +411,7 @@ int main()
                 cout<<"\t5) Busqueda de posicion en lista linelizada\n";
                 cout<<"\t6) Reporte de Errores\n";
                 cout<<"\t7) Codigo generado de Salida\n";
+                cout<<"\t8) Regresar\n";
                 cout<<"\tIngrese una opción: ";
                 cin>>opcion;
                 cout<<"\n";

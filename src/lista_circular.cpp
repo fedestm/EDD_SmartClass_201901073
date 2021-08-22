@@ -174,20 +174,27 @@ void lista_circular::modificar_estudiante_carnet(string dpi,string carnet){
     }else{
         nuevo->carnet=carnet;
     }
+    nuevo->carnet=carnet;
 }
 
 void lista_circular::modificar_estudiante_nombre(string dpi,string nombre){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
         nuevo->nombre=nombre;
-    }else{
+    }else if(nuevo=this->ultimo){
         nuevo->nombre=nombre;
     }
+    else{
+        nuevo->nombre=nombre;
+    }
+
 }
 
 void lista_circular::modificar_estudiante_carrera(string dpi,string carrera){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
+        nuevo->carrera=carrera;
+    }else if(nuevo=this->ultimo){
         nuevo->carrera=carrera;
     }else{
         nuevo->carrera=carrera;
@@ -198,6 +205,8 @@ void lista_circular::modificar_estudiante_pass(string dpi,string pass){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
         nuevo->pass=pass;
+    }else if(nuevo=this->ultimo){
+        nuevo->pass=pass;
     }else{
         nuevo->pass=pass;
     }
@@ -206,6 +215,8 @@ void lista_circular::modificar_estudiante_pass(string dpi,string pass){
 void lista_circular::modificar_estudiante_creditos(string dpi,string creditos){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
+        nuevo->creditos=creditos;
+    }else if(nuevo=this->ultimo){
         nuevo->creditos=creditos;
     }else{
         nuevo->creditos=creditos;
@@ -216,6 +227,8 @@ void lista_circular::modificar_estudiante_edad(string dpi,string edad){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
         nuevo->edad=edad;
+    }else if(nuevo=this->ultimo){
+        nuevo->edad=edad;
     }else{
         nuevo->edad=edad;
     }
@@ -225,9 +238,12 @@ void lista_circular::modificar_estudiante_correo(string dpi,string correo){
     nodo_circular *nuevo=this->buscar_estudiante(dpi);
     if(nuevo==this->primero){
         nuevo->correo=correo;
+    }else if(nuevo=this->ultimo){
+        nuevo->correo=correo;
     }else{
         nuevo->correo=correo;
     }
+    nuevo->correo=correo;
 }
 
 string lista_circular::salida_estudiantes(){

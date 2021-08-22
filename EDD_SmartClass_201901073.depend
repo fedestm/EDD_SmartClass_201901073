@@ -2,7 +2,7 @@
 1627934312 source:c:\users\user\desktop\proyectos estructuras de datos\lista simple c++\edd_smartclass_201901073\main.cpp
 	<iostream>
 
-1629598736 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
+1629604047 source:c:\users\user\documents\github\edd_smartclass_201901073\main.cpp
 	<iostream>
 	<string>
 	<fstream>
@@ -18,7 +18,7 @@
 1629588295 c:\users\user\documents\github\edd_smartclass_201901073\include\nodo_circular.h
 	<iostream>
 
-1629597070 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_circular.cpp
+1629603394 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_circular.cpp
 	"../include/lista_circular.h"
 	<fstream>
 
@@ -39,7 +39,7 @@
 1629583415 source:c:\users\user\documents\github\edd_smartclass_201901073\src\nodo_doble.cpp
 	"../include/nodo_doble.h"
 
-1629597574 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
+1629604988 source:c:\users\user\documents\github\edd_smartclass_201901073\src\lista_doble.cpp
 	"../include/lista_doble.h"
 	<fstream>
 
