@@ -74,8 +74,8 @@ void cola::graficar_cola(){
         fs<<"\t}\n"<<endl;
         fs.close();
 
-        system("dot -Tpng cola.dot -o cola_errores.png");
-        system("cola_errores.png &");
+        system("dot -Tsvg cola.dot -o cola_errores.svg");
+        system("cola_errores.svg &");
     }
 }
 

@@ -221,7 +221,7 @@ void lista_doble::graficar_tarea(){
     //Se declara una variable auxiliar para recorrer los nodos
     nodo_doble *temp=this->primero;
     while(temp!=nullptr){
-        if(temp->materia=="-1"){
+        if(temp->descripcion=="-1"){
             if(temp==this->primero){
                 ofs<<"n_"<<cont<<"[label=\"-1"<<"\",shape=box,shape=box,color=\"#3396FF\"];"<<endl;
             }else if(temp==this->ultimo){
@@ -255,8 +255,8 @@ void lista_doble::graficar_tarea(){
 
     ofs<<"}"<<endl;
     ofs.close();
-    system("dot -Tpng lista_doblemente_enlazada.dot -o lista_doble_tareas.png");
-    system("lista_doble_tareas.png &");
+    system("dot -Tsvg lista_doblemente_enlazada.dot -o lista_doble_tareas.svg");
+    system("lista_doble_tareas.svg &");
 }
 
 lista_doble::~lista_doble()
