@@ -23,3 +23,6 @@ def p_items(t):
             |  item
     """
 
+def p_item(t):
+    'item : LQUESTION TITEM tipeItem EQUALS valueItem DOLAR RQUESTION'
+
