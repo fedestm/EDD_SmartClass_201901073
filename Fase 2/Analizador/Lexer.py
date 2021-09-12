@@ -20,3 +20,9 @@ reserved = {
 tokens = [
     'LQUESTION', 'RQUESTION', 'DOLAR', 'ID', 'EQUALS', 'QUOTATION_MARKS', 'NUMBER', 'NORMSTRING', 'DATE', 'HOUR'
 ]+list(reserved.values())
+
+t_LQUESTION = r'\¿'
+t_RQUESTION = r'\?'
+t_DOLAR = r'\$'
+t_EQUALS = r'\='
+t_QUOTATIONS_MARKS = r'\"'
