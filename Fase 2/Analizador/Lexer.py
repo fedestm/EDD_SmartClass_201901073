@@ -48,3 +48,7 @@ def t_NORMSTRING(t):
 def t_Date(t):
     r'\s+(?=\d{2}(?:\d{2})?/\d{1,2}/\d{1,2}\b)'
     return t
+
+def t_Hora(t):
+    r'(?=(?:\b[01]\d|2[0-3]):[0-5]\d\b)'
+    return t
