@@ -52,3 +52,5 @@ def t_Date(t):
 def t_Hora(t):
     r'(?=(?:\b[01]\d|2[0-3]):[0-5]\d\b)'
     return t
+
+t_ignore = ' \t\n\r'
