@@ -61,3 +61,7 @@ def t_newline(t):
 
 def t_error(t):
     t.lexer.skip(1)
+
+import ply.lex as lex
+import re
+lexer=lex.lex(reflags=re.IGNORECASE)
