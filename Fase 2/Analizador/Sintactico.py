@@ -26,3 +26,8 @@ def p_items(t):
 def p_item(t):
     'item : LQUESTION TITEM tipeItem EQUALS valueItem DOLAR RQUESTION'
 
+def p_valueItem(t):
+    """valueItem : NORMSTRING
+                |  NUMBER
+    """
+
