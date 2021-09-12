@@ -58,3 +58,6 @@ t_ignore = ' \t\n\r'
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += t.value.count("\n")
+
+def t_error(t):
+    t.lexer.skip(1)
