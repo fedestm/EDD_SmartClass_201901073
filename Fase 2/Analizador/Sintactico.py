@@ -18,3 +18,8 @@ def p_elemento(t):
 def p_tipoElemento(t):
     'tipoElemento : TTYPE EQUALS NORMSTRING'
 
+def p_items(t):
+    """items : items item
+            |  item
+    """
+
