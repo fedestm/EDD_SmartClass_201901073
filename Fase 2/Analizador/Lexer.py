@@ -54,3 +54,7 @@ def t_Hora(t):
     return t
 
 t_ignore = ' \t\n\r'
+
+def t_newline(t):
+    r'\n+'
+    t.lexer.lineno += t.value.count("\n")
