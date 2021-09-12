@@ -12,3 +12,6 @@ def p_elementos_group(t):
                 |  elemento
     """
 
+def p_elemento(t):
+    'elemento : LQUESTION TELEMENT tipoElemento RQUESTION items LQUESTION DOLAR TELEMENT RQUESTION'
+
