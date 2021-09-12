@@ -39,3 +39,8 @@ def t_NUMBER(t):
     except ValueError:
         t.value=0
     return t
+
+def t_NORMSTRING(t):
+    r'\"(\\.|[^"\\])*\"'
+    #print("'%s'" % t.value)
+    return t
