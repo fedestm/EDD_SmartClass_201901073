@@ -16,3 +16,7 @@ reserved={
     'Hora':'THORA',
     'Estado':'TESTADO',
 }
+
+tokens=[
+    'LQUESTION','RQUESTION','DOLAR','ID','EQUALS','QUOTATION_MARKS','NUMBER','NORMSTRING','DATE','HOUR'
+]+list(reserved.values())
