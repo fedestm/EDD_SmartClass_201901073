@@ -1,1 +1,18 @@
-
+reserved={
+    'Elements':'TELEMENTS',
+    'element' : 'TELEMENT',
+    'type':'TTYPE',
+    'item':'TITEM',
+    'Carnet':'TCARNET',
+    'Dpi':'TDPI',
+    'Nombre':'TNOMBRE',
+    'Carrera':'TCARRERA',
+    'Password':'TPASSWORD',
+    'Creditos':'TCREDITOS',
+    'Edad':'TEDAD',
+    'Descripcion':'TDESCRIPCION',
+    'Materia':'TMATERIA',
+    'Fecha':'TFECHA',
+    'Hora':'THORA',
+    'Estado':'TESTADO',
+}
