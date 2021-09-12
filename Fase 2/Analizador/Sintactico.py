@@ -31,3 +31,18 @@ def p_valueItem(t):
                 |  NUMBER
     """
 
+def p_TipeItem(t):
+    """tipeItem : TCARNET
+                | TDPI
+                | TNOMBRE
+                | TCARRERA
+                | TPASSWORD
+                | TCREDITOS
+                | TEDAD
+                | TDESCRIPCION
+                | TMATERIA
+                | TFECHA
+                | THORA
+                | TESTADO
+    """
+
