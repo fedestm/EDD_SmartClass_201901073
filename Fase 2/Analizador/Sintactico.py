@@ -46,3 +46,5 @@ def p_TipeItem(t):
                 | TESTADO
     """
 
+def p_error(t):
+    print("Error de sintaxis '%s'" % t.value)
