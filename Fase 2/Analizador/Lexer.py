@@ -1,22 +1,22 @@
-reserved={
-    'Elements':'TELEMENTS',
-    'element' : 'TELEMENT',
-    'type':'TTYPE',
-    'item':'TITEM',
-    'Carnet':'TCARNET',
-    'Dpi':'TDPI',
-    'Nombre':'TNOMBRE',
-    'Carrera':'TCARRERA',
-    'Password':'TPASSWORD',
-    'Creditos':'TCREDITOS',
-    'Edad':'TEDAD',
-    'Descripcion':'TDESCRIPCION',
-    'Materia':'TMATERIA',
-    'Fecha':'TFECHA',
-    'Hora':'THORA',
-    'Estado':'TESTADO',
+reserved = {
+    'Elements': 'TELEMENTS',
+    'element': 'TELEMENT',
+    'type': 'TTYPE',
+    'item': 'TITEM',
+    'Carnet': 'TCARNET',
+    'Dpi': 'TDPI',
+    'Nombre': 'TNOMBRE',
+    'Carrera': 'TCARRERA',
+    'Password': 'TPASSWORD',
+    'Creditos': 'TCREDITOS',
+    'Edad': 'TEDAD',
+    'Descripcion': 'TDESCRIPCION',
+    'Materia': 'TMATERIA',
+    'Fecha': 'TFECHA',
+    'Hora': 'THORA',
+    'Estado': 'TESTADO',
 }
 
-tokens=[
-    'LQUESTION','RQUESTION','DOLAR','ID','EQUALS','QUOTATION_MARKS','NUMBER','NORMSTRING','DATE','HOUR'
+tokens = [
+    'LQUESTION', 'RQUESTION', 'DOLAR', 'ID', 'EQUALS', 'QUOTATION_MARKS', 'NUMBER', 'NORMSTRING', 'DATE', 'HOUR'
 ]+list(reserved.values())
