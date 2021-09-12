@@ -48,3 +48,6 @@ def p_TipeItem(t):
 
 def p_error(t):
     print("Error de sintaxis '%s'" % t.value)
+
+import ply.yacc as yacc
+parser = yacc.yacc()
