@@ -5,7 +5,10 @@ app=Flask(__name__)
 @app.route("/carga",methods=["POST"])
 def carga_masiva():
     if request.method=="POST":
-        return "Carga Masiva"
+        tipo=request.form.get('tipo')
+        path=request.form.get('path')
+
+        return tipo +" "+ path
 
 @app.route("/")
 def index():
