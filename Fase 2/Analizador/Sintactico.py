@@ -15,3 +15,6 @@ def p_elementos_group(t):
 def p_elemento(t):
     'elemento : LQUESTION TELEMENT tipoElemento RQUESTION items LQUESTION DOLAR TELEMENT RQUESTION'
 
+def p_tipoElemento(t):
+    'tipoElemento : TTYPE EQUALS NORMSTRING'
+
