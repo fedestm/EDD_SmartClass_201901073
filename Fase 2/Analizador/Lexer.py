@@ -44,3 +44,7 @@ def t_NORMSTRING(t):
     r'\"(\\.|[^"\\])*\"'
     #print("'%s'" % t.value)
     return t
+
+def t_Date(t):
+    r'\s+(?=\d{2}(?:\d{2})?/\d{1,2}/\d{1,2}\b)'
+    return t
