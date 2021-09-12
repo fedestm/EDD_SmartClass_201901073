@@ -26,3 +26,8 @@ t_RQUESTION = r'\?'
 t_DOLAR = r'\$'
 t_EQUALS = r'\='
 t_QUOTATIONS_MARKS = r'\"'
+
+def t_ID(t):
+    r'[a-zA-Z_][a-zA-Z_0-9]*'
+    t.type = reserved.get(t.value,'ID')
+    return t
