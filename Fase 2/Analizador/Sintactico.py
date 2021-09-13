@@ -25,9 +25,15 @@ def p_items(t):
 
 def p_item(t):
     'item : LQUESTION TITEM tipeItem EQUALS valueItem DOLAR RQUESTION'
-    print("\n")
-    print(t[3])
-    print(t[5])
+
+    obj = {
+        t[3].replace("'",""):t[5]
+    }
+    t[0] = obj
+
+    #print(t[3])
+    #print(t[5])
+    
 
 def p_valueItem(t):
     """valueItem : NORMSTRING
