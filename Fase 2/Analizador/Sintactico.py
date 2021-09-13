@@ -25,11 +25,15 @@ def p_items(t):
 
 def p_item(t):
     'item : LQUESTION TITEM tipeItem EQUALS valueItem DOLAR RQUESTION'
+    print("\n")
+    print(t[3])
+    print(t[5])
 
 def p_valueItem(t):
     """valueItem : NORMSTRING
                 |  NUMBER
     """
+    t[0] = t[1]
 
 def p_TipeItem(t):
     """tipeItem : TCARNET
@@ -45,6 +49,7 @@ def p_TipeItem(t):
                 | THORA
                 | TESTADO
     """
+    t[0] = t[1]
 
 def p_error(t):
     print("Error de sintaxis '%s'" % t.value)
