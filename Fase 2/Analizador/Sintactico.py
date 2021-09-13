@@ -5,6 +5,7 @@ names = {}
 def p_statement_group(t):
     'statement : LQUESTION TELEMENTS RQUESTION elementos LQUESTION DOLAR TELEMENTS RQUESTION'
     print("prueba")
+    #el no terminal statement t[0] es igual al contenido de elementos t[4]
     t[0]=t[4]
 
 def p_elementos_group(t):
