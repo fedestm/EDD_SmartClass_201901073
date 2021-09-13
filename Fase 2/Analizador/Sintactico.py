@@ -1,10 +1,10 @@
-from lexer import tokens
+from Analizador.Lexer import tokens
 
 names = {}
 
 def p_statement_group(t):
     'statement : LQUESTION TELEMENTS RQUESTION elementos LQUESTION DOLAR TELEMENTS RQUESTION'
-    #print("prueba")
+    print("prueba")
     t[0]=t[4]
 
 def p_elementos_group(t):
@@ -49,5 +49,5 @@ def p_TipeItem(t):
 def p_error(t):
     print("Error de sintaxis '%s'" % t.value)
 
-import ply.yacc as yacc
+import Analizador.ply.yacc as yacc
 parser = yacc.yacc()

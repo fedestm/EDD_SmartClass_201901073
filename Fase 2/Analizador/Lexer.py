@@ -4,7 +4,7 @@ reserved = {
     'type': 'TTYPE',
     'item': 'TITEM',
     'Carnet': 'TCARNET',
-    'Dpi': 'TDPI',
+    'DPI': 'TDPI',
     'Nombre': 'TNOMBRE',
     'Carrera': 'TCARRERA',
     'Password': 'TPASSWORD',
@@ -25,7 +25,7 @@ t_LQUESTION = r'\¿'
 t_RQUESTION = r'\?'
 t_DOLAR = r'\$'
 t_EQUALS = r'\='
-t_QUOTATIONS_MARKS = r'\"'
+t_QUOTATION_MARKS = r'\"'
 
 def t_ID(t):
     r'[a-zA-Z_][a-zA-Z_0-9]*'
@@ -62,6 +62,6 @@ def t_newline(t):
 def t_error(t):
     t.lexer.skip(1)
 
-import ply.lex as lex
+import Analizador.ply.lex as lex
 import re
 lexer=lex.lex(reflags=re.IGNORECASE)
