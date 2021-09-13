@@ -18,6 +18,11 @@ def p_elemento(t):
     #print(t[3])
     #print(t[5])
     #print("\n")
+    obj = {
+        "type": t[3],
+        "atributos": t[5]
+    }
+    print(obj)
     
 
 def p_tipoElemento(t):
