@@ -11,6 +11,12 @@ def p_elementos_group(t):
     """elementos : elementos elemento
                 |  elemento
     """
+    try:
+        t[1].append(t[2])
+        t[0] = t[1]
+    except:
+        t[0] = []
+        t[0].append(t[1])
 
 def p_elemento(t):
     'elemento : LQUESTION TELEMENT tipoElemento RQUESTION items LQUESTION DOLAR TELEMENT RQUESTION'
@@ -22,7 +28,8 @@ def p_elemento(t):
         "type": t[3],
         "atributos": t[5]
     }
-    print(obj)
+    t[0] = obj
+    #print(obj)
     
 
 def p_tipoElemento(t):
