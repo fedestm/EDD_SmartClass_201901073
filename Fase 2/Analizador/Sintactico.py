@@ -14,9 +14,11 @@ def p_elementos_group(t):
 
 def p_elemento(t):
     'elemento : LQUESTION TELEMENT tipoElemento RQUESTION items LQUESTION DOLAR TELEMENT RQUESTION'
+    #print(t[3])
 
 def p_tipoElemento(t):
     'tipoElemento : TTYPE EQUALS NORMSTRING'
+    t[0] = t[3]
 
 def p_items(t):
     """items : items item
@@ -32,9 +34,13 @@ def p_items(t):
 def p_item(t):
     'item : LQUESTION TITEM tipeItem EQUALS valueItem DOLAR RQUESTION'
 
+    #Se colocan dichas posiciones ya que tipeItem esta en la posicion 3 y valueItem en 5
+    #Esos son los unicos valores que nos interesan
+    #Y siempre se igualan al no terminal que esta asociado, por ejemplo item esta en t[0]
     obj = {
         t[3].replace("'",""):t[5]
     }
+    
     t[0] = obj
 
     #Prueba
