@@ -22,6 +22,12 @@ def p_items(t):
     """items : items item
             |  item
     """
+    try:
+        t[1].append(t[2])
+        t[0] = t[1]
+    except:
+        t[0] = []
+        t[0].append(t[1])
 
 def p_item(t):
     'item : LQUESTION TITEM tipeItem EQUALS valueItem DOLAR RQUESTION'
@@ -31,6 +37,7 @@ def p_item(t):
     }
     t[0] = obj
 
+    #Prueba
     #print(t[3])
     #print(t[5])
     
