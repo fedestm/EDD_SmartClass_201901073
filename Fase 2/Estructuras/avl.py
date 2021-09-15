@@ -78,6 +78,9 @@ class avl:
             #Fase de equilibrio
             raiz_actual.altura = self.maximo(self.f_equilibrio(raiz_actual.derecha), self.f_equilibrio(nodo_avl.izquierda)) + 1
             return raiz_actual
+        else:
+            raiz_actual = nuevo
+            return raiz_actual
 
 
 
