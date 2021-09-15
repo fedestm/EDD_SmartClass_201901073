@@ -66,6 +66,14 @@ class avl:
                     else:
                         raiz_actual = self.R_izq_der(raiz_actual)
             
+            elif raiz_actual.carnet < nuevo.carnet:
+                raiz_actual.derecha = self.insertar_nodo(nuevo,raiz_actual.derecha)
+                if (self.f_equilibrio(raiz_actual.derecha) - self.f_equilibrio(raiz_actual.izquierda) == 2):
+                    if nuevo.carnet > raiz_actual.derecha.carnet:
+                        raiz_actual = self.R_derecha(raiz_actual)
+                    else:
+                        raiz_actual = self.R_der_izq(raiz_actual)
+            
             return raiz_actual
 
 
