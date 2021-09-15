@@ -81,6 +81,9 @@ class avl:
         else:
             raiz_actual = nuevo
             return raiz_actual
+    
+    def insertar(self, carnet, dpi, nombre, carrera, password, creditos, edad):
+        nuevo = nodo_avl(carnet, dpi, nombre, carrera, password, creditos, edad)
 
 
 
