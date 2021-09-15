@@ -52,6 +52,24 @@ class avl:
         nodo_avl.derecha = self.R_izquierda(nodo_avl.derecha)
         aux = self.R_izquierda(nodo_avl)
         return aux
+    
+    def insertar_nodo(self, nuevo, raiz_actual):
+        #Se valida si existe una raiz
+        if raiz_actual:
+            #Se utiliza carnet para comparar la raiz
+            if raiz_actual.carnet > nuevo.carnet:
+                raiz_actual.izquierda = self.insertar_nodo(nuevo, raiz_actual.izquierda)
+                #Se verifica si necesita rotaciones
+                if (self.f_equilibrio(raiz_actual.derecha) - self.f_equilibrio(raiz_actual.izquierda) == -2):
+                    if nuevo.carnet < raiz_actual.izquierda.carnet:
+                        raiz_actual = self.R_izquierda(raiz_actual)
+                    else:
+                        raiz_actual = self.R_izq_der(raiz_actual)
+            
+            return raiz_actual
+
+
+
 
 
 
