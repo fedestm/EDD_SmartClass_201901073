@@ -40,6 +40,13 @@ class avl:
         nodo_avl.altura = self.maximo(self.f_equilibrio(nodo_avl.derecha) , self.f_equilibrio(nodo_avl.izquierda)) + 1
         aux.altura = self.maximo(nodo_avl.altura, self.f_equilibrio(nodo_avl.derecha)) + 1
         return aux
+    
+    #Rotacion Izquierda -> Derecha
+    def R_izq_der(self, nodo_avl):
+        nodo_avl.izquierda = self.R_derecha(nodo_avl.izquierda)
+        aux = self.R_izquierda(nodo_avl)
+        return aux
+
 
 
 
