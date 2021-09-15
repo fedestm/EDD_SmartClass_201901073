@@ -1,2 +1,3 @@
 class avl:
-    self.raiz=None
+    def __init__(self):
+        self.raiz=None
