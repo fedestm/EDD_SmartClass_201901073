@@ -87,6 +87,8 @@ class avl:
 
         if self.raiz == None:
             self.raiz = nuevo
+        else:
+            self.raiz = self.insertar_nodo(nuevo, self.raiz)
 
 
 
