@@ -85,6 +85,9 @@ class avl:
     def insertar(self, carnet, dpi, nombre, carrera, password, creditos, edad):
         nuevo = nodo_avl(carnet, dpi, nombre, carrera, password, creditos, edad)
 
+        if self.raiz == None:
+            self.raiz = nuevo
+
 
 
 
