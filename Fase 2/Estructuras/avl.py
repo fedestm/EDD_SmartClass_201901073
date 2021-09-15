@@ -1,3 +1,5 @@
+from nodo_avl import nodo_avl
+
 class avl:
     def __init__(self):
         self.raiz=None
@@ -9,3 +11,14 @@ class avl:
             return a1
         else:
             return a2
+    
+    #Retorna fase de equilibrio de nodo
+    def f_equilibrio(self, nodo_avl):
+        #Se verifica si existe el nodo
+        if nodo_avl:
+            return nodo_avl.altura
+        else:
+            #De lo contrario se retorna -1
+            return -1
+        
+
