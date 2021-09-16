@@ -98,6 +98,23 @@ class avl:
         file = open("avl.dot","w+")
         file.write(dot)
         file.close()
+    
+    def recorrer(self, raiz_actual):
+        if raiz_actual:
+            dot = "\nn"+str(raiz_actual.carnet)+"[label= <<TABLE BORDER=\"0\" CELLBORDER=\"1\" CELLSPACING=\"0\">"
+            dot += "\n\t<TR><TD BGCOLOR=\"orange\" PORT=\"C0\">  I  <br/>  Z  <br/>  Q  "   
+            dot += "</TD>\n\t<TD PORT=\"value\">"
+            dot += "Carnet: "+str(raiz_actual.carnet)+"<br/>DPI: "+str(raiz_actual.nombre)+"<br/>Nombre: "+str(raiz_actual.dpi)
+            dot += "<br/>Carrera: "+str(raiz_actual.carrera)+"  <br/>Password: "+str(raiz_actual.password)
+            dot += "<br/>Creditos: "+str(raiz_actual.creditos)+"<br/>Edad: "+str(raiz_actual.edad)
+            dot += "</TD>"
+            dot += "\n\t<TD BGCOLOR=\"#33A8FF\" PORT=\"C1\">  D  <br/>  E  <br/>  R  </TD></TR>\n</TABLE>>];\n"
+            dot += self.recorrer(raiz_actual.izquierda)
+            dot += self.recorrer(raiz_actual.derecha)
+            return dot
+        else:
+            return ""
+
 
 
 
