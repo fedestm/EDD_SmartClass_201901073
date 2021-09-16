@@ -114,6 +114,17 @@ class avl:
             return dot
         else:
             return ""
+    
+    def enlazar(self, raiz_actual):
+        dot = ""
+        if raiz_actual:
+            if raiz_actual.izquierda:
+                #Se conecta raiz de carnet a nodo de la izquierda
+                dot += "n" + str(raiz_actual.carnet) + ":C0 -> n" + str(raiz_actual.izquierda.carnet) + ":value\n"
+
+            dot += self.enlazar(raiz_actual.izquierda)
+        
+        return dot
 
 
 
