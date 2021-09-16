@@ -121,8 +121,11 @@ class avl:
             if raiz_actual.izquierda:
                 #Se conecta raiz de carnet a nodo de la izquierda
                 dot += "n" + str(raiz_actual.carnet) + ":C0 -> n" + str(raiz_actual.izquierda.carnet) + ":value\n"
+            elif raiz_actual.derecha:
+                dot += "n" + str(raiz_actual.carnet) + ":C1 -> n" + str(raiz_actual.derecha.carnet) + ":value\n"
 
             dot += self.enlazar(raiz_actual.izquierda)
+            dot += self.enlazar(raiz_actual.derecha)
         
         return dot
 
