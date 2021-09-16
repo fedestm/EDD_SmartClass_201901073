@@ -51,7 +51,7 @@ class avl:
     #Rotacion Derecha -> Izquierda
     def R_der_izq(self, nodo_avl):
         nodo_avl.derecha = self.R_izquierda(nodo_avl.derecha)
-        aux = self.R_izquierda(nodo_avl)
+        aux = self.R_derecha(nodo_avl)
         return aux
     
     def insertar_nodo(self, nuevo, raiz_actual):
@@ -136,4 +136,3 @@ class avl:
             dot += self.enlazar(raiz_actual.derecha)
         
         return dot
-
