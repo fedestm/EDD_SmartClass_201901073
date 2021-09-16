@@ -1,4 +1,5 @@
 from nodo_avl import nodo_avl
+import os
 
 class avl:
     def __init__(self):
@@ -98,9 +99,13 @@ class avl:
             dot += self.recorrer(self.raiz)
             dot += "\n"
             dot += self.enlazar(self.raiz)
+        #w+ Escritura en un archivo, se le agrega contenido extra sin eliminar contenido anterior
         file = open("avl.dot","w+")
         file.write(dot)
         file.close()
+        os.system("dot -Tsvg avl.dot -o avl.svg")
+        os.startfile("avl.svg")
+
     
     def recorrer(self, raiz_actual):
         if raiz_actual:
