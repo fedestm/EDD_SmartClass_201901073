@@ -94,7 +94,10 @@ class avl:
         dot = "digraph avl {\n"
         dot += "node[shape=plaintext];\nrankdir=TR;\n"
         dot += "}"
-
+        if self.raiz != None:
+            dot += self.recorrer(self.raiz)
+            dot += "\n"
+            dot += self.enlazar(self.raiz)
         file = open("avl.dot","w+")
         file.write(dot)
         file.close()
