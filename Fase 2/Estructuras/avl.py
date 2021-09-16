@@ -89,9 +89,15 @@ class avl:
             self.raiz = nuevo
         else:
             self.raiz = self.insertar_nodo(nuevo, self.raiz)
+    
+    def graficar(self):
+        dot = "digraph avl {\n"
+        dot += "node[shape=plaintext];\nrankdir=TR;\n"
+        dot += "}"
 
-
-
+        file = open("avl.dot","w+")
+        file.write(dot)
+        file.close()
 
 
 
