@@ -94,11 +94,11 @@ class avl:
     def graficar(self):
         dot = "digraph avl {\n"
         dot += "node[shape=plaintext];\nrankdir=TR;\n"
-        dot += "}"
         if self.raiz != None:
             dot += self.recorrer(self.raiz)
             dot += "\n"
             dot += self.enlazar(self.raiz)
+        dot += "}"
         #w+ Escritura en un archivo, se le agrega contenido extra sin eliminar contenido anterior
         file = open("avl.dot","w+")
         file.write(dot)
@@ -129,14 +129,11 @@ class avl:
             if raiz_actual.izquierda:
                 #Se conecta raiz de carnet a nodo de la izquierda
                 dot += "n" + str(raiz_actual.carnet) + ":C0 -> n" + str(raiz_actual.izquierda.carnet) + ":value\n"
-            elif raiz_actual.derecha:
+            if raiz_actual.derecha:
                 dot += "n" + str(raiz_actual.carnet) + ":C1 -> n" + str(raiz_actual.derecha.carnet) + ":value\n"
 
             dot += self.enlazar(raiz_actual.izquierda)
             dot += self.enlazar(raiz_actual.derecha)
         
         return dot
-
-
-
 
