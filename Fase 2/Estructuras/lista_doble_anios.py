@@ -9,5 +9,10 @@ class ListaDoble_Anios:
     
     def insertar(self, anio, semestre, meses):
         nuevo = NodoDoble_Anios(None, None, anio, semestre, meses)
-        if lista_vacia():
+        if self.lista_vacia():
             self.primero = self.ultimo = nuevo
+        else:
+            if self.primero == self.ultimo:
+                self.primero.siguiente = nuevo
+                nuevo.anterior = self.primero
+                self.ultimo = nuevo
