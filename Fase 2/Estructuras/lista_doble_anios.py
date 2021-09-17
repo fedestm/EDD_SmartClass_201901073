@@ -20,3 +20,11 @@ class ListaDoble_Anios:
                 nuevo.anterior = self.ultimo
                 self.ultimo.siguiente = nuevo
                 self.ultimo = nuevo
+    
+    def recorrer(self):
+        temp = self.primero
+        
+        while temp != None:
+            if temp == self.primero:
+                print(temp.anio, end =" <-> ")
+            temp = temp.siguiente
