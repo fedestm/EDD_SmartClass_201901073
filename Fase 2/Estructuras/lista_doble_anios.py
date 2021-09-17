@@ -27,4 +27,8 @@ class ListaDoble_Anios:
         while temp != None:
             if temp == self.primero:
                 print(temp.anio, end =" <-> ")
+            elif temp == self.ultimo:
+                print(temp.anio, end = "")
+            else:
+                print(temp.anio, end=" <-> ")
             temp = temp.siguiente
