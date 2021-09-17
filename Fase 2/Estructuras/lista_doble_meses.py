@@ -20,3 +20,15 @@ class ListaDoble_Meses:
                 nuevo.anterior = self.ultimo
                 self.ultimo.siguiente = nuevo
                 self.ultimo = nuevo
+    
+    def recorrer(self):
+        temp = self.primero
+        
+        while temp != None:
+            if temp == self.primero:
+                print(temp.mes, end =" <-> ")
+            elif temp == self.ultimo:
+                print(temp.mes, end = "")
+            else:
+                print(temp.mes, end=" <-> ")
+            temp = temp.siguiente
