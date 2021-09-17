@@ -32,3 +32,17 @@ class ListaDoble_Anios:
             else:
                 print(temp.anio, end=" <-> ")
             temp = temp.siguiente
+    
+    def buscar_anio(self, anio):
+        if self.lista_vacia():
+            print("Lista Vacia")
+        else:
+            temp = self.primero
+            while temp != None:
+                if temp.anio == anio:
+                    #Si se encuentra el datos retorna el nodo
+                    return temp
+                else:
+                    temp = temp.siguiente
+            print("No se encontro el año")
+            return None
