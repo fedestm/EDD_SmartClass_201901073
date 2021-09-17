@@ -11,3 +11,8 @@ class ListaDoble_Meses:
         nuevo = NodoDoble_Meses(None, None, mes, tareas)
         if self.lista_vacia():
             self.primero = self.ultimo = nuevo
+        else:
+            if self.primero == self.ultimo:
+                self.primero.siguiente = nuevo
+                nuevo.anterior = self.primero
+                self.ultimo = nuevo
