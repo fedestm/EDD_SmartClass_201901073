@@ -51,3 +51,10 @@ class ListaDoble_Anios:
         temp = self.buscar_anio(anio)
         if temp != None:
             temp.lista_semestres.insertar(num_semestres, cursos)
+    
+    def recorrer_semestre(self, anio):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_semestres.recorrer()
+        else:
+            print("No se encontro")
