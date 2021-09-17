@@ -6,3 +6,8 @@ class ListaDoble_Meses:
     
     def lista_vacia(self):
         return self.primero == None
+
+    def insertar(self, mes, tareas):
+        nuevo = NodoDoble_Meses(None, None, mes, tareas)
+        if self.lista_vacia():
+            self.primero = self.ultimo = nuevo
