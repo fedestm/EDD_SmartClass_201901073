@@ -8,6 +8,9 @@ class ListaSimple:
         return self.primero == None
     
     def insertar(self, semestre, cursos):
-        if lista_vacia():
-            self.primero = self.ultimo = Nodo_Simple(None, semestre, cursos)
-    
+        nuevo = Nodo_Simple(None, semestre, cursos)
+        if self.lista_vacia():
+            self.primero = self.ultimo = nuevo
+        else:
+            self.ultimo.siguiente = nuevo
+            self.ultimo = nuevo
