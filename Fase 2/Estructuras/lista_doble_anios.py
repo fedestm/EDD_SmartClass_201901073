@@ -16,3 +16,7 @@ class ListaDoble_Anios:
                 self.primero.siguiente = nuevo
                 nuevo.anterior = self.primero
                 self.ultimo = nuevo
+            else:
+                nuevo.anterior = self.ultimo
+                self.ultimo.siguiente = nuevo
+                self.ultimo = nuevo
