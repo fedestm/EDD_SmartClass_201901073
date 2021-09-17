@@ -46,3 +46,8 @@ class ListaDoble_Anios:
                     temp = temp.siguiente
             print("No se encontro el año")
             return None
+    
+    def insertar_semestre(self, anio, num_semestres, cursos):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_semestres.insertar(num_semestres, cursos)
