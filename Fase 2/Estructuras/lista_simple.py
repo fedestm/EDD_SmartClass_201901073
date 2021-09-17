@@ -14,3 +14,9 @@ class ListaSimple:
         else:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
+
+    def recorrer(self):
+        temp = self.primero
+        while temp!= None:
+            print(temp.semestre + " -> ")
+            temp = temp.siguiente
