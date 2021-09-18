@@ -165,4 +165,4 @@ class avl:
             return self.rec(raiz_actual, carnet)
     
     def insertar_anio(self, carnet, anio, num_semestre, meses):
-        temp = self.raiz
+        temp = self.buscar(carnet)
