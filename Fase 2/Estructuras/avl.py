@@ -147,3 +147,10 @@ class avl:
             else:
                 #Si no se encuentra se busca el siguiente
                 return self.rec(raiz_actual.izquierda, carnet)
+        elif self.rec(raiz_actual.derecha, carnet):
+            #Se verifica si el carnet se encuentra en el nodo derecho
+            if raiz_actual.derecha.carnet == carnet:
+                return raiz_actual.derecha
+            else:
+                #Se busca en el siguiente
+                return self.rec(raiz_actual.derecha, carnet)
