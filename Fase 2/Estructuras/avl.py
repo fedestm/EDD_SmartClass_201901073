@@ -166,3 +166,5 @@ class avl:
     
     def insertar_anio(self, carnet, anio, num_semestre, meses):
         temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.insertar(anio, num_semestre, meses)
