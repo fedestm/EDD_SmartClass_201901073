@@ -136,3 +136,11 @@ class avl:
             dot += self.enlazar(raiz_actual.derecha)
         
         return dot
+    
+    #Recorrer arbol para buscar carnet
+    def rec(self, raiz_actual, carnet):
+        #Se recorre raiz por la izquierda
+        if self.rec(raiz_actual.izquierda, carnet):
+            #Se verifica si el carnet se encuentra en el nodo izquierdo
+            if raiz_actual.izquierda.carnet == carnet:
+                return raiz_actual.izquierda
