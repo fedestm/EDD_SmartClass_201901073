@@ -163,3 +163,6 @@ class avl:
         raiz_actual = self.raiz
         if raiz_actual != None:
             return self.rec(raiz_actual, carnet)
+    
+    def insertar_anio(self, carnet, anio, num_semestre, meses):
+        temp = self.raiz
