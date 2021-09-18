@@ -154,3 +154,7 @@ class avl:
             else:
                 #Se busca en el siguiente
                 return self.rec(raiz_actual.derecha, carnet)
+        else:
+            #Si el carnet no esta en derecha o izquierda, se encuentra en la primera raiz
+            if raiz_actual.carnet == carnet:
+                return raiz_actual
