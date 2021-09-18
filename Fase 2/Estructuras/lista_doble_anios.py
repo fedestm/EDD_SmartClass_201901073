@@ -64,4 +64,10 @@ class ListaDoble_Anios:
         temp = self.buscar_anio(anio)
         if temp != None:
             temp.lista_meses.insertar(mes, tareas)
-
+    
+    def recorrer_meses(self, anio):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_meses.recorrer()
+        else:
+            print("No se encontro")
