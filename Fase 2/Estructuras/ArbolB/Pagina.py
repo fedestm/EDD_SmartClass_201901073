@@ -7,3 +7,7 @@ class Pagina:
         self.claves_max = 4
         self.claves_min = 2
         self.claves = ListaNodos()
+    
+    def insertar_pagina(self, nuevo):
+        if self.claves.insertar(nuevo):
+            self.tam = self.claves.size
