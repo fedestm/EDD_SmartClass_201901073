@@ -86,6 +86,8 @@ class ArbolB:
         dot = "digraph arbolB{\n"
         dot += "rankdir=TB;\n"
         dot += "node [shape = box, fillcolor=\"#F2F3F4\" color=\"black\" style=\"filled\"];\n"
+        dot += self.graficar_nodos(self.raiz)
+        dot += self.graficar_enlaces(self.raiz)
         dot += "\n}\n"
         file.write(dot)
         file.close()
@@ -125,7 +127,14 @@ class ArbolB:
         dot = ""
         if raiz_actual.hoja(raiz_actual):
             return str(raiz_actual.claves.primero.codigo) + ";"
-
-
-
-
+        else:
+            dot += str(raiz_actual.claves.primero.codigo) + ";"
+            pivote = raiz_actual.claves.primero
+            cont = 0
+            r_actual = str(raiz_actual.claves.primero.codigo)
+            while pivote != None:
+                dot += "\n" + r_actual + ":p" + str(cont) + "->" + str(self.graficar_enlaces(pivote.izquierda))
+                cont += 1
+                pivote = pivote.siguiente
+            dot += "\n" + r_actual + ":p" + str(cont) + "->" + str(self.graficar_enlaces(raiz_actual.claves.ultimo.derecha))
+            return dot
