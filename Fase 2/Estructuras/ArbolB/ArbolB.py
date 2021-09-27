@@ -32,9 +32,10 @@ class ArbolB:
                     self.altura += 1
                     self.raiz = Pagina()
                     self.raiz.insertar_pagina(respuesta_insertar)
+                else:
+                    #Se retorna una pagina a la raiz
+                    self.raiz = respuesta_insertar
 
-
-    
     def recorrer_insertar(self, nuevo, raiz_actual):
         if raiz_actual.hoja(raiz_actual):
             #Se valida que es hoja
