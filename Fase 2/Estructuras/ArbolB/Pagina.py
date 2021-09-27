@@ -47,3 +47,6 @@ class Pagina:
         derecha = Pagina()
         derecha.insertar_pagina(tercero)
         derecha.insertar_pagina(cuarto)
+
+        temp.izquierda = izquierda
+        temp.derecha = derecha
