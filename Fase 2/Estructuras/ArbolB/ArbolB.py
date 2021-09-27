@@ -69,6 +69,7 @@ class ArbolB:
                         return raiz_actual
                     else:
                         pivote = pivote.siguiente
+        return self
 
 
 
