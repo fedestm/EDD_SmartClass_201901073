@@ -58,6 +58,9 @@ class ListaNodos:
                             pivote.anterior = nuevo
                             self.size += 1
                             return True
+                        elif nuevo.codigo == pivote.codigo:
+                            #Retorna False porque ya se encuentra el codigo que se ingreso
+                            return False
                         else:
                             pivote = pivote.siguiente
-    
+        return False
