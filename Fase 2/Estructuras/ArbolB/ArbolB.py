@@ -25,6 +25,8 @@ class ArbolB:
                     self.raiz = Pagina()
                     nuevo_raiz = respuesta_insertar
                     self.raiz = self.raiz.insertar_pagina(nuevo_raiz)
+            else:
+                respuesta_insertar = self.recorrer_insertar(nuevo, self.raiz)
     
     def recorrer_insertar(self, nuevo, raiz_actual):
         if raiz_actual.hoja(raiz_actual):
