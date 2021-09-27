@@ -24,3 +24,6 @@ class Pagina:
 
         primero = pag.claves.primero
         segundo = pag.claves.primero.siguiente
+
+        tercero = temp.siguiente
+        cuarto = pag.claves.ultimo
