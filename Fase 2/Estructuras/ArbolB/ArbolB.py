@@ -31,5 +31,18 @@ class ArbolB:
             #Se valida que es hoja
             respuesta_insertar = raiz_actual.insertar_pagina(nuevo)
             return respuesta_insertar
+        else:
+            #De lo contrario no es hoja
+            if nuevo.codigo < raiz_actual.claves.primero.codigo:
+                #Ingresa por la izquierda
+                respuesta_insertar = self.recorrer_insertar(nuevo, raiz_actual.claves.primero.izquierda)
+                if isinstance(respuesta_insertar, NodoB):
+                    #Se retorna nodo
+                    return raiz_actual.insertar_pagina(respuesta_insertar)
+                else:
+                    #Se retorna una pagina
+                    raiz_actual.claves.primero.izquierda = respuesta_insertar
+                    return raiz_actual
+
 
 
