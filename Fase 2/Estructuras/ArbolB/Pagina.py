@@ -55,3 +55,9 @@ class Pagina:
 
         #Temporal retorna el nodo central temp.codigo
         return temp
+    
+    def hoja(self, pag):
+        #Si pagina izquierda es Nulo es una Hoja
+        if pag.claves.primero.izquierda == None:
+            return True
+        return False
