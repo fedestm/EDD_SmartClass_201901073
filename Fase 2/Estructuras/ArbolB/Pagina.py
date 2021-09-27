@@ -36,3 +36,6 @@ class Pagina:
 
         tercero.siguiente = None
         cuarto.anterior = None
+
+        temp.siguiente = None
+        temp.anterior = None
