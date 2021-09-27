@@ -50,3 +50,6 @@ class Pagina:
 
         temp.izquierda = izquierda
         temp.derecha = derecha
+
+        #Temporal retorna el nodo central temp.codigo
+        return temp
