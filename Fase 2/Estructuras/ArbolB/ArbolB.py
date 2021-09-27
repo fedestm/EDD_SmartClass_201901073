@@ -65,6 +65,8 @@ class ArbolB:
                             pivote.izquierda = respuesta_insertar
                             pivote.anterior.derecha = respuesta_insertar
                             return raiz_actual
+                    elif nuevo.codigo == pivote.codigo:
+                        return raiz_actual
                     else:
                         pivote = pivote.siguiente
 
