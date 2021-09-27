@@ -14,6 +14,8 @@ class Pagina:
 
             if self.tam < 5:
                 return self
+            elif self.tam == 5:
+                return self.dividir_pagina(self)
         return None
     
     def dividir_pagina(self, pag):
