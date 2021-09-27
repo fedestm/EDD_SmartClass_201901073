@@ -43,3 +43,7 @@ class Pagina:
         izquierda = Pagina()
         izquierda.insertar_pagina(primero)
         izquierda.insertar_pagina(segundo)
+
+        derecha = Pagina()
+        derecha.insertar_pagina(tercero)
+        derecha.insertar_pagina(cuarto)
