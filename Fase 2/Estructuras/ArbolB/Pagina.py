@@ -11,3 +11,6 @@ class Pagina:
     def insertar_pagina(self, nuevo):
         if self.claves.insertar(nuevo):
             self.tam = self.claves.size
+
+            if self.tam < 5:
+                return self
