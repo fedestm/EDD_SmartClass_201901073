@@ -89,7 +89,19 @@ class ArbolB:
         dot += "\n}\n"
         file.write(dot)
         file.close()
-
+    
+    def graficar_nodos(self, raiz_actual):
+        dot = ""
+        if raiz_actual.hoja(raiz_actual):
+            dot += "node[shape=record label= \"<p0>"
+            cont = 0
+            pivote = raiz_actual.claves.primero
+            while pivote != None:
+                cont += 1
+                dot += "|{" + str(pivote.codigo) + "}|<p" + str(cont) + "> "
+                pivote = pivote.siguiente
+            dot += "\"]" + str(raiz_actual.claves.primero.codigo) + "; \n"
+            return dot
 
 
 
