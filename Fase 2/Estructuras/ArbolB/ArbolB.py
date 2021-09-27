@@ -102,6 +102,24 @@ class ArbolB:
                 pivote = pivote.siguiente
             dot += "\"]" + str(raiz_actual.claves.primero.codigo) + "; \n"
             return dot
+        else:
+            dot += "node[shape=record label= \"<p0>"
+            cont = 0
+            pivote = raiz_actual.claves.primero
+            while pivote != None:
+                cont += 1
+                dot += "|{" + str(pivote.codigo) + "}|<p" + str(cont) + "> "
+                pivote = pivote.siguiente
+            dot += "\"]" + str(raiz_actual.claves.primero.codigo) + "; \n"
+
+            pivote = raiz_actual.claves.primero
+            cont = 0
+            while pivote != None:
+                dot += self.graficar_nodos(pivote.izquierda)
+                cont += 1
+                pivote = pivote.siguiente
+            dot += self.graficar_nodos(raiz_actual.claves.ultimo.derecha)
+            return dot
 
 
 
