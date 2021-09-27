@@ -80,6 +80,17 @@ class ArbolB:
                     else:
                         pivote = pivote.siguiente
         return self
+    
+    def graficar(self):
+        file = open("arbolB.dot", "w")
+        dot = "digraph arbolB{\n"
+        dot += "rankdir=TB;\n"
+        dot += "node [shape = box, fillcolor=\"#F2F3F4\" color=\"black\" style=\"filled\"];\n"
+        dot += "\n}\n"
+        file.write(dot)
+        file.close()
+
+
 
 
 
