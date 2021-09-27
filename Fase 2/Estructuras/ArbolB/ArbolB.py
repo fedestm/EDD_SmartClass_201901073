@@ -61,6 +61,10 @@ class ArbolB:
                         respuesta_insertar = self.recorrer_insertar(nuevo, pivote.izquierda)
                         if isinstance(respuesta_insertar, NodoB):
                             return raiz_actual.insertar_pagina(respuesta_insertar)
+                        else:
+                            pivote.izquierda = respuesta_insertar
+                            pivote.anterior.derecha = respuesta_insertar
+                            return raiz_actual
                     else:
                         pivote = pivote.siguiente
 
