@@ -15,3 +15,9 @@ class Pagina:
             if self.tam < 5:
                 return self
         return None
+    
+    def dividir_pagina(self, pag):
+        #Si tamaño de nodos es igual a 5, entra en esta funcion
+        temp = pag.claves.primero
+        for i in range(2):
+            temp = temp.siguiente
