@@ -120,6 +120,11 @@ class ArbolB:
                 pivote = pivote.siguiente
             dot += self.graficar_nodos(raiz_actual.claves.ultimo.derecha)
             return dot
+    
+    def graficar_enlaces(self, raiz_actual):
+        dot = ""
+        if raiz_actual.hoja(raiz_actual):
+            return str(raiz_actual.claves.primero.codigo) + ";"
 
 
 
