@@ -39,3 +39,7 @@ class Pagina:
 
         temp.siguiente = None
         temp.anterior = None
+
+        izquierda = Pagina()
+        izquierda.insertar_pagina(primero)
+        izquierda.insertar_pagina(segundo)
