@@ -27,3 +27,12 @@ class Pagina:
 
         tercero = temp.siguiente
         cuarto = pag.claves.ultimo
+
+        primero.siguiente = None
+        primero.anterior = None
+
+        segundo.siguiente = None
+        segundo.anterior = None
+
+        tercero.siguiente = None
+        cuarto.anterior = None
