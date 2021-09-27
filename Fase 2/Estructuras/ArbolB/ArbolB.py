@@ -6,3 +6,6 @@ class ArbolB:
         self.raiz = None
         self.orden = 5
         self.altura = 0
+    
+    def insertar_nodo(self, codigo, nombre, creditos, prerequisitos, obligatorio):
+        nuevo = NodoB(codigo, nombre, creditos, prerequisitos, obligatorio)
