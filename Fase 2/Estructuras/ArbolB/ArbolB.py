@@ -53,6 +53,14 @@ class ArbolB:
                     #Retorna una pagina
                     raiz_actual.claves.ultimo.derecha = respuesta_insertar
                     return raiz_actual
+            else:
+                pivote = raiz_actual.claves.primero
+
+                while pivote != None:
+                    if nuevo.codigo < pivote.codigo:
+                        respuesta_insertar = self.recorrer_insertar(nuevo, pivote.izquierda)
+                    else:
+                        pivote = pivote.siguiente
 
 
 
