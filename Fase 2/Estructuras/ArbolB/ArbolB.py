@@ -14,3 +14,16 @@ class ArbolB:
             self.raiz.raiz = True
             self.raiz = self.raiz.insertar_pagina(nuevo)
             #Se inserta datos nuevo.codigo
+        else:
+            if self.altura == 0:
+                respuesta_insertar = self.raiz.insertar_pagina(nuevo)
+                if isinstance(respuesta_insertar, Pagina):
+                    self.raiz = respuesta_insertar
+                    #Se inserta nodo
+                elif isinstance(respuesta_insertar, NodoB):
+                    self.altura += 1
+                    self.raiz = Pagina()
+                    nuevo_raiz = respuesta_insertar
+                    self.raiz = self.raiz.insertar_pagina(nuevo_raiz)
+
+
