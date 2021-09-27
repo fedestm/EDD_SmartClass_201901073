@@ -14,3 +14,4 @@ class Pagina:
 
             if self.tam < 5:
                 return self
+        return None
