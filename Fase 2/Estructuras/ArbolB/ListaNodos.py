@@ -44,4 +44,20 @@ class ListaNodos:
                     self.ultimo = nuevo
                     self.size += 1
                     return True
+                else:
+                    pivote = self.primero
+                    while pivote != None:
+                        if nuevo.codigo < pivote.codigo:
+                            nuevo.siguiente = pivote
+                            nuevo.anterior = pivote.anterior
 
+                            pivote.izquierda = nuevo.derecha
+                            pivote.anterior.derecha = nuevo.izquierda
+
+                            pivote.anterior.siguiente = nuevo
+                            pivote.anterior = nuevo
+                            self.size += 1
+                            return True
+                        else:
+                            pivote = pivote.siguiente
+    
