@@ -21,3 +21,6 @@ class Pagina:
         temp = pag.claves.primero
         for i in range(2):
             temp = temp.siguiente
+
+        primero = pag.claves.primero
+        segundo = pag.claves.primero.siguiente
