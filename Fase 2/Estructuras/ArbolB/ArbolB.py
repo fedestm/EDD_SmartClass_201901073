@@ -9,3 +9,8 @@ class ArbolB:
     
     def insertar_nodo(self, codigo, nombre, creditos, prerequisitos, obligatorio):
         nuevo = NodoB(codigo, nombre, creditos, prerequisitos, obligatorio)
+        if self.raiz == None:
+            self.raiz = Pagina()
+            self.raiz.raiz = True
+            self.raiz = self.raiz.insertar_pagina(nuevo)
+            #Se inserta datos nuevo.codigo
