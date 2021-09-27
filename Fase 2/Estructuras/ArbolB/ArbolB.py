@@ -43,6 +43,16 @@ class ArbolB:
                     #Se retorna una pagina
                     raiz_actual.claves.primero.izquierda = respuesta_insertar
                     return raiz_actual
+            elif nuevo.codigo > raiz_actual.claves.ultimo.codigo:
+                #Ingresa el ultimo nodo
+                respuesta_insertar = self.recorrer_insertar(nuevo, raiz_actual.claves.ultimo.derecha)
+                if isinstance(respuesta_insertar, NodoB):
+                    #Retorna un nodo
+                    return raiz_actual.insertar_pagina(respuesta_insertar)
+                else:
+                    #Retorna una pagina
+                    raiz_actual.claves.ultimo.derecha = respuesta_insertar
+                    return raiz_actual
 
 
 
