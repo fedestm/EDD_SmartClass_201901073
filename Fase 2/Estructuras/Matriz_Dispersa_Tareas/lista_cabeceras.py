@@ -33,3 +33,5 @@ class ListaCabeceras:
         while temp != None:
             if temp.posicion == posicion:
                 return temp
+            else:
+                temp = temp.siguiente
