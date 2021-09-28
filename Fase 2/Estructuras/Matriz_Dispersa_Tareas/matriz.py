@@ -23,3 +23,4 @@ class Matriz:
             self.cabeceras_y.insertar_cabecera(nodo_cabecera_y)
         
         nodo_cabecera_x.lista_interna.insertar_posx(x, y, cantidad)
+        nodo_cabecera_y.lista_interna.insertar_posy(x, y, cantidad)
