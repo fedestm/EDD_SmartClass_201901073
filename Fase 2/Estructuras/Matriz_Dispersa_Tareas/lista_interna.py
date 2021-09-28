@@ -57,3 +57,5 @@ class Lista_Interna:
                             temp.abajo = nuevo
                             nuevo.arriba = temp
                             break
+                        else:
+                            temp = temp.abajo
