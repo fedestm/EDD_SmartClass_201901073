@@ -34,3 +34,12 @@ class Lista_Interna:
         else:
             #Si la lista se guarda el primer nodo
             self.primero = nuevo
+    
+    def insertar_posy(self, x, y, cantidad):
+        nuevo = NodoInterno(x, y, cantidad)
+
+        if self.primero:
+            if nuevo.pos_x < self.primero.pos_x:
+                nuevo.abajo = self.primero
+                self.primero.arriba = nuevo
+                self.primero = nuevo
