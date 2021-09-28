@@ -21,6 +21,9 @@ class Lista_Interna:
                         temp.anterior.siguiente = nuevo
                         temp.anterior = nuevo
                         break
+                    elif nuevo.pos_x == temp.pos_x and nuevo.pos_y == temp.pos_y:
+                        #Posicion ocupada
+                        break
                     else:
                         if temp.siguiente == None:
                             temp.siguiente = nuevo
