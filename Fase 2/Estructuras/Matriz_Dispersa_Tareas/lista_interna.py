@@ -52,6 +52,10 @@ class Lista_Interna:
                         temp.arriba.abajo = nuevo
                         temp.arriba = nuevo
                         break
+                    elif nuevo.pos_x == temp.pos_x and nuevo.pos_y == temp.pos_y:
+                        #Posicion ocupada
+                        #Finaliza condicion
+                        break
                     else:
                         if temp.abajo == None:
                             temp.abajo = nuevo
