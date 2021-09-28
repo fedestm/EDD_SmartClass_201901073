@@ -31,3 +31,6 @@ class Lista_Interna:
                             break
                         else:
                             temp = temp.siguiente
+        else:
+            #Si la lista se guarda el primer nodo
+            self.primero = nuevo
