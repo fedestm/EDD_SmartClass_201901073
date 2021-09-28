@@ -21,3 +21,8 @@ class Lista_Interna:
                         temp.anterior.siguiente = nuevo
                         temp.anterior = nuevo
                         break
+                    else:
+                        if temp.siguiente == None:
+                            temp.siguiente = nuevo
+                            nuevo.anterior = temp
+                            break
