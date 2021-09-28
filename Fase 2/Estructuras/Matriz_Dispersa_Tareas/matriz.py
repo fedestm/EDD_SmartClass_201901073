@@ -1,4 +1,5 @@
 from lista_cabeceras import ListaCabeceras
+from nodo_cabeceras import NodoCabeceras
 
 class Matriz:
     def __init__(self):
