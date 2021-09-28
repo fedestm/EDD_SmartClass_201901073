@@ -20,3 +20,4 @@ class Lista_Interna:
                         nuevo.anterior = temp.anterior
                         temp.anterior.siguiente = nuevo
                         temp.anterior = nuevo
+                        break
