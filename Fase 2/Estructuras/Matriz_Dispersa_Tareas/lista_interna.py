@@ -32,7 +32,7 @@ class Lista_Interna:
                         else:
                             temp = temp.siguiente
         else:
-            #Si la lista se guarda el primer nodo
+            #Si la lista esta vacia se guarda el primer nodo
             self.primero = nuevo
     
     def insertar_posy(self, x, y, cantidad):
@@ -63,3 +63,6 @@ class Lista_Interna:
                             break
                         else:
                             temp = temp.abajo
+        else:
+            #Si lista esta vacia se guarda el primer nodo
+            self.primero = nuevo
