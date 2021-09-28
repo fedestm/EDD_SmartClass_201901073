@@ -27,3 +27,9 @@ class ListaCabeceras:
         else:
             #Si lista esta vacia se guarda el primer nodo
             self.primero = nuevo
+    
+    def buscar_cabecera(self, posicion):
+        temp = self.primero
+        while temp != None:
+            if temp.posicion == posicion:
+                return temp
