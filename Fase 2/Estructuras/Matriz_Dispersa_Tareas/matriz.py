@@ -17,3 +17,7 @@ class Matriz:
         if nodo_cabecera_x == None:
             nodo_cabecera_x = NodoCabeceras(x)
             self.cabeceras_x.insertar_cabecera(nodo_cabecera_x)
+        
+        if nodo_cabecera_y == None:
+            nodo_cabecera_y = NodoCabeceras(y)
+            self.cabeceras_y.insertar_cabecera(nodo_cabecera_y)
