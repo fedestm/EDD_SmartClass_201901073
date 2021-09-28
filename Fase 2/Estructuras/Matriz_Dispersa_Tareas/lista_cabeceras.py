@@ -24,3 +24,6 @@ class ListaCabeceras:
                             break
                         else:
                             temp = temp.siguiente
+        else:
+            #Si lista esta vacia se guarda el primer nodo
+            self.primero = nuevo
