@@ -21,3 +21,5 @@ class Matriz:
         if nodo_cabecera_y == None:
             nodo_cabecera_y = NodoCabeceras(y)
             self.cabeceras_y.insertar_cabecera(nodo_cabecera_y)
+        
+        nodo_cabecera_x.lista_interna.insertar_posx(x, y, cantidad)
