@@ -43,3 +43,12 @@ class Lista_Interna:
                 nuevo.abajo = self.primero
                 self.primero.arriba = nuevo
                 self.primero = nuevo
+            else:
+                temp = self.primero
+                while temp != None:
+                    if nuevo.pos_x < temp.pos_x:
+                        nuevo.abajo = temp
+                        nuevo.arriba = temp.anterior
+                        temp.arriba.abajo = nuevo
+                        temp.arriba = nuevo
+                        break
