@@ -26,3 +26,5 @@ class Lista_Interna:
                             temp.siguiente = nuevo
                             nuevo.anterior = temp
                             break
+                        else:
+                            temp = temp.siguiente
