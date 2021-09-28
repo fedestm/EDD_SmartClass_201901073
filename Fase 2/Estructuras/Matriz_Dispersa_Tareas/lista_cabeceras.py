@@ -22,3 +22,5 @@ class ListaCabeceras:
                             temp.siguiente = nuevo
                             nuevo.anterior = temp
                             break
+                        else:
+                            temp = temp.siguiente
