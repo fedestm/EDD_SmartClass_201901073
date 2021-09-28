@@ -15,5 +15,5 @@ class Matriz:
             nodo_cabecera_y = self.cabeceras_y.buscar_cabecera(y)
         
         if nodo_cabecera_x == None:
-            nodo_cabecera_x = NodoCabeceras(y)
+            nodo_cabecera_x = NodoCabeceras(x)
             self.cabeceras_x.insertar_cabecera(nodo_cabecera_x)
