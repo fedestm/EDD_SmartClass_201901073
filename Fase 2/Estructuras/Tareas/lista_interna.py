@@ -91,6 +91,6 @@ class Lista_Interna:
         dot = ""
         temp = self.primero
         while temp != None:
-            dot += "node[label =\"%s\" fillcolor=\"#EB984E\" pos=\"%d,-%d!\" shape = box]\"i%d-%d!\"" % (temp.cantidad, temp.pos_x, temp.pos_y, temp.pos_x, temp.pos_y)+";\n"
+            dot += "node[label =\"%s\" fillcolor=\"#EB984E\" pos=\"%d,-%d!\" shape = box]\"i%d-%d!\"" % (self.cantidad_tareas(x, y), temp.pos_x, temp.pos_y, temp.pos_x, temp.pos_y)+";\n"
             temp = temp.siguiente
         return dot
