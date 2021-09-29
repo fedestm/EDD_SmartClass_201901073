@@ -77,6 +77,11 @@ class Lista_Interna:
                 temp = temp.sig
         return None
     
+    def insertar_tareas(self, x, y, carnet, nombre, desc, materia, fecha, hora, estado):
+        temp = self.buscar_cantidad(x, y)
+        if temp != None:
+            temp.lista_tareas.insertar(carnet, nombre, desc, materia, fecha, hora, estado)
+    
     def graficar_internos(self):
         dot = ""
         temp = self.primero
