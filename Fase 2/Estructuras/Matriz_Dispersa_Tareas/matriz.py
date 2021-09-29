@@ -33,5 +33,15 @@ class Matriz:
         dot += "edge[style = \"bold\"];\n"
         dot += "node[label = \"Mes: 5\" fillcolor=\" darkolivegreen1\" pos = \"-1,1!\"]principal;\n"
         dot += "\n}\n"
+
+        #Cabeceras en X
+        temp_cx = self.cabeceras_x.primero
+        cont = 0
+        while temp_cx != None:
+            tempx = temp_cx.lista_interna.primero
+            dot += "\n\tnode[label = \"X: %d\" fillcolor=\"#58D68D\" pos = \"%d,1!\" shape = box]x%d;" % (tempx.pos_x ,temp.pos_x, cont)
+            cont += 1
+            temp = temp.siguiente
+
         file.write(dot)
         file.close()
