@@ -70,3 +70,5 @@ class Matriz:
 
         file.write(dot)
         file.close()
+        os.system("neato -Tsvg matriz_dispersa.dot -o matriz_dispersa.svg")
+        os.startfile("matriz_dispersa.svg")
