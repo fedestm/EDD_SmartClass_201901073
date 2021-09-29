@@ -59,6 +59,13 @@ class Matriz:
         for i in range(cont2 - 1):
             dot += "\ny"+str(i)+" -> y"+str(i+1)+";"
             dot += "\ny"+str(i+1)+" -> y"+str(i)+";"
+        
+        #Valores interno de matriz
+        temp = self.cabeceras_x.primero
+        while temp != None:
+            aux = temp.lista_interna
+            dot += aux.graficar_internos()
+            temp = temp.siguiente
 
         file.write(dot)
         file.close()
