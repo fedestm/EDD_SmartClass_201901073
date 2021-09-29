@@ -66,3 +66,11 @@ class Lista_Interna:
         else:
             #Si lista esta vacia se guarda el primer nodo
             self.primero = nuevo
+    
+    def graficar_internos(self):
+        dot = ""
+        temp = self.primero
+        while temp != None:
+            dot += "node[label =\"%s\" fillcolor=\"#EB984E\" pos=\"%d,-%d!\" shape = box]\"i%d-%d!\"" % (temp.valor, temp.pos_x, temp.pos_y, temp.pos_x, temp.pos_y)+";\n"
+            temp = temp.siguiente
+        return dot
