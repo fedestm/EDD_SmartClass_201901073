@@ -87,6 +87,11 @@ class Lista_Interna:
         if temp != None:
             return temp.lista_tareas.cantidad_tareas()
     
+    def graficar_lista_tareas(self, x, y):
+        temp = self.buscar_cantidad(x, y)
+        if temp != None:
+            temp.lista_tareas.graficar()
+    
     def graficar_internos(self):
         dot = ""
         temp = self.primero
