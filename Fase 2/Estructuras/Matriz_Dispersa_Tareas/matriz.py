@@ -33,7 +33,6 @@ class Matriz:
         dot += "node[shape = box,width=0.7,height=0.7,fillcolor=\"azure2\" color=\"white\" style=\"filled\"];\n"
         dot += "edge[style = \"bold\"];\n"
         dot += "node[label = \"Mes: 5\" fillcolor=\" darkolivegreen1\" pos = \"-1,1!\"]principal;\n"
-        dot += "\n}\n"
 
         #Cabeceras en X
         temp_cx = self.cabeceras_x.primero
@@ -67,6 +66,8 @@ class Matriz:
             aux = temp.lista_interna
             dot += aux.graficar_internos()
             temp = temp.siguiente
+
+        dot += "\n}\n"
 
         file.write(dot)
         file.close()
