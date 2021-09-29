@@ -51,6 +51,10 @@ class Matriz:
             dot += "\n\tnode[label = \"Y: %d\" fillcolor=\"#3498DB\" pos = \"-1,-%d!\" shape = box]y%d;" % (tempy.pos_y, tempy.pos_y, cont2)
             cont2 += 1
             temp_cy = temp_cy.siguiente
+        
+        for i in range(cont - 1):
+            dot += "\nx"+str(i)+" -> x"+str(i+1)+";"
+            dot += "\nx"+str(i+1)+" -> x"+str(i)+";"
 
         file.write(dot)
         file.close()
