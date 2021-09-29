@@ -39,7 +39,7 @@ class Matriz:
         cont = 0
         while temp_cx != None:
             tempx = temp_cx.lista_interna.primero
-            dot += "\n\tnode[label = \"X: %d\" fillcolor=\"#58D68D\" pos = \"%d,1!\" shape = box]x%d;" % (tempx.pos_x ,temp.pos_x, cont)
+            dot += "\n\tnode[label = \"X: %d\" fillcolor=\"#58D68D\" pos = \"%d,1!\" shape = box]x%d;" % (tempx.pos_x ,tempx.pos_x, cont)
             cont += 1
             temp_cx = temp_cx.siguiente
         
