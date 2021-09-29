@@ -38,3 +38,25 @@ class ListaDoble_Tareas:
             cont += 1
             temp = temp.siguiente
         return cont
+    
+    def graficar(self):
+        temp = self.primero
+        dot = "digraph Lista_Doble{\n"
+        dot += "rankdir = LR;\n"
+        dot += "node [style=filled];\n"
+        dot += "label=\"Lista Doblemente Enlazada\""
+        dot += "color=black\n"
+
+        while temp != None:
+            if temp == self.primero:
+                dot += "n_" + str(temp) + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
+            elif temp == self.ultimo:
+                dot += "n_" + str(temp) + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
+            else:
+                dot += "n_" + str(temp) + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
+            
+            if temp.anterior != None:
+                dot += "\"" + str(temp) + "\" -> \"" + str(temp.anterior) + "\"\n"
+            elif temp.siguiente != None:
+                dot += "\"" + str(temp) + "\" -> \"" + str(temp.siguiente) + "\"\n"
+            temp = temp.siguiente
