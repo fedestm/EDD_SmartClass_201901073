@@ -30,3 +30,11 @@ class ListaDoble_Tareas:
                 print(temp.materia, end = "")
             else:
                 print(temp.materia, end=" <-> ")
+    
+    def cantidad_tareas(self):
+        temp = self.primero
+        cont = 0
+        while temp != None:
+            cont += 1
+            temp = temp.siguiente
+        return cont
