@@ -24,3 +24,14 @@ class Matriz:
         
         nodo_cabecera_x.lista_interna.insertar_posx(x, y, cantidad)
         nodo_cabecera_y.lista_interna.insertar_posy(x, y, cantidad)
+
+    def graficar(self):
+        dot = ""
+        file = open("matriz_dispersa.dot","w")
+        dot += "digraph G{\n rankdir = TB\n"
+        dot += "node[shape = box,width=0.7,height=0.7,fillcolor=\"azure2\" color=\"white\" style=\"filled\"];\n"
+        dot += "edge[style = \"bold\"];\n"
+        dot += "node[label = \"Mes: 5\" fillcolor=\" darkolivegreen1\" pos = \"-1,1!\"]principal;\n"
+        dot += "\n}\n"
+        file.write(dot)
+        file.close()
