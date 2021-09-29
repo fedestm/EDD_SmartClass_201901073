@@ -1,4 +1,4 @@
-from lista_interna import Lista_Interna
+from Matriz_Dispersa_Tareas.lista_interna import Lista_Interna
 
 class NodoCabeceras:
     def __init__(self, posicion):

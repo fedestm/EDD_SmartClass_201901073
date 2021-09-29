@@ -1,4 +1,4 @@
-from nodo_interno import NodoInterno
+from Matriz_Dispersa_Tareas.nodo_interno import NodoInterno
 
 class Lista_Interna:
     def __init__(self):

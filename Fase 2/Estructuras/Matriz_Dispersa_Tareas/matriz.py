@@ -1,5 +1,5 @@
-from lista_cabeceras import ListaCabeceras
-from nodo_cabeceras import NodoCabeceras
+from Matriz_Dispersa_Tareas.lista_cabeceras import ListaCabeceras
+from Matriz_Dispersa_Tareas.nodo_cabeceras import NodoCabeceras
 import os
 
 class Matriz:

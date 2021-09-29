@@ -20,3 +20,14 @@ class ListaSimple:
         while temp!= None:
             print(temp.semestre + " -> ")
             temp = temp.siguiente
+    
+    def buscar(self, semestre):
+        if self.lista_vacia():
+            print("Lista Vacia")
+        else:
+            temp = self.primero
+            while temp != None:
+                if temp.semestre == semestre:
+                    return temp
+                else:
+                    temp = temp.siguiente

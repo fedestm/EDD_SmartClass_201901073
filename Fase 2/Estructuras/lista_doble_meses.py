@@ -1,4 +1,5 @@
 from nodo_doble_meses import NodoDoble_Meses
+from Matriz_Dispersa_Tareas.matriz import Matriz
 
 class ListaDoble_Meses:
     def __init__(self):
