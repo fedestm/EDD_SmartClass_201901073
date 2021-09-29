@@ -73,3 +73,11 @@ class Matriz:
         file.close()
         os.system("neato -Tsvg matriz_dispersa.dot -o matriz_dispersa.svg")
         os.startfile("matriz_dispersa.svg")
+    
+    def insertar_tareas(self, x, y, carnet, nombre, desc, materia, fecha, hora, estado):
+        temp = self.cabeceras_x.primero
+        while temp != None:
+            temp2 = temp.lista_interna
+            temp2.insertar_tareas(x, y, carnet, nombre, desc, materia, fecha, hora, estado)
+            temp = temp.siguiente
+    
