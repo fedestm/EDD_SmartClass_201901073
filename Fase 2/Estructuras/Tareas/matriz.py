@@ -81,3 +81,9 @@ class Matriz:
             temp2.insertar_tareas(x, y, carnet, nombre, desc, materia, fecha, hora, estado)
             temp = temp.siguiente
     
+    def graficar_tareas(self, x, y):
+        temp = self.cabeceras_x.primero
+        while temp != None:
+            temp2 = temp.lista_interna
+            temp2.graficar_lista_tareas(x, y)
+            temp = temp.siguiente
