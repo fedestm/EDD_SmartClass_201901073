@@ -55,6 +55,10 @@ class Matriz:
         for i in range(cont - 1):
             dot += "\nx"+str(i)+" -> x"+str(i+1)+";"
             dot += "\nx"+str(i+1)+" -> x"+str(i)+";"
+        
+        for i in range(cont2 - 1):
+            dot += "\ny"+str(i)+" -> y"+str(i+1)+";"
+            dot += "\ny"+str(i+1)+" -> y"+str(i)+";"
 
         file.write(dot)
         file.close()
