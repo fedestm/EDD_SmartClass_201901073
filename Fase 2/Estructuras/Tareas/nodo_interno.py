@@ -1,3 +1,5 @@
+from lista_doble_tareas import ListaDoble_Tareas
+
 class NodoInterno:
     def __init__(self, pos_x, pos_y, cantidad):
         self.anterior = None
@@ -7,3 +9,4 @@ class NodoInterno:
         self.arriba = None
         self.abajo = None
         self.cantidad = cantidad
+        self.lista_tareas = ListaDoble_Tareas()
