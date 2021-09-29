@@ -42,6 +42,15 @@ class Matriz:
             dot += "\n\tnode[label = \"X: %d\" fillcolor=\"#58D68D\" pos = \"%d,1!\" shape = box]x%d;" % (tempx.pos_x ,temp.pos_x, cont)
             cont += 1
             temp = temp.siguiente
+        
+        #Cabeceras en Y
+        temp_cy = self.cabeceras_y.primero
+        cont2 = 0
+        while temp_cy != None:
+            tempy = temp_cy.lista_interna.primero
+            dot += "\n\tnode[label = \"Y: %d\" fillcolor=\"#3498DB\" pos = \"-1,-%d!\" shape = box]y%d;" % (tempy.pos_y, tempy.pos_y, cont2)
+            cont2 += 1
+            temp_cy = temp_cy.siguiente
 
         file.write(dot)
         file.close()
