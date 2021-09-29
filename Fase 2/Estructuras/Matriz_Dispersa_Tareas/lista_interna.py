@@ -1,4 +1,5 @@
-from Matriz_Dispersa_Tareas.nodo_interno import NodoInterno
+from nodo_interno import NodoInterno
+from ..lista_doble_meses import ListaDoble_Meses
 
 class Lista_Interna:
     def __init__(self):
@@ -66,6 +67,15 @@ class Lista_Interna:
         else:
             #Si lista esta vacia se guarda el primer nodo
             self.primero = nuevo
+    
+    def buscar_cantidad(self, x, y):
+        temp = self.primero
+        while temp != None:
+            if temp.pos_x == x and temp.pos_y == y:
+                return temp
+            else:
+                temp = temp.sig
+        return None
     
     def graficar_internos(self):
         dot = ""
