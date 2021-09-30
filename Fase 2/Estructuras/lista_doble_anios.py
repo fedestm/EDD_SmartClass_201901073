@@ -7,8 +7,8 @@ class ListaDoble_Anios:
     def lista_vacia(self):
         return self.primero == None
     
-    def insertar(self, anio, semestre, meses):
-        nuevo = NodoDoble_Anios(None, None, anio, semestre, meses)
+    def insertar(self, anio):
+        nuevo = NodoDoble_Anios(None, None, anio)
         if self.lista_vacia():
             self.primero = self.ultimo = nuevo
         else:

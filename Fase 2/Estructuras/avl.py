@@ -165,10 +165,10 @@ class avl:
         if raiz_actual != None:
             return self.rec(raiz_actual, carnet)
     
-    def insertar_anio(self, carnet, anio, num_semestre, meses):
+    def insertar_anio(self, carnet, anio):
         temp = self.buscar(carnet)
         if temp != None:
-            temp.lista_anios.insertar(anio, num_semestre, meses)
+            temp.lista_anios.insertar(anio)
     
     #Operaciones de Cursos de Semestre
     def insertar_semestre(self, carnet, anio, semestre):

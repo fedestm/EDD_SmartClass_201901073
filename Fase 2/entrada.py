@@ -43,5 +43,3 @@ class CRUD:
             mes = int(fecha[1])
             anio = int(fecha[2])
             hora = i["Hora"].split(":")
-            
-
