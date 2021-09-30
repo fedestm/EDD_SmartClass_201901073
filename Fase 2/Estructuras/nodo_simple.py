@@ -1,4 +1,4 @@
-from ArbolB.ArbolB import ArbolB
+from ArbolB import ArbolB
 
 class Nodo_Simple:
     def __init__(self,siguiente, semestre, cursos):

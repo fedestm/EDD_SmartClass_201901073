@@ -1,4 +1,4 @@
-from ListaNodos import ListaNodos
+from .ListaNodos import ListaNodos
 
 class Pagina:
     def __init__(self):
