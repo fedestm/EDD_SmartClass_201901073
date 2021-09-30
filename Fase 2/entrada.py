@@ -10,3 +10,12 @@ class CRUD:
         data = entrada.read()
         entrada.close()
         analizar = parser.parse(data)
+
+        atrib = ""
+        t = ""
+        for i in analizar:
+            if i["type"] == "user":
+                atrib += str(i["atributos"])
+                t = atrib.replace("][",",").replace("}, {",",").replace("\"","")
+        #Se convierte string a json
+        estudiantes = eval(t)
