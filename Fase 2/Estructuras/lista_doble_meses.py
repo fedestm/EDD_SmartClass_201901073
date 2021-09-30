@@ -62,3 +62,9 @@ class ListaDoble_Meses:
         temp = self.buscar(mes)
         if temp != None:
             temp.lista_matrices.graficar()
+    
+    def graficar_tareas(self, mes, x, y):
+        temp = self.buscar(mes)
+        if temp != None:
+            temp.lista_matrices.graficar_tareas(x, y)
+
