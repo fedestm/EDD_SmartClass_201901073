@@ -50,3 +50,10 @@ class ListaDoble_Meses:
         temp = self.buscar(mes)
         if temp != None:
             temp.lista_matrices.insertar(dia, hora, "")
+    
+    # x -> Dia
+    # y -> Hora
+    def insertar_tareas(self, mes, x, y, carnet, nombre, desc, materia, fecha, hora, estado):
+        temp = self.buscar(mes)
+        if temp != None:
+            temp.lista_matrices.insertar_tareas(x, y, carnet, nombre, desc, materia, fecha, hora, estado)
