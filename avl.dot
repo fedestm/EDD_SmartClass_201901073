@@ -1,0 +1,32 @@
+digraph avl {
+node[shape=plaintext];
+rankdir=TR;
+
+n202022412[label= <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR><TD BGCOLOR="orange" PORT="C0">  I  <br/>  Z  <br/>  Q  </TD>
+	<TD PORT="value">Carnet: 202022412<br/>DPI: Federico<br/>Nombre: 3035992350110<br/>Carrera: Ing  <br/>Password: 12345<br/>Creditos: 150<br/>Edad: 32</TD>
+	<TD BGCOLOR="#33A8FF" PORT="C1">  D  <br/>  E  <br/>  R  </TD></TR>
+</TABLE>>];
+
+n201901423[label= <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR><TD BGCOLOR="orange" PORT="C0">  I  <br/>  Z  <br/>  Q  </TD>
+	<TD PORT="value">Carnet: 201901423<br/>DPI: Federico<br/>Nombre: 3035992350110<br/>Carrera: Ing  <br/>Password: 12345<br/>Creditos: 150<br/>Edad: 32</TD>
+	<TD BGCOLOR="#33A8FF" PORT="C1">  D  <br/>  E  <br/>  R  </TD></TR>
+</TABLE>>];
+
+n202122412[label= <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR><TD BGCOLOR="orange" PORT="C0">  I  <br/>  Z  <br/>  Q  </TD>
+	<TD PORT="value">Carnet: 202122412<br/>DPI: Federico<br/>Nombre: 3035992350110<br/>Carrera: Ing  <br/>Password: 12345<br/>Creditos: 150<br/>Edad: 32</TD>
+	<TD BGCOLOR="#33A8FF" PORT="C1">  D  <br/>  E  <br/>  R  </TD></TR>
+</TABLE>>];
+
+n202222412[label= <<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0">
+	<TR><TD BGCOLOR="orange" PORT="C0">  I  <br/>  Z  <br/>  Q  </TD>
+	<TD PORT="value">Carnet: 202222412<br/>DPI: Federico<br/>Nombre: 3035992350110<br/>Carrera: Ing  <br/>Password: 12345<br/>Creditos: 150<br/>Edad: 32</TD>
+	<TD BGCOLOR="#33A8FF" PORT="C1">  D  <br/>  E  <br/>  R  </TD></TR>
+</TABLE>>];
+
+n202022412:C0 -> n201901423:value
+n202022412:C1 -> n202122412:value
+n202122412:C1 -> n202222412:value
+}
