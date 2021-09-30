@@ -175,4 +175,9 @@ class avl:
         if temp != None:
             temp.lista_anios.insertar_meses(anio, mes)
     
+    def insertar_mes_matriz(self, carnet, anio, mes, dia, hora):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.insertar_mes_matriz(anio, mes, dia, hora)
+    
 
