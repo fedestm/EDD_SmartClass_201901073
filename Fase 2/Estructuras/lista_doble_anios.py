@@ -58,6 +58,11 @@ class ListaDoble_Anios:
         if temp != None:
             temp.lista_semestres.insertar_cursos(semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
     
+    def graficar_arbolB(self, anio, semestre):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_semestres.graficar_arbolB(semestre)
+    
     def recorrer_semestre(self, anio):
         temp = self.buscar_anio(anio)
         if temp != None:
