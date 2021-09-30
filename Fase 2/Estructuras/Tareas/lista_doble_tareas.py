@@ -48,20 +48,21 @@ class ListaDoble_Tareas:
         dot += "node [style=filled];\n"
         dot += "label=\"Lista Doblemente Enlazada\""
         dot += "color=black\n"
+        cont = 0
 
         while temp != None:
             if temp == self.primero:
-                dot += "\"" + str(temp) + "\"" + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
+                dot += "n_" + str(cont) + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
             elif temp == self.ultimo:
-                dot += "\"" + str(temp) + "\"" + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
+                dot += "n_" + str(cont) + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
             else:
-                dot += "\"" + str(temp) + "\"" + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
-            
-            if temp.anterior != None:
-                dot += "\"" + str(temp) + "\" -> \"" + str(temp.anterior) + "\"\n"
-            elif temp.siguiente != None:
-                dot += "\"" + str(temp) + "\" -> \"" + str(temp.siguiente) + "\"\n"
+                dot += "n_" + str(cont) + "[label=\"Carnet: " + temp.carnet + "\\nNombre: " + temp.nombre + "\\nDescripcion: " + temp.desc + "\\nMateria: " + temp.materia + "\\nFecha: " + temp.fecha + "\\nHora: " + temp.hora + "\\nEstado: " + temp.estado + "\", shape = box, color = \"#3396FF\"];\n"
+            cont += 1
             temp = temp.siguiente
+        for i in range(cont - 1):
+            dot += "n_" + str(i) + " -> " + "n_" + str(i+1) + ";\n"
+            dot += "n_" + str(i+1) + "-> " + "n_" + str(i) + ";\n"
+
         dot += "\n}\n"
         file.write(dot)
         file.close()
