@@ -169,6 +169,12 @@ class avl:
         temp = self.buscar(carnet)
         if temp != None:
             temp.lista_anios.insertar(anio, num_semestre, meses)
+    
+    #Operaciones de Cursos de Semestre
+    def insertar_semestre(self, carnet, anio, semestre):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.insertar_semestre(anio, semestre)
 
     
     #Operaciones de Recordatorio de Tareas
