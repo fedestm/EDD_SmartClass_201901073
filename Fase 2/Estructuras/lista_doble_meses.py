@@ -44,3 +44,9 @@ class ListaDoble_Meses:
                 else:
                     temp = temp.siguiente
             return None
+
+    #Se inserta mes, dia y hora en matriz dispersa
+    def insertar_mes(self, mes, dia, hora):
+        temp = self.buscar(mes)
+        if temp != None:
+            temp.lista_matrices.insertar(dia, hora, "")
