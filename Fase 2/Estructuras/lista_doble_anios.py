@@ -84,5 +84,3 @@ class ListaDoble_Anios:
         temp = self.buscar_anio(anio)
         if temp != None:
             temp.lista_meses.graficar_tareas(mes, x, y)
-
-    
