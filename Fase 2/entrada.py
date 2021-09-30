@@ -50,4 +50,8 @@ class CRUD:
     
     def graficar_avl(self):
         a.graficar()
-
+    
+    def graficar_matriz(self, carnet, anio, mes):
+        a.graficar_matriz(carnet, anio, mes)
+    
+    
