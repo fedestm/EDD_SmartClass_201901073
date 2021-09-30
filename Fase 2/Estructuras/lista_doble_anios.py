@@ -60,10 +60,10 @@ class ListaDoble_Anios:
             print("No se encontro")
     
     #Funciones para enlazar lista doble de tareas
-    def insertar_meses(self, anio, mes, tareas):
+    def insertar_meses(self, anio, mes):
         temp = self.buscar_anio(anio)
         if temp != None:
-            temp.lista_meses.insertar(mes, tareas)
+            temp.lista_meses.insertar(mes)
     
     def recorrer_meses(self, anio):
         temp = self.buscar_anio(anio)
