@@ -19,7 +19,12 @@ def carga_masiva():
                     "Estado": 200,
                     "Mensaje": "Se insertaron los estudiantes"
                 }
-                
+            elif tipo == "recordatorio":
+                crud.cargar_recordatorios(path)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron las tareas"
+                }
         except:
             return {
                 "Estado": 404,
