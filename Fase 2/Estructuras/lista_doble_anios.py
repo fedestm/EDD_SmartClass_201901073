@@ -75,3 +75,9 @@ class ListaDoble_Anios:
         if temp != None:
             temp.lista_meses.insertar_tareas(mes, x, y, carnet, nombre, desc, materia, fecha, hora, estado)
     
+    def graficar_matriz(self, anio, mes):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_meses.graficar_matriz(mes)
+    
+    
