@@ -1,6 +1,9 @@
 from flask import Flask, make_response, jsonify, request
+from entrada import CRUD
+crud = CRUD()
 
 app = Flask(__name__)
+
 
 @app.route("/carga", methods = ["POST"])
 def carga_masiva():
