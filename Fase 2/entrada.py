@@ -28,5 +28,12 @@ class CRUD:
         data = entrada.read()
         entrada.close()
         analizar = parser.parse(data)
-        
+
+        atrib = ""
+        t = ""
+        for i in analizar:
+            if i["type"] == "task":
+                atrib += str(i["atributos"])
+                t = atrib.replace("][",",").replace("}, {",",").replace("\"","")
+        tareas = eval(t)
 
