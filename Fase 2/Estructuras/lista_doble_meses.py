@@ -57,3 +57,8 @@ class ListaDoble_Meses:
         temp = self.buscar(mes)
         if temp != None:
             temp.lista_matrices.insertar_tareas(x, y, carnet, nombre, desc, materia, fecha, hora, estado)
+    
+    def graficar_matriz(self, mes):
+        temp = self.buscar(mes)
+        if temp != None:
+            temp.lista_matrices.graficar()
