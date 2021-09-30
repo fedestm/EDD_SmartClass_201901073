@@ -80,4 +80,9 @@ class ListaDoble_Anios:
         if temp != None:
             temp.lista_meses.graficar_matriz(mes)
     
+    def graficar_lista_tareas(self, anio, mes, x, y):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_meses.graficar_tareas(mes, x, y)
+
     
