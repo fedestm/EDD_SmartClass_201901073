@@ -169,7 +169,10 @@ class avl:
         if temp != None:
             temp.lista_anios.insertar(anio, num_semestre, meses)
     
-    def mostrar_anio(self, carnet):
+    #Operaciones de Recordatorio de Tareas
+    def insertar_meses(self, carnet, anio, mes):
         temp = self.buscar(carnet)
         if temp != None:
-            temp.lista_anios.recorrer()
+            temp.lista_anios.insertar_meses(anio, mes)
+    
+
