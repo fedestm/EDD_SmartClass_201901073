@@ -9,6 +9,9 @@ app = Flask(__name__)
 def carga_masiva():
     if request.method == "POST":
         carga = request.get_json()
+        tipo = carga["tipo"]
+        path = carga["path"]
+        
 
 @app.route("/")
 def index():
