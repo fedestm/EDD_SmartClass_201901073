@@ -189,4 +189,9 @@ class avl:
         temp = self.buscar(carnet)
         if temp != None:
             temp.lista_anios.graficar_matriz(self, anio, mes)
+    
+    def graficar_lista_tareas(self, carnet, anio, mes, dia, hora):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.graficar_lista_tareas(anio, mes, dia, hora)
 
