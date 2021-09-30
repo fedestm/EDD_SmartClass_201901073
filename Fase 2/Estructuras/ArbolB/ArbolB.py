@@ -1,5 +1,6 @@
 from .nodo_B import NodoB
 from .Pagina import Pagina
+import os
 
 class ArbolB:
     def __init__(self):
@@ -91,6 +92,8 @@ class ArbolB:
         dot += "\n}\n"
         file.write(dot)
         file.close()
+        os.system("dot -Tsvg arbolB.dot -o arbolB.svg")
+        os.startfile("arbolB.svg")
     
     def graficar_nodos(self, raiz_actual):
         dot = ""
