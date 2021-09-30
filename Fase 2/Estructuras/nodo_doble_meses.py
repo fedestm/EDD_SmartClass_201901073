@@ -6,3 +6,4 @@ class NodoDoble_Meses:
         self.tareas = tareas
         self.anterior = anterior
         self.siguiente = siguiente
+        self.lista_matrices = Matriz()
