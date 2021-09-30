@@ -47,3 +47,7 @@ class CRUD:
             a.insertar_meses(i["Carnet"], str(anio), str(mes))
             a.insertar_mes_matriz(i["Carnet"], str(anio), str(mes), int(dia), int(hora[0]))
             a.insertar_tareas_matriz(i["Carnet"], str(anio), str(mes), int(dia), int(hora[0]), i["Carnet"], i["Nombre"], i["Descripcion"], i["Materia"], i["Fecha"], i["Hora"], i["Estado"])
+    
+    def graficar_avl(self):
+        a.graficar()
+
