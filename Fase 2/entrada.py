@@ -22,3 +22,11 @@ class CRUD:
 
         for i in estudiantes:
             a.insertar(i["Carnet"], i["DPI"], i["Nombre"], i["Carrera"], i["Password"], i["Creditos"], i["Edad"])
+    
+    def cargar_recordatorios(self, ruta):
+        entrada = open(ruta)
+        data = entrada.read()
+        entrada.close()
+        analizar = parser.parse(data)
+        
+
