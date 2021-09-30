@@ -31,3 +31,4 @@ class ListaSimple:
                     return temp
                 else:
                     temp = temp.siguiente
+            return None
