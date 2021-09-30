@@ -7,7 +7,7 @@ class Matriz:
         self.cabeceras_x = ListaCabeceras()
         self.cabeceras_y = ListaCabeceras()
     
-    def insertar(self, x, y, cantidad):
+    def insertar(self, x, y):
         nodo_cabecera_x = None
         nodo_cabecera_y = None
 
@@ -23,8 +23,8 @@ class Matriz:
             nodo_cabecera_y = NodoCabeceras(y)
             self.cabeceras_y.insertar_cabecera(nodo_cabecera_y)
         
-        nodo_cabecera_x.lista_interna.insertar_posx(x, y, cantidad)
-        nodo_cabecera_y.lista_interna.insertar_posy(x, y, cantidad)
+        nodo_cabecera_x.lista_interna.insertar_posx(x, y)
+        nodo_cabecera_y.lista_interna.insertar_posy(x, y)
 
     def graficar(self):
         dot = ""

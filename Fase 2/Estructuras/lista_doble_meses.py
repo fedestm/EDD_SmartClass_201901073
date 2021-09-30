@@ -49,7 +49,7 @@ class ListaDoble_Meses:
     def insertar_mes(self, mes, dia, hora):
         temp = self.buscar(mes)
         if temp != None:
-            temp.lista_matrices.insertar(dia, hora, "")
+            temp.lista_matrices.insertar(dia, hora)
     
     # x -> Dia
     # y -> Hora

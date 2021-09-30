@@ -5,8 +5,8 @@ class Lista_Interna:
     def __init__(self):
         self.primero = None
     
-    def insertar_posx(self, x, y, cantidad):
-        nuevo = NodoInterno(x, y, cantidad)
+    def insertar_posx(self, x, y):
+        nuevo = NodoInterno(x, y)
 
         if self.primero:
             if nuevo.pos_y < self.primero.pos_y:
@@ -36,8 +36,8 @@ class Lista_Interna:
             #Si la lista esta vacia se guarda el primer nodo
             self.primero = nuevo
     
-    def insertar_posy(self, x, y, cantidad):
-        nuevo = NodoInterno(x, y, cantidad)
+    def insertar_posy(self, x, y):
+        nuevo = NodoInterno(x, y)
 
         if self.primero:
             if nuevo.pos_x < self.primero.pos_x:
@@ -74,7 +74,7 @@ class Lista_Interna:
             if temp.pos_x == x and temp.pos_y == y:
                 return temp
             else:
-                temp = temp.sig
+                temp = temp.siguiente
         return None
     
     def insertar_tareas(self, x, y, carnet, nombre, desc, materia, fecha, hora, estado):
