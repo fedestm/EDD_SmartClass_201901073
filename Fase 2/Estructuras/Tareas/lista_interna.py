@@ -1,5 +1,5 @@
-from nodo_interno import NodoInterno
-from lista_doble_tareas import ListaDoble_Tareas
+from .nodo_interno import NodoInterno
+from .lista_doble_tareas import ListaDoble_Tareas
 
 class Lista_Interna:
     def __init__(self):

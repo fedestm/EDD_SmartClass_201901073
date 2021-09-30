@@ -1,4 +1,4 @@
-from lista_doble_tareas import ListaDoble_Tareas
+from .lista_doble_tareas import ListaDoble_Tareas
 
 class NodoInterno:
     def __init__(self, pos_x, pos_y, cantidad):

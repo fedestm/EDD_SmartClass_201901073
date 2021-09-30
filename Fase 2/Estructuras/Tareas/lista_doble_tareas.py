@@ -1,4 +1,4 @@
-from nodo_doble_tareas import NodoDoble_Tareas
+from .nodo_doble_tareas import NodoDoble_Tareas
 
 class ListaDoble_Tareas:
     def __init__(self):
