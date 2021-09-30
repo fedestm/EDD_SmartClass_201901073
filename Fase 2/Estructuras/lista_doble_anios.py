@@ -47,10 +47,16 @@ class ListaDoble_Anios:
             print("No se encontro el año")
             return None
     
+    #Funciones para enlazar lista simple de cursos asignados en el semestre
     def insertar_semestre(self, anio, num_semestres):
         temp = self.buscar_anio(anio)
         if temp != None:
             temp.lista_semestres.insertar(num_semestres)
+    
+    def insertar_cursos(self, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_semestres.insertar_cursos(semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
     
     def recorrer_semestre(self, anio):
         temp = self.buscar_anio(anio)
