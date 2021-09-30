@@ -37,3 +37,8 @@ class ListaSimple:
         temp = self.buscar(semestre)
         if temp != None:
             temp.arbol_cursos.insertar_nodo(codigo, nombre, creditos, prerequisitos, obligatorio)
+    
+    def graficar_arbolB(self, semestre):
+        temp = self.buscar(semestre)
+        if temp != None:
+            temp.arbol_cursos.graficar()
