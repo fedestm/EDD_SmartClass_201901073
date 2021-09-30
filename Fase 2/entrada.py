@@ -19,3 +19,6 @@ class CRUD:
                 t = atrib.replace("][",",").replace("}, {",",").replace("\"","")
         #Se convierte string a json
         estudiantes = eval(t)
+
+        for i in estudiantes:
+            a.insertar(i["Carnet"], i["DPI"], i["Nombre"], i["Carrera"], i["Password"], i["Creditos"], i["Edad"])
