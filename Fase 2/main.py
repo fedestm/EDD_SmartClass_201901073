@@ -25,6 +25,12 @@ def carga_masiva():
                     "Estado": 200,
                     "Mensaje": "Se insertaron las tareas"
                 }
+            elif tipo == "curso":
+                crud.cursos_estudiantes(path)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron cursos de estudiante"
+                }
         except:
             return {
                 "Estado": 404,
