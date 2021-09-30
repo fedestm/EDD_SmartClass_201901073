@@ -1,4 +1,4 @@
-from nodo_avl import nodo_avl
+from .nodo_avl import nodo_avl
 import os
 
 class avl:

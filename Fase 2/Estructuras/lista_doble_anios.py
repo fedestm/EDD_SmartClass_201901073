@@ -1,4 +1,4 @@
-from nodo_doble import NodoDoble_Anios
+from .nodo_doble import NodoDoble_Anios
 
 class ListaDoble_Anios:
     def __init__(self):

@@ -1,4 +1,4 @@
-from lista_doble_anios import ListaDoble_Anios
+from .lista_doble_anios import ListaDoble_Anios
 
 class nodo_avl:
     def __init__(self,carnet,dpi,nombre,carrera,password,creditos,edad):

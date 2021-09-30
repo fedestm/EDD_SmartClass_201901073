@@ -1,4 +1,4 @@
-from Tareas import Matriz
+from .Tareas import Matriz
 
 class NodoDoble_Meses:
     def __init__(self, anterior, siguiente, mes):

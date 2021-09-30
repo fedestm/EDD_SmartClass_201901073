@@ -1,4 +1,4 @@
-from nodo_doble_meses import NodoDoble_Meses
+from .nodo_doble_meses import NodoDoble_Meses
 
 class ListaDoble_Meses:
     def __init__(self):
