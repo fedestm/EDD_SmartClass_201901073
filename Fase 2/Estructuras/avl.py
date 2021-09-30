@@ -139,25 +139,26 @@ class avl:
     
     #Recorrer arbol para buscar carnet
     def rec(self, raiz_actual, carnet):
-        #Se recorre raiz por la izquierda
-        if self.rec(raiz_actual.izquierda, carnet):
-            #Se verifica si el carnet se encuentra en el nodo izquierdo
-            if raiz_actual.izquierda.carnet == carnet:
-                return raiz_actual.izquierda
+        if raiz_actual:
+            #Se recorre raiz por la izquierda
+            if self.rec(raiz_actual.izquierda, carnet):
+                #Se verifica si el carnet se encuentra en el nodo izquierdo
+                if raiz_actual.izquierda.carnet == carnet:
+                    return raiz_actual.izquierda
+                else:
+                    #Si no se encuentra se busca el siguiente
+                    return self.rec(raiz_actual.izquierda, carnet)
+            elif self.rec(raiz_actual.derecha, carnet):
+                #Se verifica si el carnet se encuentra en el nodo derecho
+                if raiz_actual.derecha.carnet == carnet:
+                    return raiz_actual.derecha
+                else:
+                    #Se busca en el siguiente
+                    return self.rec(raiz_actual.derecha, carnet)
             else:
-                #Si no se encuentra se busca el siguiente
-                return self.rec(raiz_actual.izquierda, carnet)
-        elif self.rec(raiz_actual.derecha, carnet):
-            #Se verifica si el carnet se encuentra en el nodo derecho
-            if raiz_actual.derecha.carnet == carnet:
-                return raiz_actual.derecha
-            else:
-                #Se busca en el siguiente
-                return self.rec(raiz_actual.derecha, carnet)
-        else:
-            #Si el carnet no esta en derecha o izquierda, se encuentra en la primera raiz
-            if raiz_actual.carnet == carnet:
-                return raiz_actual
+                #Si el carnet no esta en derecha o izquierda, se encuentra en la primera raiz
+                if raiz_actual.carnet == carnet:
+                    return raiz_actual
     
     def buscar(self, carnet):
         raiz_actual = self.raiz
@@ -168,6 +169,7 @@ class avl:
         temp = self.buscar(carnet)
         if temp != None:
             temp.lista_anios.insertar(anio, num_semestre, meses)
+
     
     #Operaciones de Recordatorio de Tareas
     def insertar_meses(self, carnet, anio, mes):
@@ -188,10 +190,9 @@ class avl:
     def graficar_matriz(self, carnet, anio, mes):
         temp = self.buscar(carnet)
         if temp != None:
-            temp.lista_anios.graficar_matriz(self, anio, mes)
+            temp.lista_anios.graficar_matriz(anio, mes)
     
     def graficar_lista_tareas(self, carnet, anio, mes, dia, hora):
         temp = self.buscar(carnet)
         if temp != None:
             temp.lista_anios.graficar_lista_tareas(anio, mes, dia, hora)
-
