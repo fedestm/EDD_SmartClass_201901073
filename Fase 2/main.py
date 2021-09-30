@@ -15,10 +15,11 @@ def carga_masiva():
         try:
             if tipo == "estudiante":
                 crud.cargar_estudiantes(path)
-            return {
-                "Estado": 200,
-                "Mensaje": "Se insertaron los estudiantes"
-            }
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron los estudiantes"
+                }
+                
         except:
             return {
                 "Estado": 404,
