@@ -65,9 +65,8 @@ class ListaDoble_Anios:
         if temp != None:
             temp.lista_meses.insertar(mes)
     
-    def recorrer_meses(self, anio):
+    def insertar_mes_matriz(self, anio, mes, x, y):
         temp = self.buscar_anio(anio)
         if temp != None:
-            temp.lista_meses.recorrer()
-        else:
-            print("No se encontro")
+            temp.lista_meses.insertar_mes(mes, x, y)
+    
