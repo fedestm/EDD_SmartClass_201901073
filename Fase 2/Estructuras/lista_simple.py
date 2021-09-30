@@ -32,3 +32,8 @@ class ListaSimple:
                 else:
                     temp = temp.siguiente
             return None
+    
+    def insertar_cursos(self, semestre, codigo, nombre, creditos, prerequisitos, obligatorio):
+        temp = self.buscar(semestre)
+        if temp != None:
+            temp.arbol_cursos.insertar_nodo(codigo, nombre, creditos, prerequisitos, obligatorio)
