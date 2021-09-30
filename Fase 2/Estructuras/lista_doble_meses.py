@@ -32,3 +32,15 @@ class ListaDoble_Meses:
             else:
                 print(temp.mes, end=" <-> ")
             temp = temp.siguiente
+    
+    def buscar(self, mes):
+        if self.lista_vacia():
+            print("Lista Vacia")
+        else:
+            temp = self.primero
+            while temp != None:
+                if temp.mes == mes:
+                    return temp
+                else:
+                    temp = temp.siguiente
+            return None
