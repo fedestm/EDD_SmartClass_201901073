@@ -37,3 +37,11 @@ class CRUD:
                 t = atrib.replace("][",",").replace("}, {",",").replace("\"","")
         tareas = eval(t)
 
+        for i in tareas:
+            fecha = i["Fecha"].split("/")
+            dia = int(fecha[0])
+            mes = int(fecha[1])
+            anio = int(fecha[2])
+            hora = i["Hora"].split(":")
+            
+
