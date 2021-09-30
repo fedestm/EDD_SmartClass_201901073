@@ -47,10 +47,10 @@ class ListaDoble_Anios:
             print("No se encontro el año")
             return None
     
-    def insertar_semestre(self, anio, num_semestres, cursos):
+    def insertar_semestre(self, anio, num_semestres):
         temp = self.buscar_anio(anio)
         if temp != None:
-            temp.lista_semestres.insertar(num_semestres, cursos)
+            temp.lista_semestres.insertar(num_semestres)
     
     def recorrer_semestre(self, anio):
         temp = self.buscar_anio(anio)
