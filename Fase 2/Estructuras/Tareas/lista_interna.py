@@ -119,4 +119,25 @@ class Lista_Interna:
                     temp = temp.siguiente
         else:
             print("No hay datos")
-                
+    
+    def eliminar_posy(self, x):
+        if self.primero:
+            temp = self.primero
+            while temp != None:
+                if temp.pos_x == x:
+                    if temp == self.primero:
+                        if temp.abajo:
+                            temp.abajo.arriba = None
+                        self.primero = temp.abajo
+                        break
+                    else:
+                        temp.arriba.abajo = temp.abajo
+                        if temp.abajo:
+                            temp.abajo.arriba = temp.arriba
+                        break
+                else:
+                    temp = temp.abajo
+        else:
+            print("No hay datos")
+
+
