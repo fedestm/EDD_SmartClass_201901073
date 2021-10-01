@@ -50,6 +50,11 @@ def reportes():
                     "Estado": 200,
                     "Mensaje": "Se cargo arbol avl"
                 }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al graficar"
+            }
 
 @app.route("/")
 def index():
