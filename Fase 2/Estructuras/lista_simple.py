@@ -1,4 +1,4 @@
-from nodo_simple import Nodo_Simple
+from .nodo_simple import Nodo_Simple
 
 class ListaSimple:
     def __init__(self):
