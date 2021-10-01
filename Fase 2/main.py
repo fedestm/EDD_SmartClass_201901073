@@ -59,6 +59,15 @@ def reportes():
                     "Estado": 200,
                     "Mensaje": "Se grafico matriz dispersa"
                 }
+            elif tipo == 4:
+                carnet = str(reportes["carnet"])
+                anio = str(reportes["anio"])
+                semestre = str(reportes["semestre"])
+                crud.graficar_arbolB(carnet, anio, semestre)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se grafico Arbol B"
+                }
         except:
             return {
                 "Estado": 404,
