@@ -73,6 +73,18 @@ class CRUD:
     
     def graficar_lista_tareas(self, carnet, anio, mes, dia, hora):
         a.graficar_lista_tareas(carnet, anio, mes, dia, hora)
+    
+    def carga_cursosPensum(self, ruta):
+        file = open(ruta, "r")
+        datos = json.load(file)
+
+        for i in datos["Cursos"]:
+            pensum.insertar("pensum")
+            pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
+    
+    
+
+
 
 
 
