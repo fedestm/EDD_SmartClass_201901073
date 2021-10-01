@@ -84,10 +84,11 @@ class CRUD:
     
     def graficar_arbolPensum(self):
         pensum.graficar_arbolPensum("pensum")
-
-
-
-
-
-
-
+    
+    def eliminar_recordatorio(self, carnet, fecha, horas):
+        fechas = fecha.split("/")
+        anio = str(int(fechas[2]))
+        mes = str(int(fechas[1]))
+        dia = int(fechas[0])
+        hora = horas.split(":")
+        a.eliminar_posicion(carnet, anio, mes, dia, hora)
