@@ -87,3 +87,18 @@ class Matriz:
             temp2 = temp.lista_interna
             temp2.graficar_lista_tareas(x, y)
             temp = temp.siguiente
+    
+    def eliminar(self, x, y):
+        cabecerax = self.cabeceras_x.buscar_cabecera(x)
+        cabeceray = self.cabeceras_y.buscar_cabecera(y)
+
+        if cabecerax != None and cabeceray != None:
+            cabecerax.lista_interna.eliminar_posx(y)
+            if cabecerax.lista_interna.primero == None:
+                self.cabeceras_x.eliminar_cabecera(cabecerax.posicion)
+            
+            cabeceray.lista_interna.eliminar_posy(x)
+            if cabeceray.lista_interna.primero == None:
+                self.cabeceras_y.eliminar_cabecera(cabeceray.posicion)
+        else:
+            print("No se encuentra dicha posicion")
