@@ -38,3 +38,7 @@ class ListaSimple_Pensum:
         if temp != None:
             temp.arbol_cursos.insertar_nodo(cursos, codigo, nombre, creditos, prerequisitos, obligatorio)
 
+    def graficar_arbolPensum(self, tipo):
+        temp = self.buscar(tipo)
+        if temp != None:
+            temp.arbol_cursos.graficar()
