@@ -76,6 +76,12 @@ def reportes():
                     "Estado": 200,
                     "Mensaje": "Se grafico lista de tareas"
                 }
+            elif tipo == 3:
+                crud.graficar_arbolPensum()
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se grafico Arbol B de pensum de cursos"
+                }
             elif tipo == 4:
                 carnet = str(reportes["carnet"])
                 anio = str(reportes["año"])
