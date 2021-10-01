@@ -37,6 +37,20 @@ def carga_masiva():
                 "Mensaje": "Error al insertar"
             }
 
+@app.route("/reporte", methods = ["POST"])
+def reportes():
+    if request.method == "POST":
+        reportes = request.get_json()
+        tipo = reportes["tipo"]
+
+        try:
+            if tipo == 0:
+                crud.graficar_avl()
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se cargo arbol avl"
+                }
+
 @app.route("/")
 def index():
     return "Ruta principal"
