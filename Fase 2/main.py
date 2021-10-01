@@ -115,6 +115,16 @@ def recordatorios():
                 "Estado": 404,
                 "Mensaje": "Error al eliminar"
             }
+    elif request.method == "POST":
+        try:
+            recordatorios = request.get_json()
+            carnet = recordatorios["Carnet"]
+            nombre = recordatorios["Nombre"]
+            desc = recordatorios["Descripcion"]
+            materia = recordatorios["Materia"]
+            fecha = recordatorios["Fecha"]
+            hora = recordatorios["Hora"]
+            estado = recordatorios["Estado"]
 
 @app.route("/")
 def index():
