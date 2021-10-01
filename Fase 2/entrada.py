@@ -1,8 +1,10 @@
 from Analizador import parser
 from Estructuras import avl
+from Estructuras import ListaSimple_Pensum
 import json
 
 a = avl()
+pensum = ListaSimple_Pensum()
 
 class CRUD:
     def cargar_estudiantes(self, ruta):
