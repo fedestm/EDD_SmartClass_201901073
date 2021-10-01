@@ -6,3 +6,4 @@ from .nodo_avl import nodo_avl
 from .nodo_doble_meses import NodoDoble_Meses
 from .nodo_doble import NodoDoble_Anios
 from .nodo_simple import Nodo_Simple
+from .lista_pensum import NodoSimple_ArbolB
