@@ -5,3 +5,9 @@ class NodoSimple_ArbolB:
         self.siguiente = siguiente
         self.cursos = cursos
         self.arbol_pensum = ArbolB()
+
+class ListaSimple_Pensum:
+    def __init__(self):
+        self.primero = self.ultimo = None
+    
+    
