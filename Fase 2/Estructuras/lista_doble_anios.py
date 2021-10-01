@@ -95,3 +95,8 @@ class ListaDoble_Anios:
         temp = self.buscar_anio(anio)
         if temp != None:
             temp.lista_meses.graficar_tareas(mes, x, y)
+    
+    def eliminar_posicion(self, anio, mes, x, y):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_meses.eliminar_posicion(mes, x, y)
