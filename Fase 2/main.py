@@ -59,6 +59,17 @@ def reportes():
                     "Estado": 200,
                     "Mensaje": "Se grafico matriz dispersa"
                 }
+            elif tipo == 2:
+                carnet = str(reportes["carnet"])
+                anio = str(reportes["año"])
+                mes = str(reportes["mes"])
+                dia = int(reportes["dia"])
+                hora = int(reportes["hora"])
+                crud.graficar_lista_tareas(carnet, anio, mes, dia, hora)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se grafico lista de tareas"
+                }
             elif tipo == 4:
                 carnet = str(reportes["carnet"])
                 anio = str(reportes["anio"])
