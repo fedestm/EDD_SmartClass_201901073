@@ -97,6 +97,8 @@ def reportes():
                 "Mensaje": "Error al graficar"
             }
 
+@app.route("/recordatorios", methods = ["POST", "GET", "UPDATE", "DELETE"])
+
 @app.route("/")
 def index():
     return "Ruta principal"
