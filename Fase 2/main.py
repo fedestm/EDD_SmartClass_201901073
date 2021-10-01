@@ -125,6 +125,15 @@ def recordatorios():
             fecha = recordatorios["Fecha"]
             hora = recordatorios["Hora"]
             estado = recordatorios["Estado"]
+            return {
+                "Estado": 200,
+                "Mensaje": "Se creo recordatorio"
+            }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al crear recordatorio"
+            }
 
 @app.route("/")
 def index():
