@@ -85,6 +85,17 @@ class CRUD:
     def graficar_arbolPensum(self):
         pensum.graficar_arbolPensum("pensum")
     
+    def crear_recordatorio(self, carnet, nombre, desc, materia, fecha, hora, estado):
+        fechas = fecha.split("/")
+        dia = int(fechas[0])
+        mes = str(int(fechas[1]))
+        anio = str(int(fechas[2]))
+        horas = hora.split(":")
+        a.insertar_anio(carnet, anio)
+        a.insertar_meses(carnet, anio, mes)
+        a.insertar_mes_matriz(carnet, anio, mes, dia, int(horas[0]))
+        a.insertar_tareas_matriz(carnet, anio, mes, dia, int(horas[0]), carnet, nombre, desc, materia, fecha, hora, estado)
+    
     def eliminar_recordatorio(self, carnet, fecha, horas):
         fechas = fecha.split("/")
         anio = str(int(fechas[2]))
