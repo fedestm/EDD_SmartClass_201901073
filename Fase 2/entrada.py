@@ -68,4 +68,9 @@ class CRUD:
 
     def graficar_arbolB(self, carnet, anio, semestre):
         a.graficar_arbolB(carnet, anio, semestre)
+    
+    def graficar_lista_tareas(self, carnet, anio, mes, dia, hora):
+        a.graficar_lista_tareas(carnet, anio, mes, dia, hora)
+
+
 
