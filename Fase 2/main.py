@@ -98,6 +98,23 @@ def reportes():
             }
 
 @app.route("/recordatorios", methods = ["POST", "GET", "UPDATE", "DELETE"])
+def recordatorios():
+    if request.method == "DELETE":
+        try:
+            recordatorios = request.get_json()
+            carnet = recordatorios["Carnet"]
+            fecha = recordatorios["Fecha"]
+            hora = recordatorios["Hora"]
+            crud.eliminar_recordatorio(carnet, fecha, hora)
+            return {
+                "Estado": 200,
+                "Mensaje": "Se elimino el recordatorio"
+            }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al eliminar"
+            }
 
 @app.route("/")
 def index():
