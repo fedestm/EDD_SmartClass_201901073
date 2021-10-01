@@ -33,4 +33,8 @@ class ListaSimple_Pensum:
                     temp = temp.siguiente
             return None
     
-    
+    def insertar_cursos(self, cursos, codigo, nombre, creditos, prerequisitos, obligatorio):
+        temp = self.buscar(cursos)
+        if temp != None:
+            temp.arbol_cursos.insertar_nodo(cursos, codigo, nombre, creditos, prerequisitos, obligatorio)
+
