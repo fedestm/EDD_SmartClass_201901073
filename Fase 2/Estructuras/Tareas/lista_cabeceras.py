@@ -36,3 +36,20 @@ class ListaCabeceras:
             else:
                 temp = temp.siguiente
         return None
+    
+    def eliminar_cabecera(self, posicion):
+        if self.primero:
+            temp = self.primero
+            if self.primero.posicion == posicion:
+                if temp.siguiente:
+                    temp.siguiente.anterior = None
+                self.primero = temp.siguiente
+            else:
+                while temp != None:
+                    if temp.posicion == posicion:
+                        temp.anterior.siguiente = temp.siguiente
+                        if temp.siguiente:
+                            temp.siguiente.anterior = temp.anterior
+                        break
+                    else:
+                        temp = temp.siguiente
