@@ -82,7 +82,10 @@ class CRUD:
             pensum.insertar("pensum")
             pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
     
-    
+    def graficar_arbolPensum(self):
+        pensum.graficar_arbolPensum("pensum")
+
+
 
 
 
