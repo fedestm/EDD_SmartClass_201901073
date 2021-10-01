@@ -99,3 +99,24 @@ class Lista_Interna:
             dot += "node[label =\"%s\" fillcolor=\"#EB984E\" pos=\"%d,-%d!\" shape = box]\"i%d-%d!\"" % (self.cantidad_tareas(temp.pos_x, temp.pos_y), temp.pos_x, temp.pos_y, temp.pos_x, temp.pos_y)+";\n"
             temp = temp.siguiente
         return dot
+    
+    def eliminar_posx(self, y):
+        if self.primero:
+            temp = self.primero
+            while temp != None:
+                if temp.pos_y == y:
+                    if temp == self.primero:
+                        if temp.siguiente:
+                            temp.siguiente.anterior = None
+                        self.primero = temp.siguiente
+                        break
+                    else:
+                        temp.anterior.siguiente = temp.siguiente
+                        if temp.siguiente:
+                            temp.siguiente.anterior = temp.anterior
+                        break
+                else:
+                    temp = temp.siguiente
+        else:
+            print("No hay datos")
+                
