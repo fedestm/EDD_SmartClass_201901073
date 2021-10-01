@@ -72,7 +72,7 @@ def reportes():
                 }
             elif tipo == 4:
                 carnet = str(reportes["carnet"])
-                anio = str(reportes["anio"])
+                anio = str(reportes["año"])
                 semestre = str(reportes["semestre"])
                 crud.graficar_arbolB(carnet, anio, semestre)
                 return {
