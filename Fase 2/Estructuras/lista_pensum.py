@@ -21,4 +21,16 @@ class ListaSimple_Pensum:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
     
+    def buscar(self, cursos):
+        if self.lista_vacia():
+            print("Lista Vacia")
+        else:
+            temp = self.primero
+            while temp != None:
+                if temp.cursos == cursos:
+                    return temp
+                else:
+                    temp = temp.siguiente
+            return None
+    
     
