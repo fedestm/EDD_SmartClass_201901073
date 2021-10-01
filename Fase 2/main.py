@@ -50,6 +50,15 @@ def reportes():
                     "Estado": 200,
                     "Mensaje": "Se cargo arbol avl"
                 }
+            elif tipo == 1:
+                carnet = str(reportes["carnet"])
+                anio = str(reportes["año"])
+                mes = str(reportes["mes"])
+                crud.graficar_matriz(carnet, anio, mes)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se grafico matriz dispersa"
+                }
         except:
             return {
                 "Estado": 404,
