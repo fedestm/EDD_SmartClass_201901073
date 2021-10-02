@@ -200,8 +200,17 @@ class avl:
                     raiz_actual.izquierda = None
                     return raiz_actual.izquierda
                 else:
-                    return self.rec(raiz_actual.izquierda, carnet)
-
+                    return self.recorrer_eliminar(raiz_actual.izquierda, carnet)
+            elif self.rec(raiz_actual.derecha, carnet):
+                if raiz_actual.derecha.carnet == carnet:
+                    raiz_actual.derecha = None
+                    return raiz_actual.derecha
+                else:
+                    return self.recorrer_eliminar(raiz_actual.derecha, carnet)
+            else:
+                if raiz_actual.carnet == carnet:
+                    raiz_actual = None
+                    return raiz_actual
     
     def buscar(self, carnet):
         raiz_actual = self.raiz
