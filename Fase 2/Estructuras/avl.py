@@ -173,6 +173,16 @@ class avl:
                     return raiz_actual.izquierda
                 else:
                     return self.recorrer_modificar(raiz_actual.izquierda, carnet, dpi, nombre, carrera, password, creditos, edad)
+            elif self.recorrer_modificar(raiz_actual.derecha, carnet, dpi, nombre, carrera, password, creditos, edad):
+                if raiz_actual.derecha.carnet == carnet:
+                    raiz_actual.derecha.dpi == dpi
+                    raiz_actual.derecha.nombre == nombre
+                    raiz_actual.derecha.carrera == carrera
+                    raiz_actual.derecha.password == password
+                    raiz_actual.derecha.creditos == creditos
+                    raiz_actual.derecha.edad == edad
+                else:
+                    return self.recorrer_modificar(raiz_actual.derecha, carnet, dpi, nombre, carrera, password, creditos, edad)
 
     
     def buscar(self, carnet):
