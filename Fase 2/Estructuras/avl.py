@@ -193,6 +193,14 @@ class avl:
                     raiz_actual.creditos == creditos
                     return raiz_actual
     
+    def recorrer_eliminar(self, raiz_actual, carnet):
+        if raiz_actual:
+            if self.rec(raiz_actual.izquierda, carnet):
+                if raiz_actual.izquierda.carnet == carnet:
+                    raiz_actual.izquierda = None
+                    return raiz_actual.izquierda
+
+    
     def buscar(self, carnet):
         raiz_actual = self.raiz
         if raiz_actual != None:
