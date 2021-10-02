@@ -160,6 +160,19 @@ class avl:
                 if raiz_actual.carnet == carnet:
                     return raiz_actual
     
+    def recorrer_modificar(self, raiz_actual, carnet, dpi, nombre, carrera, password, creditos, edad):
+        if raiz_actual:
+            if self.recorrer_modificar(raiz_actual.izquierda, carnet, dpi, nombre, carrera, password, creditos, edad):
+                if raiz_actual.izquierda.carnet == carnet:
+                    raiz_actual.izquierda.dpi == dpi
+                    raiz_actual.izquierda.nombre == nombre
+                    raiz_actual.izquierda.carrera == carrera
+                    raiz_actual.izquierda.password == password
+                    raiz_actual.izquierda.creditos == creditos
+                    raiz_actual.izquierda.edad == edad
+                    return raiz_actual.izquierda
+
+    
     def buscar(self, carnet):
         raiz_actual = self.raiz
         if raiz_actual != None:
