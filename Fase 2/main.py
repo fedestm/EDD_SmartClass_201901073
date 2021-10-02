@@ -125,6 +125,7 @@ def recordatorios():
             fecha = recordatorios["Fecha"]
             hora = recordatorios["Hora"]
             estado = recordatorios["Estado"]
+            crud.crear_recordatorio(carnet, nombre, desc, materia, fecha, hora, estado)
             return {
                 "Estado": 200,
                 "Mensaje": "Se creo recordatorio"
