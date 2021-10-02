@@ -192,12 +192,16 @@ class avl:
                     raiz_actual.password == password
                     raiz_actual.creditos == creditos
                     return raiz_actual
-
     
     def buscar(self, carnet):
         raiz_actual = self.raiz
         if raiz_actual != None:
             return self.rec(raiz_actual, carnet)
+    
+    def modificar_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
+        raiz_actual = self.raiz
+        if raiz_actual != None:
+            return self.modificar_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
     
     def insertar_anio(self, carnet, anio):
         temp = self.buscar(carnet)
