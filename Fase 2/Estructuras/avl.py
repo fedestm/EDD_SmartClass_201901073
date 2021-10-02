@@ -223,7 +223,7 @@ class avl:
             return self.modificar_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
     
     def eliminar_estudiante(self, carnet):
-        raiz_actual == self.raiz
+        raiz_actual = self.raiz
         if raiz_actual != None:
             return self.eliminar_estudiante(carnet)
     
