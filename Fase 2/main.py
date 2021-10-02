@@ -136,6 +136,8 @@ def recordatorios():
                 "Mensaje": "Error al crear recordatorio"
             }
 
+@app.route("/estudiante", methods=["GET", "POST", "UPDATE", "DELETE"])
+
 @app.route("/")
 def index():
     return "Ruta principal"
