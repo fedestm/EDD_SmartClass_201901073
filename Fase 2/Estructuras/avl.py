@@ -181,6 +181,7 @@ class avl:
                     raiz_actual.derecha.password == password
                     raiz_actual.derecha.creditos == creditos
                     raiz_actual.derecha.edad == edad
+                    return raiz_actual.derecha
                 else:
                     return self.recorrer_modificar(raiz_actual.derecha, carnet, dpi, nombre, carrera, password, creditos, edad)
             else:
