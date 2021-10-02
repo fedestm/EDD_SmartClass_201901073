@@ -137,6 +137,28 @@ def recordatorios():
             }
 
 @app.route("/estudiante", methods=["GET", "POST", "UPDATE", "DELETE"])
+def estudiante():
+    if request.method == "POST":
+        try:
+            estudiante = request.get_json()
+            carnet = estudiante["carnet"]
+            dpi = estudiante["DPI"]
+            nombre = estudiante["nombre"]
+            carrera = estudiante["carrera"]
+            correo = estudiante["correo"]
+            password = estudiante["password"]
+            creditos = estudiante["creditos"]
+            edad = estudiante["edad"]
+            crud.crear_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
+            return {
+                "Estado": 200,
+                "Mensaje": "Se creo estudiante"
+            }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al crear estudiante"
+            }
 
 @app.route("/")
 def index():
