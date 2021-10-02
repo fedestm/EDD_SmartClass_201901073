@@ -107,4 +107,7 @@ class CRUD:
     def crear_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
         a.insertar(carnet, dpi, nombre, carrera, password, creditos, edad)
     
+    def modificar_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
+        a.modificar_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
+    
     
