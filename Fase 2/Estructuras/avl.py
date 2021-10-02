@@ -171,6 +171,8 @@ class avl:
                     raiz_actual.izquierda.creditos == creditos
                     raiz_actual.izquierda.edad == edad
                     return raiz_actual.izquierda
+                else:
+                    return self.recorrer_modificar(raiz_actual.izquierda, carnet, dpi, nombre, carrera, password, creditos, edad)
 
     
     def buscar(self, carnet):
