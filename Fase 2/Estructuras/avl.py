@@ -199,6 +199,8 @@ class avl:
                 if raiz_actual.izquierda.carnet == carnet:
                     raiz_actual.izquierda = None
                     return raiz_actual.izquierda
+                else:
+                    return self.rec(raiz_actual.izquierda, carnet)
 
     
     def buscar(self, carnet):
