@@ -139,5 +139,11 @@ class Lista_Interna:
                     temp = temp.abajo
         else:
             print("No hay datos")
+    
+    def mostrar_tarea(self, x, y):
+        temp = self.buscar_cantidad(x, y)
+        if temp != None:
+            return temp.lista_tareas.mostrar_tarea()
+
 
 
