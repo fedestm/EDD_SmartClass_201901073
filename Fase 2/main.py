@@ -99,6 +99,11 @@ def reportes():
 
 @app.route("/recordatorios", methods = ["POST", "GET", "UPDATE", "DELETE"])
 def recordatorios():
+    if request.method == "GET":
+        carnet = request.args.get("carnet")
+        fecha = request.args.get("Fecha")
+        hora = request.args.get("Hora")
+        return crud.mostrar_recordatorio(carnet, fecha, hora)
     if request.method == "DELETE":
         try:
             recordatorios = request.get_json()
