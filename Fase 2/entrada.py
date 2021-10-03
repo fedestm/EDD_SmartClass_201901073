@@ -110,4 +110,5 @@ class CRUD:
     def modificar_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
         a.modificar_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
     
-    
+    def eliminar_estudiante(self, carnet):
+        a.eliminar_estudiante(carnet)
