@@ -159,6 +159,28 @@ def estudiante():
                 "Estado": 404,
                 "Mensaje": "Error al crear estudiante"
             }
+    
+    if request.method == "UPDATE":
+        try:
+            estudiante = request.get_json()
+            carnet = estudiante["carnet"]
+            dpi = estudiante["DPI"]
+            nombre = estudiante["nombre"]
+            carrera = estudiante["carrera"]
+            correo = estudiante["correo"]
+            password = estudiante["password"]
+            creditos = estudiante["creditos"]
+            edad = estudiante["edad"]
+            crud.modificar_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
+            return {
+                "Estado": 200,
+                "Mensaje": "Se modifico estudiante"
+            }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al modificar estudiante"
+            }
 
 @app.route("/")
 def index():
