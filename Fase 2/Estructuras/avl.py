@@ -212,10 +212,55 @@ class avl:
                     raiz_actual = None
                     return raiz_actual
     
+    def recorrer_mostrarEstudiante(self, raiz_actual, carnet):
+        if raiz_actual:
+            if self.recorrer_mostrarEstudiante(raiz_actual.izquierda, carnet):
+                if raiz_actual.izquierda.carnet == carnet:
+                    return {
+                        "Carnet": str(raiz_actual.izquierda.carnet),
+                        "DPI": str(raiz_actual.izquierda.dpi),
+                        "Nombre": str(raiz_actual.izquierda.nombre),
+                        "Carrera": str(raiz_actual.izquierda.carrera),
+                        "Password": str(raiz_actual.izquierda.password),
+                        "Creditos": str(raiz_actual.izquierda.creditos),
+                        "Edad": str(raiz_actual.izquierda.edad)
+                    }
+                else:
+                    return self.recorrer_mostrarEstudiante(raiz_actual.izquierda, carnet)
+            elif self.recorrer_mostrarEstudiante(raiz_actual.derecha, carnet):
+                if raiz_actual.derecha.carnet == carnet:
+                    return {
+                        "Carnet": str(raiz_actual.derecha.carnet),
+                        "DPI": str(raiz_actual.derecha.dpi),
+                        "Nombre": str(raiz_actual.derecha.nombre),
+                        "Carrera": str(raiz_actual.derecha.carrera),
+                        "Password": str(raiz_actual.derecha.password),
+                        "Creditos": str(raiz_actual.derecha.creditos),
+                        "Edad": str(raiz_actual.derecha.edad)
+                    }
+                else:
+                    return self.recorrer_mostrarEstudiante(raiz_actual.derecha, carnet)
+            else:
+                if raiz_actual.carnet == carnet:
+                    return {
+                        "Carnet": str(raiz_actual.carnet),
+                        "DPI": str(raiz_actual.dpi),
+                        "Nombre": str(raiz_actual.nombre),
+                        "Carrera": str(raiz_actual.carrera),
+                        "Password": str(raiz_actual.password),
+                        "Creditos": str(raiz_actual.creditos),
+                        "Edad": str(raiz_actual.edad)
+                    }
+    
     def buscar(self, carnet):
         raiz_actual = self.raiz
         if raiz_actual != None:
             return self.rec(raiz_actual, carnet)
+    
+    def mostrar_estudiante(self, carnet):
+        raiz_actual = self.raiz
+        if raiz_actual != None:
+            return self.recorrer_mostrarEstudiante(raiz_actual, carnet)
     
     def modificar_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
         raiz_actual = self.raiz
