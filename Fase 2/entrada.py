@@ -115,3 +115,11 @@ class CRUD:
     
     def mostrar_estudiante(self, carnet):
         return a.mostrar_estudiante(carnet)
+    
+    def mostrar_recordatorio(self, carnet, fecha, hora):
+        fechas = fecha.split("/")
+        dia = fechas[0]
+        mes = fechas[1]
+        anio = fechas[2]
+        horas = hora.split(":")
+        return a.mostrar_tarea(carnet, str(int(anio)), str(int(mes)), int(dia), int(horas[0]))
