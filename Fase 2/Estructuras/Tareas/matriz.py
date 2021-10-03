@@ -102,3 +102,10 @@ class Matriz:
                 self.cabeceras_y.eliminar_cabecera(cabeceray.posicion)
         else:
             print("No se encuentra dicha posicion")
+    
+    def mostrar_tarea(self, x, y):
+        temp = self.cabeceras_x.primero
+        while temp != None:
+            temp2 = temp.lista_interna
+            return temp2.mostrar_tarea(x, y)
+            temp = temp.siguiente
