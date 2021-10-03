@@ -138,6 +138,10 @@ def recordatorios():
 
 @app.route("/estudiante", methods=["GET", "POST", "UPDATE", "DELETE"])
 def estudiante():
+    if request.method == "GET":
+        carnet = request.args.get("carnet")
+        return crud.mostrar_estudiante(carnet)
+
     if request.method == "POST":
         try:
             estudiante = request.get_json()
