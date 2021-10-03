@@ -112,3 +112,6 @@ class CRUD:
     
     def eliminar_estudiante(self, carnet):
         a.eliminar_estudiante(carnet)
+    
+    def mostrar_estudiante(self, carnet):
+        return a.mostrar_estudiante(carnet)
