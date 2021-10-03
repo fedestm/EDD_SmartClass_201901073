@@ -181,6 +181,21 @@ def estudiante():
                 "Estado": 404,
                 "Mensaje": "Error al modificar estudiante"
             }
+    
+    if request.method == "DELETE":
+        try:
+            estudiante = request.get_json()
+            carnet = estudiante["carnet"]
+            crud.eliminar_estudiante(carnet)
+            return {
+                "Estado": 200,
+                "Mensaje": "Se elimino estudiante"
+            }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al eliminar estudiante"
+            }
 
 @app.route("/")
 def index():
