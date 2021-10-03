@@ -72,4 +72,9 @@ class ListaDoble_Meses:
         temp = self.buscar(mes)
         if temp != None:
             temp.lista_matrices.eliminar(x, y)
+    
+    def mostrar_tarea(self, mes, x, y):
+        temp = self.buscar(mes)
+        if temp != None:
+            return temp.lista_matrices.mostrar_tarea(x, y)
 

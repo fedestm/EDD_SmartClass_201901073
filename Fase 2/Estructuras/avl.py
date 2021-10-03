@@ -323,3 +323,8 @@ class avl:
         temp = self.buscar(carnet)
         if temp != None:
             temp.lista_anios.eliminar_posicion(anio, mes, dia, hora)
+    
+    def mostrar_tarea(self, carnet, anio, mes, dia ,hora):
+        temp = self.buscar(carnet)
+        if temp != None:
+            return temp.lista_anios.mostrar_tarea(anio, mes, dia, hora)

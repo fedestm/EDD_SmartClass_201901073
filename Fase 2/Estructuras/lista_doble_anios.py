@@ -100,3 +100,8 @@ class ListaDoble_Anios:
         temp = self.buscar_anio(anio)
         if temp != None:
             temp.lista_meses.eliminar_posicion(mes, x, y)
+    
+    def mostrar_tarea(self, anio, mes, x, y):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            return temp.lista_meses.mostrar_tarea(mes, x, y)
