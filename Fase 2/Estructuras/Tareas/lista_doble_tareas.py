@@ -32,6 +32,41 @@ class ListaDoble_Tareas:
             else:
                 print(temp.materia, end=" <-> ")
     
+    def mostrar_tarea(self):
+        temp = self.primero
+        while temp != None:
+            if temp == self.primero:
+                return {
+                    "Carnet": str(temp.carnet),
+                    "Nombre": str(temp.nombre),
+                    "Descripcion": str(temp.desc),
+                    "Materia": str(temp.materia),
+                    "Fecha": str(temp.fecha),
+                    "Hora": str(temp.hora),
+                    "Estado": str(temp.estado)
+                }
+            elif temp == self.ultimo:
+                return {
+                    "Carnet": str(temp.carnet),
+                    "Nombre": str(temp.nombre),
+                    "Descripcion": str(temp.desc),
+                    "Materia": str(temp.materia),
+                    "Fecha": str(temp.fecha),
+                    "Hora": str(temp.hora),
+                    "Estado": str(temp.estado)
+                }
+            else:
+                return {
+                    "Carnet": str(temp.carnet),
+                    "Nombre": str(temp.nombre),
+                    "Descripcion": str(temp.desc),
+                    "Materia": str(temp.materia),
+                    "Fecha": str(temp.fecha),
+                    "Hora": str(temp.hora),
+                    "Estado": str(temp.estado)
+                }
+            temp = temp.siguiente
+    
     def cantidad_tareas(self):
         temp = self.primero
         cont = 0
