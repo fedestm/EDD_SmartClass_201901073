@@ -227,13 +227,20 @@ def cursosEstudiante():
     if request.method == "POST":
         estudiante = request.get_json()
         crud.crear_cursosEstudiante(estudiante)
+        return {
+            "Estado": 200,
+            "Mensaje": "Se inserto curso"
+        }
 
 @app.route("/cursosPensum", methods = ["POST"])
 def cursosPensum():
     if request.method == "POST":
         cursos = request.get_json()
         crud.crear_cursosPensum(cursos)
-        
+        return {
+            "Estado": 200,
+            "Mensaje": "Se inserto curso de pensum"
+        }
 
 @app.route("/")
 def index():
