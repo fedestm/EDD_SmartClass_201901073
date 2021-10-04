@@ -16,7 +16,7 @@ class ListaSimple_Pensum:
     def insertar(self, cursos):
         nuevo = NodoSimple_ArbolB(None, cursos)
         if self.lista_vacia():
-            print("Lista Vacia")
+            self.primero = self.ultimo = nuevo
         else:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
@@ -36,9 +36,9 @@ class ListaSimple_Pensum:
     def insertar_cursos(self, cursos, codigo, nombre, creditos, prerequisitos, obligatorio):
         temp = self.buscar(cursos)
         if temp != None:
-            temp.arbol_cursos.insertar_nodo(cursos, codigo, nombre, creditos, prerequisitos, obligatorio)
+            temp.arbol_pensum.insertar_nodo(codigo, nombre, creditos, prerequisitos, obligatorio)
 
     def graficar_arbolPensum(self, tipo):
         temp = self.buscar(tipo)
         if temp != None:
-            temp.arbol_cursos.graficar()
+            temp.arbol_pensum.graficar()
