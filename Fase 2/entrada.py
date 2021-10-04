@@ -123,3 +123,11 @@ class CRUD:
         anio = fechas[2]
         horas = hora.split(":")
         return a.mostrar_tarea(carnet, str(int(anio)), str(int(mes)), int(dia), int(horas[0]))
+    
+    def modificar_tarea(self, carnet, fecha, hora, nombre, desc, materia, estado):
+        fechas = fecha.split("/")
+        dia = fechas[0]
+        mes = fechas[1]
+        anio = fechas[2]
+        horas = hora.split(":")
+        a.modificar_tarea(carnet, str(int(anio)), str(int(mes)), int(dia), int(horas[0]), nombre, desc, materia, estado)
