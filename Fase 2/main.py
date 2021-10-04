@@ -104,6 +104,22 @@ def recordatorios():
         fecha = request.args.get("Fecha")
         hora = request.args.get("Hora")
         return crud.mostrar_recordatorio(carnet, fecha, hora)
+
+    if request.method == "UPDATE":
+        recordatorios = request.get_json()
+        carnet = recordatorios["Carnet"]
+        nombre = recordatorios["Nombre"]
+        desc = recordatorios["Descripcion"]
+        materia = recordatorios["Materia"]
+        fecha = recordatorios["Fecha"]
+        hora = recordatorios["Hora"]
+        estado = recordatorios["Estado"]
+        crud.modificar_tarea(carnet, fecha, hora, nombre, desc, materia, estado)
+        return {
+            "Estado": 200,
+            "Mensaje": "Se modifico una tarea"
+        }
+        
     if request.method == "DELETE":
         try:
             recordatorios = request.get_json()
