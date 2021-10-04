@@ -270,7 +270,7 @@ class avl:
     def eliminar_estudiante(self, carnet):
         raiz_actual = self.raiz
         if raiz_actual != None:
-            return self.eliminar_estudiante(carnet)
+            return self.recorrer_eliminar(raiz_actual, carnet)
     
     def insertar_anio(self, carnet, anio):
         temp = self.buscar(carnet)
