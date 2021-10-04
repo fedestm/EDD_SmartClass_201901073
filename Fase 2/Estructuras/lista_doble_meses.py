@@ -77,4 +77,8 @@ class ListaDoble_Meses:
         temp = self.buscar(mes)
         if temp != None:
             return temp.lista_matrices.mostrar_tarea(x, y)
-
+    
+    def modificar_tarea(self, mes, x, y, nombre, desc, materia, estado):
+        temp = self.buscar(mes)
+        if temp != None:
+            temp.lista_matrices.modificar_tarea(x, y, nombre, desc, materia, estado)

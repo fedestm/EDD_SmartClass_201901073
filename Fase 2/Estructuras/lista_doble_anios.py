@@ -105,3 +105,8 @@ class ListaDoble_Anios:
         temp = self.buscar_anio(anio)
         if temp != None:
             return temp.lista_meses.mostrar_tarea(mes, x, y)
+    
+    def modificar_tarea(self, anio, mes, x, y, nombre, desc, materia, estado):
+        temp = self.buscar_anio(anio)
+        if temp != None:
+            temp.lista_meses.modificar_tarea(mes, x, y, nombre, desc, materia, estado)

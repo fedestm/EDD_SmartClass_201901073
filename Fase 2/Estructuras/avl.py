@@ -328,3 +328,8 @@ class avl:
         temp = self.buscar(carnet)
         if temp != None:
             return temp.lista_anios.mostrar_tarea(anio, mes, dia, hora)
+    
+    def modificar_tarea(self, carnet, anio, mes, dia, hora, nombre, desc, materia, estado):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.modificar_tarea(anio, mes, dia, hora, nombre, desc, materia, estado)
