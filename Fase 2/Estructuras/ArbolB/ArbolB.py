@@ -103,7 +103,7 @@ class ArbolB:
             pivote = raiz_actual.claves.primero
             while pivote != None:
                 cont += 1
-                dot += "|{" + str(pivote.codigo) + "}|<p" + str(cont) + "> "
+                dot += "|{" + str(pivote.codigo) + "\\n" + str(pivote.nombre) + "}|<p" + str(cont) + "> "
                 pivote = pivote.siguiente
             dot += "\"]" + str(raiz_actual.claves.primero.codigo) + "; \n"
             return dot
@@ -113,7 +113,7 @@ class ArbolB:
             pivote = raiz_actual.claves.primero
             while pivote != None:
                 cont += 1
-                dot += "|{" + str(pivote.codigo) + "}|<p" + str(cont) + "> "
+                dot += "|{" + str(pivote.codigo) + "\\n" + str(pivote.nombre) + "}|<p" + str(cont) + "> "
                 pivote = pivote.siguiente
             dot += "\"]" + str(raiz_actual.claves.primero.codigo) + "; \n"
 
