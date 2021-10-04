@@ -109,3 +109,10 @@ class Matriz:
             temp2 = temp.lista_interna
             return temp2.mostrar_tarea(x, y)
             temp = temp.siguiente
+    
+    def modificar_tarea(self, x, y, nombre, desc, materia, estado):
+        temp = self.cabeceras_x.primero
+        while temp != None:
+            temp2 = temp.lista_interna
+            temp2.modificar_tarea(x, y, nombre, desc, materia, estado)
+            temp = temp.siguiente
