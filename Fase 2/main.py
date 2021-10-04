@@ -222,6 +222,12 @@ def estudiante():
                 "Mensaje": "Error al eliminar estudiante"
             }
 
+@app.route("/cursosEstudiante", methods = ["POST"])
+def cursosEstudiante():
+    if request.method == "POST":
+        estudiante = request.get_json()
+        crud.crear_cursosEstudiante(estudiante)
+
 @app.route("/")
 def index():
     return "Ruta principal"
