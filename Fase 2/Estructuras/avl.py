@@ -164,33 +164,33 @@ class avl:
         if raiz_actual:
             if self.recorrer_modificar(raiz_actual.izquierda, carnet, dpi, nombre, carrera, password, creditos, edad):
                 if raiz_actual.izquierda.carnet == carnet:
-                    raiz_actual.izquierda.dpi == dpi
-                    raiz_actual.izquierda.nombre == nombre
-                    raiz_actual.izquierda.carrera == carrera
-                    raiz_actual.izquierda.password == password
-                    raiz_actual.izquierda.creditos == creditos
-                    raiz_actual.izquierda.edad == edad
+                    raiz_actual.izquierda.dpi = dpi
+                    raiz_actual.izquierda.nombre = nombre
+                    raiz_actual.izquierda.carrera = carrera
+                    raiz_actual.izquierda.password = password
+                    raiz_actual.izquierda.creditos = creditos
+                    raiz_actual.izquierda.edad = edad
                     return raiz_actual.izquierda
                 else:
                     return self.recorrer_modificar(raiz_actual.izquierda, carnet, dpi, nombre, carrera, password, creditos, edad)
             elif self.recorrer_modificar(raiz_actual.derecha, carnet, dpi, nombre, carrera, password, creditos, edad):
                 if raiz_actual.derecha.carnet == carnet:
-                    raiz_actual.derecha.dpi == dpi
-                    raiz_actual.derecha.nombre == nombre
-                    raiz_actual.derecha.carrera == carrera
-                    raiz_actual.derecha.password == password
-                    raiz_actual.derecha.creditos == creditos
-                    raiz_actual.derecha.edad == edad
+                    raiz_actual.derecha.dpi = dpi
+                    raiz_actual.derecha.nombre = nombre
+                    raiz_actual.derecha.carrera = carrera
+                    raiz_actual.derecha.password = password
+                    raiz_actual.derecha.creditos = creditos
+                    raiz_actual.derecha.edad = edad
                     return raiz_actual.derecha
                 else:
                     return self.recorrer_modificar(raiz_actual.derecha, carnet, dpi, nombre, carrera, password, creditos, edad)
             else:
                 if raiz_actual.carnet == carnet:
-                    raiz_actual.dpi == dpi
-                    raiz_actual.nombre == nombre
-                    raiz_actual.carrera == carrera
-                    raiz_actual.password == password
-                    raiz_actual.creditos == creditos
+                    raiz_actual.dpi = dpi
+                    raiz_actual.nombre = nombre
+                    raiz_actual.carrera = carrera
+                    raiz_actual.password = password
+                    raiz_actual.creditos = creditos
                     return raiz_actual
     
     def recorrer_eliminar(self, raiz_actual, carnet):
@@ -265,7 +265,7 @@ class avl:
     def modificar_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
         raiz_actual = self.raiz
         if raiz_actual != None:
-            return self.modificar_estudiante(carnet, dpi, nombre, carrera, password, creditos, edad)
+            return self.recorrer_modificar(raiz_actual, carnet, dpi, nombre, carrera, password, creditos, edad)
     
     def eliminar_estudiante(self, carnet):
         raiz_actual = self.raiz
