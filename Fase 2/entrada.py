@@ -136,16 +136,16 @@ class CRUD:
         datos = entrada_json
         
         for i in datos["Estudiantes"]:
-            for j in i["AÃ±os"]:
+            for j in i["Años"]:
                 for k in j["Semestres"]:
                     for l in k["Cursos"]:
-                        a.insertar_anio(i["Carnet"], j["AÃ±o"])
-                        a.insertar_semestre(i["Carnet"], j["AÃ±o"], k["Semestre"])
-                        a.insertar_cursos(i["Carnet"], j["AÃ±o"], k["Semestre"], int(l["Codigo"]), l["Nombre"], l["Creditos"], l["Prerequisitos"], l["Obligatorio"])
+                        a.insertar_anio(i["Carnet"], j["Año"])
+                        a.insertar_semestre(i["Carnet"], j["Año"], k["Semestre"])
+                        a.insertar_cursos(i["Carnet"], j["Año"], k["Semestre"], int(l["Codigo"]), l["Nombre"], l["Creditos"], l["Prerequisitos"], l["Obligatorio"])
     
     def crear_cursosPensum(self, entrada_json):
         datos = entrada_json
-        
+
         for i in datos["Cursos"]:
             pensum.insertar("pensum")
             pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
