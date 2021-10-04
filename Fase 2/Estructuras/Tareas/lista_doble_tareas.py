@@ -31,6 +31,24 @@ class ListaDoble_Tareas:
                 print(temp.materia, end = "")
             else:
                 print(temp.materia, end=" <-> ")
+                
+    def modificar_tarea(self, nombre, desc, materia, estado):
+        temp = self.primero
+        if temp == self.primero:
+            temp.nombre = nombre
+            temp.desc = desc
+            temp.materia = materia
+            temp.estado = estado
+        if temp == self.ultimo:
+            temp.nombre = nombre
+            temp.desc = desc
+            temp.materia = materia
+            temp.estado = estado
+        else:
+            temp.nombre = nombre
+            temp.desc = desc
+            temp.materia = materia
+            temp.estado = estado
     
     def mostrar_tarea(self):
         temp = self.primero
