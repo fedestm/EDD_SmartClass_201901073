@@ -131,3 +131,14 @@ class CRUD:
         anio = fechas[2]
         horas = hora.split(":")
         a.modificar_tarea(carnet, str(int(anio)), str(int(mes)), int(dia), int(horas[0]), nombre, desc, materia, estado)
+    
+    def crear_cursosEstudiante(self, entrada_json):
+        datos = entrada_json
+        
+        for i in datos["Estudiantes"]:
+            for j in i["AÃ±os"]:
+                for k in j["Semestres"]:
+                    for l in k["Cursos"]:
+                        a.insertar_anio(i["Carnet"], j["AÃ±o"])
+                        a.insertar_semestre(i["Carnet"], j["AÃ±o"], k["Semestre"])
+                        a.insertar_cursos(i["Carnet"], j["AÃ±o"], k["Semestre"], int(l["Codigo"]), l["Nombre"], l["Creditos"], l["Prerequisitos"], l["Obligatorio"])
