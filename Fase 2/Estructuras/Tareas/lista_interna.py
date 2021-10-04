@@ -144,6 +144,11 @@ class Lista_Interna:
         temp = self.buscar_cantidad(x, y)
         if temp != None:
             return temp.lista_tareas.mostrar_tarea()
+    
+    def modificar_tarea(self, x, y, nombre, desc, materia, estado):
+        temp = self.buscar_cantidad(x, y)
+        if temp != None:
+            temp.lista_tareas.modificar_tarea(nombre, desc, materia, estado)
 
 
 
