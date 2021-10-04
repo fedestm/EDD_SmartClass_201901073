@@ -142,3 +142,10 @@ class CRUD:
                         a.insertar_anio(i["Carnet"], j["AÃ±o"])
                         a.insertar_semestre(i["Carnet"], j["AÃ±o"], k["Semestre"])
                         a.insertar_cursos(i["Carnet"], j["AÃ±o"], k["Semestre"], int(l["Codigo"]), l["Nombre"], l["Creditos"], l["Prerequisitos"], l["Obligatorio"])
+    
+    def crear_cursosPensum(self, entrada_json):
+        datos = entrada_json
+        
+        for i in datos["Cursos"]:
+            pensum.insertar("pensum")
+            pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
