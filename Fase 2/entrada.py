@@ -102,7 +102,7 @@ class CRUD:
         mes = str(int(fechas[1]))
         dia = int(fechas[0])
         hora = horas.split(":")
-        a.eliminar_posicion(carnet, anio, mes, dia, hora)
+        a.eliminar_posicion(carnet, anio, mes, dia, int(hora[0]))
     
     def crear_estudiante(self, carnet, dpi, nombre, carrera, password, creditos, edad):
         a.insertar(carnet, dpi, nombre, carrera, password, creditos, edad)
