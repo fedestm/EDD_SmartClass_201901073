@@ -5,3 +5,8 @@ class Hash:
         self.claves_usadas = 0
         for i in range(self.size):
             self.claves.append(None)
+    
+    def calcular_hash(self, carnet):
+        resultado = 0
+        resultado = carnet % self.size
+        return resultado
