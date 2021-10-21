@@ -86,4 +86,17 @@ class Hash:
                 dot += "node[shape = record label = \"{" + str(i) + "| -      Vacio       -}\";]v" + str(i) + "\n"
         return dot
     
-    
+    def graficar(self):
+        file = open("hash.dot", "w")
+        dot = "digraph Hash{\n"
+        dot += "rankdir=LR;\n"
+        dot += "nodesep=0;\n"
+        dot += "node [shape = box,fillcolor=\"azure2\" color=\"black\" style=\"filled\"];\n"
+        dot += self.generar_nodos()
+        dot += "}\n"
+        file.write(dot)
+        file.close()
+        os.system("dot -Tsvg hash.dot -o hash.svg")
+        os.startfile("hash.svg")
+
+
