@@ -1,3 +1,5 @@
+from nodo import Nodo
+
 class Hash:
     def __init__(self):
         self.claves = []
@@ -26,4 +28,16 @@ class Hash:
             i += 1
         return nuevo_indice
     
-    
+    def insertar(self, carnet, dpi, nombre, carrera, correo, password, edad):
+        nuevo = Nodo(carnet, dpi, nombre, carrera, correo, password, edad)
+
+        indice_hash = self.calcular_hash(carnet)
+
+        if self.claves[indice_hash] == None:
+            self.claves[indice_hash] = nuevo
+            self.claves_usadas += 1
+        else:
+            indice_hash = self.solucionar_colisiones(indice_hash)
+            self.claves[indice_hash] = nuevo
+            self.claves_usadas += 1
+            
