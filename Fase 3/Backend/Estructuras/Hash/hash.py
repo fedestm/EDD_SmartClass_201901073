@@ -1,4 +1,5 @@
 from nodo import Nodo
+import os
 
 class Hash:
     def __init__(self):
@@ -75,4 +76,14 @@ class Hash:
         for i in range(len(aux)):
             if aux[i] != None:
                 self.insertar(aux[i].carnet, aux[i].dpi, aux[i].nombre, aux[i].carrera, aux[i].correo, aux[i].password, aux[i].edad)
+    
+    def generar_nodos(self):
+        dot = ""
+        for i in range(len(self.claves) - 1, -1, -1):
+            if self.claves[i] != None:
+                dot += "node[shape = record label = \"{" + str(i) + "| - Nombre: " + self.claves[i].nombre + "- }\";]v" + str(i) + "\n"
+            else:
+                dot += "node[shape = record label = \"{" + str(i) + "| -      Vacio       -}\";]v" + str(i) + "\n"
+        return dot
+    
     
