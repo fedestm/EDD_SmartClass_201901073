@@ -40,4 +40,33 @@ class Hash:
             indice_hash = self.solucionar_colisiones(indice_hash)
             self.claves[indice_hash] = nuevo
             self.claves_usadas += 1
-            
+
+    def rehash(self):
+        es_primo = False
+        new_tam = self.size
+
+        while es_primo == False:
+            new_tam += 1
+            cont = 0
+            for i in range(new_tam, 0, -1):
+                if new_tam % i == 0:
+                    cont += 1
+            if cont == 2:
+                es_primo = True
+        
+        aux = []
+        for i in range(self.size):
+            aux.append(None)
+        aux = self.claves
+        self.size = new_tam
+
+        new_claves = []
+        for i in range(new_tam):
+            new_claves.append(None)
+        self.claves = new_claves
+        self.claves_usadas = 0
+
+        for i in range(len(aux)):
+            if aux[i] != None:
+                self.insertar(aux[i].carnet, aux[i].dpi, aux[i].nombre, aux[i].carrera, aux[i].correo, aux[i].password, aux[i].edad)
+    
