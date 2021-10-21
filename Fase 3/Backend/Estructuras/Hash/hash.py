@@ -40,6 +40,12 @@ class Hash:
             indice_hash = self.solucionar_colisiones(indice_hash)
             self.claves[indice_hash] = nuevo
             self.claves_usadas += 1
+        
+        P_uso = 0
+        P_uso = float(float(self.claves_usadas) / float(self.size))
+
+        if P_uso >= 0.5:
+            self.rehash()
 
     def rehash(self):
         es_primo = False
