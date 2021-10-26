@@ -98,5 +98,13 @@ class Hash:
         file.close()
         os.system("dot -Tsvg hash.dot -o hash.svg")
         os.startfile("hash.svg")
+    
+    def buscar_usuario(self, carnet, password):
+        for i in range(self.size):
+            if self.claves[i] != None:
+                if self.claves[i].carnet == carnet and self.claves[i].password == password:
+                    return True
+        return False
+
 
 
