@@ -1,4 +1,4 @@
-from nodo import Nodo
+from .nodo import Nodo
 import os
 
 class Hash:
