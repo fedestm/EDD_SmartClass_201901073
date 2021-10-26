@@ -9,7 +9,7 @@
 			// Global.
 				global: {
 					range: '*',
-					href: 'style/style_juegos.css',
+					href: 'style/style.css',
 					containers: 1400,
 					grid: {
 						gutters: {

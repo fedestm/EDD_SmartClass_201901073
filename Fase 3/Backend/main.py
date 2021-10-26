@@ -22,5 +22,18 @@ def insertar_estudiante():
         response = jsonify({'response': 'Se registro estudiante'})
         return response
 
+@app.route("/login", methods = ['POST'])
+def login():
+    if request.method == 'POST':
+        usuario = request.json['usuario']
+        password = request.json['pass']
+
+        if usuario == 'admin' and password == 'admin':
+            response = jsonify({'response': 1})
+            return response
+        else:
+            response = jsonify({'response': 0})
+            return response
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
