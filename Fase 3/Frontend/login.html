@@ -29,7 +29,7 @@
 
                     
 
-                    <form id="login_usuarios">
+                    <form id="login_usuarios" method="post">
                     <div class="login_usuario">
                         <input required id="txtusuario" type="text" placeholder="Ingrese Usuario ">
                     </div> 
@@ -37,7 +37,7 @@
                         <input required id="txtpassword" type="text" placeholder="Ingrese Contraseña">
                     </div>
                     <div class="btn_login">
-                        <button required id="btnlogin" type="submit">Iniciar Sesión</button> 
+                        <button required id="btnlogin" type="submit" onclick="login();">Iniciar Sesión</button> 
                     </div>
                     <div class="espacio"></div>
                 </form>
@@ -64,5 +64,6 @@
 					</ul>
 				</div>
             </footer>
+		<script src="js/login.js"></script>
 	</body>
 </html>
