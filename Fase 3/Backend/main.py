@@ -32,8 +32,15 @@ def login():
             response = jsonify({'response': 1})
             return response
         else:
-            response = jsonify({'response': 0})
-            return response
+            estudiante = crud.buscar_usuario(usuario, password)
+            if estudiante is not False:
+                #Retorna 0 si el carnet esta registrado
+                response = jsonify({'response': 0})
+                return response
+            else:
+                #Retorna 2 si no existe usuario registrado
+                response = jsonify({'response': 2})
+                return response
 
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
