@@ -15,11 +15,11 @@ function registrar(){
         "correo": correo,
         "password": password,
         "edad": edad
-    })
+    });
 
     if(carnet != "" && dpi != "" && nombre != "" && carrera != "" && correo != "" && password != "" && edad != ""){
         fetch('http://localhost:3000/insertar_estudiante', {
-            method = 'post',
+            method: 'post',
             headers: {
                 'Content-Type': 'application/json'
             },
