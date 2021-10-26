@@ -19,9 +19,14 @@ function login(){
         .then(datos => {
             console.log(datos)
             if(datos.response == 1){
+                alert("Bienvenido")
                 window.location.href = 'admin.html'
-            }else{
+            }else if(datos.response == 0){
+                alert("Bienvenido")
+                localStorage.setItem("Usuario", usuario)
                 window.location.href = 'smartclass.html'
+            }else{
+                alert("Error en usuario o contraseña")
             }
         })
     }
