@@ -23,4 +23,6 @@ def insertar_estudiante():
         response = jsonify({'response': 'Se registro estudiante'})
         return response
 
-
+if __name__ == "__main__":
+    app.run(debug = True, port = 3000, threaded = True)
+    
