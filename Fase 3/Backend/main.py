@@ -3,7 +3,7 @@ from flask_cors import CORS
 from werkzeug.wrappers import response
 from Estructuras import CRUD
 
-crud = CRUD
+crud = CRUD()
 
 app = Flask(__name__)
 app.config['CORS_HEADERS'] = 'Content-Type'
@@ -25,4 +25,3 @@ def insertar_estudiante():
 
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
-    
