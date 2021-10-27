@@ -8,13 +8,14 @@ class ListaSimple:
     def lista_vacia(self):
         return self.primero == None
     
-    def insertar(self, apunte):
+    def insertar(self, titulo, apunte):
         self.cont += 1
-        nuevo = NodoSimple(self.cont, apunte)
+        nuevo = NodoSimple(self.cont, titulo, apunte)
         if self.lista_vacia():
             self.primero = self.ultimo = nuevo
         else:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
     
-    
+
+
