@@ -105,6 +105,12 @@ class Hash:
                 if self.claves[i].carnet == carnet and self.claves[i].password == password:
                     return True
         return False
-
-
-
+    
+    def buscar(self, carnet):
+        for i in range(self.size):
+            if self.claves[i] != None:
+                if self.claves[i].carnet == carnet:
+                    return self.claves[i]
+        return None
+    
+    
