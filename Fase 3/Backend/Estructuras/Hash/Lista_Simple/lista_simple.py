@@ -27,7 +27,7 @@ class ListaSimple:
             elif temp == self.ultimo:
                 dot += "\"" + "n_" + str(temp) + "\"" + "[label=\"" +"Titulo: " + temp.titulo + "\\nApunte: " + temp.apunte + "\", shape = ellipse, fillcolor = \"#FFFF00\"""];\n"
             else:
-                "\"" + "n_" + str(temp) + "\"" + "[label=\"" +"Titulo: " + temp.apunte + "\\nApunte: " + temp.apunte + "\", shape = ellipse, fillcolor = \"#FFFF00\"""];\n"
+                dot += "\"" + "n_" + str(temp) + "\"" + "[label=\"" +"Titulo: " + temp.apunte + "\\nApunte: " + temp.apunte + "\", shape = ellipse, fillcolor = \"#FFFF00\"""];\n"
             
             if temp.siguiente != None:
                 dot += "\"" + "n_" + str(temp) + "\"" + " -> " +  "\"" + "n_" + str(temp.siguiente) + "\"" + ";\n"
@@ -36,7 +36,7 @@ class ListaSimple:
         enlace = self.primero
 
         while enlace != None:
-            if temp == self.primero:
+            if enlace == self.primero:
                 dot += indice + " -> " + "\"" + "n_" + str(enlace) + "\"" + ";\n"
             enlace = enlace.siguiente
         

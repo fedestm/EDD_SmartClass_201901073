@@ -81,7 +81,7 @@ class Hash:
         dot = ""
         for i in range(len(self.claves) - 1, -1, -1):
             if self.claves[i] != None:
-                dot += "node[shape = record label = \"{" + str(i) + "| - Nombre: " + self.claves[i].nombre + "- }\";]v" + str(i) + "\n"
+                dot += "node[shape = record label = \"{" + str(i) + "| - Carnet: " + str(self.claves[i].carnet) + "|}\";]v" + str(i) + "\n"
                 dot += str(self.enlazar_lista(self.claves[i].carnet, "v" + str(i)))
             else:
                 dot += "node[shape = record label = \"{" + str(i) + "| -      Vacio       -}\";]v" + str(i) + "\n"
@@ -92,13 +92,12 @@ class Hash:
         dot = "digraph Hash{\n"
         dot += "rankdir=LR;\n"
         dot += "nodesep=0;\n"
-        dot += "node [shape = box,fillcolor=\"azure2\" color=\"black\" style=\"filled\"];\n"
+        dot += "node [shape = box,fillcolor=\"#5DADE2\" color=\"black\" style=\"filled\"];\n"
         dot += self.generar_nodos()
         dot += "}\n"
         file.write(dot)
         file.close()
-        os.system("dot -Tsvg hash.dot -o hash.svg")
-        os.startfile("hash.svg")
+        os.system("dot -Tpng hash.dot -o hash.png")
     
     def buscar_usuario(self, carnet, password):
         for i in range(self.size):
@@ -122,4 +121,4 @@ class Hash:
     def enlazar_lista(self, carnet, indice):
         temp = self.buscar(carnet)
         if temp != None:
-            temp.lista_apuntes.graficar(indice)
+            return temp.lista_apuntes.graficar(indice)
