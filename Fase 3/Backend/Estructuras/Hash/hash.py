@@ -82,6 +82,7 @@ class Hash:
         for i in range(len(self.claves) - 1, -1, -1):
             if self.claves[i] != None:
                 dot += "node[shape = record label = \"{" + str(i) + "| - Nombre: " + self.claves[i].nombre + "- }\";]v" + str(i) + "\n"
+                dot += str(self.enlazar_lista(self.claves[i].carnet, "v" + str(i)))
             else:
                 dot += "node[shape = record label = \"{" + str(i) + "| -      Vacio       -}\";]v" + str(i) + "\n"
         return dot
@@ -118,4 +119,7 @@ class Hash:
         if temp != None:
             temp.lista_apuntes.insertar(titulo, apunte)
     
-    
+    def enlazar_lista(self, carnet, indice):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_apuntes.graficar(indice)

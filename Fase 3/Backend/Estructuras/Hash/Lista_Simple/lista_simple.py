@@ -17,7 +17,7 @@ class ListaSimple:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
     
-    def graficar(self):
+    def graficar(self, indice):
         dot = ""
         temp = self.primero
 
@@ -32,6 +32,13 @@ class ListaSimple:
             if temp.siguiente != None:
                 dot += "\"" + "n_" + str(temp) + "\"" + " -> " +  "\"" + "n_" + str(temp.siguiente) + "\"" + ";\n"
             temp = temp.siguiente
+        
+        enlace = self.primero
+
+        while enlace != None:
+            if temp == self.primero:
+                dot += indice + " -> " + "\"" + "n_" + str(enlace) + "\"" + ";\n"
+            enlace = enlace.siguiente
         
         return dot
         
