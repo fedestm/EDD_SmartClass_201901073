@@ -17,5 +17,21 @@ class ListaSimple:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
     
+    def graficar(self):
+        dot = ""
+        temp = self.primero
 
-
+        while temp != None:
+            if temp == self.primero:
+                dot += "\"" + "n_" + str(temp) + "\"" + "[label=\"" +"Titulo: " + temp.titulo + "\\nApunte: " + temp.apunte + "\", shape = ellipse, fillcolor = \"#FFFF00\"""];\n"
+            elif temp == self.ultimo:
+                dot += "\"" + "n_" + str(temp) + "\"" + "[label=\"" +"Titulo: " + temp.titulo + "\\nApunte: " + temp.apunte + "\", shape = ellipse, fillcolor = \"#FFFF00\"""];\n"
+            else:
+                "\"" + "n_" + str(temp) + "\"" + "[label=\"" +"Titulo: " + temp.apunte + "\\nApunte: " + temp.apunte + "\", shape = ellipse, fillcolor = \"#FFFF00\"""];\n"
+            
+            if temp.siguiente != None:
+                dot += "\"" + "n_" + str(temp) + "\"" + " -> " +  "\"" + "n_" + str(temp.siguiente) + "\"" + ";\n"
+            temp = temp.siguiente
+        
+        return dot
+        
