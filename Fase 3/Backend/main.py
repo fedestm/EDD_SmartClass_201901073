@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from werkzeug.wrappers import response
 from Estructuras import CRUD
+import base64
 
 crud = CRUD()
 
@@ -50,6 +52,16 @@ def insertar_apunte():
         contenido = request.json['contenido']
         crud.insertar_apunte(carnet, titulo, contenido)
         response = jsonify({'response': 'Se registro apunte'})
+        return response
+
+@app.route("/graficar_hash", methods = ['GET'])
+def graficar_hash():
+    if request.method == 'GET':
+        crud.graficar_hash()
+        b64_str = ""
+        with open("hash.png", "rb") as img:
+            b64_str = base64.b64encode(img.read())
+        response = jsonify({'response': 'Se grafico Tabla', 'img': str(b64_str.decode('utf-8'))})
         return response
 
 if __name__ == "__main__":

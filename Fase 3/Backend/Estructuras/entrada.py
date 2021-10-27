@@ -11,3 +11,6 @@ class CRUD():
     
     def insertar_apunte(self, carnet, titulo, contenido):
         e.insertar_apunte(int(carnet), titulo, contenido)
+    
+    def graficar_hash(self):
+        e.graficar()
