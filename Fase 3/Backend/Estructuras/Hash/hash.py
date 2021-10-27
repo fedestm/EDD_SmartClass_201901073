@@ -113,4 +113,9 @@ class Hash:
                     return self.claves[i]
         return None
     
+    def insertar_apunte(self, carnet, titulo, apunte):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_apuntes.insertar(titulo, apunte)
+    
     
