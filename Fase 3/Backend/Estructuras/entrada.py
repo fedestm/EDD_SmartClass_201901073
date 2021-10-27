@@ -9,4 +9,5 @@ class CRUD():
     def buscar_usuario(self, carnet, password):
         return e.buscar_usuario(int(carnet), password)
     
-    
+    def insertar_apunte(self, carnet, titulo, contenido):
+        e.insertar_apunte(int(carnet), titulo, contenido)

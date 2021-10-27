@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from werkzeug.wrappers import response
 from Estructuras import CRUD
 
 crud = CRUD()
@@ -41,6 +42,16 @@ def login():
                 #Retorna 2 si no existe usuario registrado
                 response = jsonify({'response': 2})
                 return response
+
+@app.route("/insertar_apunte", methods = ['POST'])
+def insertar_apunte():
+    if request.method == 'POST':
+        carnet = request.json['carnet']
+        titulo = request.json['titulo']
+        contenido = request.json['contenido']
+        crud.insertar_apunte(carnet, titulo, contenido)
+        response = jsonify({'response': 'Se registro apunte'})
+        return response
 
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
