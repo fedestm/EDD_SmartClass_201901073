@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Apuntes</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+        <link rel="stylesheet" href="style/style.css" />
+        <link rel="stylesheet" href="style/style-xlarge.css" />
+	</head>
+	<body onload="vista_apuntes();">
+			<header id="header" class="skel-layers-fixed">
+				<nav id="nav">
+					<ul>
+						<li><a href="smartclass.html">Apuntes</a></li>
+						<li><a href="login.html">Cerrar Sesión</a></li>
+					</ul>
+				</nav>
+			</header>
+			<section id="main" class="wrapper style1">
+				<div class="apunte_carnet">
+                        <div class="carnet_apunte_right">
+                            <label id = "lbcarnet">Carnet: </label>
+                        </div>
+                        <div class="carnet_apunte_left">
+                            <input id = "txtcarnet" type="text" disabled>
+                        </div>
+                    </div>
+                <div class="espacio"></div>
+				<header class="major">
+
+					<h1>Apuntes</h1>
+				</header>
+				<div class="vista_apuntes">
+
+
+					<div class="row" id = "reporte_apuntes">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>No.</th>
+									<th>Apuntes</th>
+									<th>Ver Apunte</th>
+								</tr>
+							</thead>
+							<tbody id = "tabla_vista_apunte"></tbody>
+						</table>	
+					</div>
+				</div>
+			</section>
+
+			<footer id="footer">
+				<div class="container">
+					<div class="row double">
+						<div class="6u">
+							<div class="row collapse-at-2">
+								<div class="6u">
+								</div>
+								<div class="6u">
+								</div>
+							</div>
+						</div>
+						<div class="6u">
+						</div>
+					</div>
+					<ul class="copyright">
+						<li>SMART CLASS 201901073</li>
+						<li>2021</li>
+					</ul>
+				</div>
+            </footer>
+		<script src="js/smartclass.js"></script>
+	</body>
+</html>

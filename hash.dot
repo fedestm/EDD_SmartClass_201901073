@@ -1,0 +1,20 @@
+digraph Hash{
+rankdir=LR;
+nodesep=0;
+node [shape = box,fillcolor="#5DADE2" color="black" style="filled"];
+node[shape = record label = "{6| -      Vacio       -}";]v6
+node[shape = record label = "{5| -      Vacio       -}";]v5
+node[shape = record label = "{4| -      Vacio       -}";]v4
+node[shape = record label = "{3| - Carnet: 201901073|}";]v3
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280A940>"[label="Titulo: Tarea 2\nApunte: Hacer tarea 4", shape = ellipse, fillcolor = "#FFFF00"];
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280A940>" -> "n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280A6D0>";
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280A6D0>"[label="Titulo: Hacer tarea 4\nApunte: Hacer tarea 4", shape = ellipse, fillcolor = "#FFFF00"];
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280A6D0>" -> "n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280D2B0>";
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280D2B0>"[label="Titulo: Hacer tarea 4\nApunte: Hacer tarea 4", shape = ellipse, fillcolor = "#FFFF00"];
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280D2B0>" -> "n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A2811DC0>";
+"n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A2811DC0>"[label="Titulo: Tarea 2\nApunte: Hacer tarea 4", shape = ellipse, fillcolor = "#FFFF00"];
+v3 -> "n_<Estructuras.Hash.Lista_Simple.nodo_simple.NodoSimple object at 0x00000203A280A940>";
+node[shape = record label = "{2| -      Vacio       -}";]v2
+node[shape = record label = "{1| -      Vacio       -}";]v1
+node[shape = record label = "{0| -      Vacio       -}";]v0
+}
