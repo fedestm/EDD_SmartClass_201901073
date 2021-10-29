@@ -47,7 +47,7 @@ function vista_apuntes(){
 
         apuntes.forEach(apuntes => {
             tabla.innerHTML += `<tr><td>${apuntes.titulo}</td><td>${apuntes.titulo}</td>
-            <td><a href = "ver_apuntes.html?id=${apuntes.id}"><button class = "btn_verapunte" type = "button">Ver Apunte</button></a>
+            <td><a href = "ver_apunte.html?id=${apuntes.id}"><button class = "btn_verapunte" type = "button">Ver Apunte</button></a>
             </td></tr>`
         })
     })
@@ -72,8 +72,8 @@ function ver_apunte(){
         console.log("Error al mostrar detalle de apunte")
     }).then(apunte => {
         console.log(apunte.titulo)
-        console.log(apunte.apunte)
+        console.log(apunte.contenido)
         document.getElementById("txttitulo").value = apunte.titulo
-        document.getElementById("txtcontenido").value = apunte.apunte
+        document.getElementById("txtcontenido").value = apunte.contenido
     })
 }
