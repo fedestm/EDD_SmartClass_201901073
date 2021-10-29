@@ -27,3 +27,28 @@ function insertar_apunte(){
     alert(datos.response)
     })
 }
+
+function vista_apuntes(){
+    var user = localStorage.getItem("Usuario")
+    document.getElementById("txtcarnet").value = user
+
+    fetch('http://localhost:3000/vista_apuntes/' + user, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .catch(err => {
+        console.log(err)
+    }).then(response => {
+        var apuntes = response;
+        var tabla = document.querySelector("#tabla_vista_apunte")
+
+        apuntes.forEach(apuntes => {
+            tabla.innerHTML += `<tr><td>${apuntes.titulo}</td><td>${apuntes.titulo}</td>
+            <td><a href = "ver_apuntes.html?id=${apuntes.id}"><button class = "btn_verapunte" type = "button">Ver Apunte</button></a>
+            </td></tr>`
+        })
+    })
+}
