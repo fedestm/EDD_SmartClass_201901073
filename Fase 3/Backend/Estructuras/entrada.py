@@ -17,3 +17,8 @@ class CRUD():
     
     def vista_apuntes(self, carnet):
         return e.vista_apuntes(int(carnet))
+    
+    def detalles_apuntes(self, carnet, cod):
+        return e.detalles_apunte(carnet, cod)
+    
+    

@@ -68,5 +68,10 @@ def vista_apuntes(carnet):
     if request.method == 'GET':
         return crud.vista_apuntes(carnet)
 
+@app.route("/detalles_apunte/<carnet>/<cod>", methods = ['GET'])
+def detalles_apunte(carnet, cod):
+    if request.method == 'GET':
+        return crud.detalles_apuntes(carnet, cod)
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
