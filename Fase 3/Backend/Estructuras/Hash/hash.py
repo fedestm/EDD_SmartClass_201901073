@@ -127,3 +127,8 @@ class Hash:
         temp = self.buscar(carnet)
         if temp != None:
             return temp.lista_apuntes.lista_apuntes()
+    
+    def detalles_apunte(self, carnet, cod):
+        temp = self.buscar(carnet)
+        if temp != None:
+            return temp.lista_apuntes.detalles_apunte(cod)
