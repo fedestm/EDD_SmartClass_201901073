@@ -14,3 +14,6 @@ class CRUD():
     
     def graficar_hash(self):
         e.graficar()
+    
+    def vista_apuntes(self, carnet):
+        return e.vista_apuntes(int(carnet))

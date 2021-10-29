@@ -63,5 +63,10 @@ def graficar_hash():
         response = jsonify({'response': 'Se grafico Tabla', 'img': str(b64_str.decode('utf-8'))})
         return response
 
+@app.route("/vista_apuntes/<carnet>", methods = ['GET'])
+def vista_apuntes(carnet):
+    if request.method == 'GET':
+        return crud.vista_apuntes(carnet)
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)

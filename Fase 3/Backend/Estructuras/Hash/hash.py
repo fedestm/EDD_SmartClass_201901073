@@ -122,3 +122,8 @@ class Hash:
         temp = self.buscar(carnet)
         if temp != None:
             return temp.lista_apuntes.graficar(indice)
+    
+    def vista_apuntes(self, carnet):
+        temp = self.buscar(carnet)
+        if temp != None:
+            return temp.lista_apuntes.lista_apuntes()
