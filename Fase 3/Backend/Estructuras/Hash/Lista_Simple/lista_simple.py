@@ -57,3 +57,31 @@ class ListaSimple:
             lista.append(obj)
             temp = temp.siguiente
         return json.dumps(lista)
+    
+    def detalles_apuntes(self, cod):
+        obj = {}
+        vacio = {}
+        res = {}
+        if self.lista_vacia():
+            vacio = {
+                'response': 'No hay datos en la lista'
+            }
+            return vacio
+        else:
+            temp = self.primero
+            while temp != None:
+                if temp.id == cod:
+                    obj = {
+                        'id': temp.id,
+                        'titulo': temp.titulo,
+                        'contenido': temp.apunte
+                    }
+                    return obj
+                else:
+                    temp = temp.siguiente
+            res = {
+                'response': 'No se encontro'
+            }
+            return res
+    
+    
