@@ -1,4 +1,5 @@
 from .nodo_simple import NodoSimple
+import json
 
 class ListaSimple:
     def __init__(self):
@@ -41,4 +42,18 @@ class ListaSimple:
             enlace = enlace.siguiente
         
         return dot
-        
+    
+    def lista_apuntes(self):
+        temp = self.primero
+        obj = {}
+        lista = []
+
+        while temp != None:
+            obj = {
+                'id': temp.id,
+                'titulo': temp.titulo,
+                'contenido': temp.apunte
+            }
+            lista.append(obj)
+            temp = temp.siguiente
+        return json.dumps(lista)
