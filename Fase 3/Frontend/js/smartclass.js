@@ -52,3 +52,28 @@ function vista_apuntes(){
         })
     })
 }
+
+function ver_apunte(){
+    var queryString = window.location.search;
+    var urlParams = new URLSearchParams(queryString)
+    var id = urlParams.get('id')
+
+    var user = localStorage.getItem("Usuario")
+    document.getElementById("txtcarnet").value = user
+
+    fetch('http://localhost:3000/detalles_apunte/' + user + '/' + id, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(res => res.json())
+    .catch(err => {
+        console.log("Error al mostrar detalle de apunte")
+    }).then(apunte => {
+        console.log(apunte.titulo)
+        console.log(apunte.apunte)
+        document.getElementById("txttitulo").value = apunte.titulo
+        document.getElementById("txtcontenido").value = apunte.apunte
+    })
+}
