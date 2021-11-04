@@ -39,4 +39,14 @@ class Grafo:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
     
+    def buscar(self, codigo):
+        temp = self.primero
+
+        while temp != None:
+            if temp.codigo == codigo:
+                return temp
+            else:
+                temp = temp.siguiente
+        return None
+    
     
