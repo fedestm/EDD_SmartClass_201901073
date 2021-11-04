@@ -1,3 +1,6 @@
+from typing import List
+
+
 class NodoGrafo:
     def __init__(self, codigo, curso, creditos, prerequisitos, obligatorio):
         self.codigo = codigo
@@ -6,6 +9,7 @@ class NodoGrafo:
         self.prerequisitos = prerequisitos
         self.obligatorio = obligatorio
         self.siguiente = None
+        self.lista_simple = Lista()
     
 class Lista:
     def __init__(self):
@@ -20,3 +24,4 @@ class Lista:
         else:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
+    
