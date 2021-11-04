@@ -1,5 +1,4 @@
-from typing import List
-
+import os
 
 class NodoGrafo:
     def __init__(self, codigo, curso, creditos, prerequisitos, obligatorio):
@@ -60,5 +59,22 @@ class Grafo:
             lista_adyacente.insertar(adyacente, curso, creditos, prerequisitos, obligatorio)
         else:
             return "No se encontro nodo origen"
+    
+    def graficar(self):
+        dot = ""
+        dot += "digraph grafo {\n"
+        dot += "rankdir = \"LR\""
+
+        temp = self.primero
+
+        while temp != None:
+            dot += "n_" + str(temp.codigo) + "[label = \"" + str(temp.codigo) + "\n" + str(temp.curso) + "\"];\n"
+            temp = temp.siguiente
+        
+        dot += "\n}"
+        file = open("grafo.dot", "w+")
+        file.write(dot)
+        file.close()
+        os.system("dot -Tpng grafo.dot -o grafo.png")
     
     
