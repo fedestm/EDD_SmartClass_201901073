@@ -49,4 +49,16 @@ class Grafo:
                 temp = temp.siguiente
         return None
     
+    def insertar_adyacente(self, codigo, adyacente, curso, creditos, prerequisitos, obligatorio):
+        nodo_origen = self.buscar(codigo)
+        nodo_adyacente = self.buscar(codigo)
+
+        if nodo_adyacente == None:
+            self.insertar(codigo, curso, creditos, prerequisitos, obligatorio)
+        if nodo_origen != None:
+            lista_adyacente = nodo_origen.lista_simple
+            lista_adyacente.insertar(adyacente, curso, creditos, prerequisitos, obligatorio)
+        else:
+            return "No se encontro nodo origen"
+    
     
