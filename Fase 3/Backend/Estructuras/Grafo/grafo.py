@@ -25,3 +25,18 @@ class Lista:
             self.ultimo.siguiente = nuevo
             self.ultimo = nuevo
     
+class Grafo:
+    def __init__(self):
+        self.primero = self.ultimo = None
+    
+    def insertar(self, codigo, curso, creditos, prerequisitos, obligatorio):
+        nuevo = NodoGrafo(codigo, curso, creditos, prerequisitos, obligatorio)
+
+        if self.primero == None:
+            self.ultimo = nuevo
+            self.primero = nuevo
+        else:
+            self.ultimo.siguiente = nuevo
+            self.ultimo = nuevo
+    
+    
