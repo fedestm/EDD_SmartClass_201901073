@@ -7,4 +7,8 @@ class NodoGrafo:
         self.obligatorio = obligatorio
         self.siguiente = None
     
+class Lista:
+    def __init__(self):
+        self.primero = self.ultimo = None
+    
     
