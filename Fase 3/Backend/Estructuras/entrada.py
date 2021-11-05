@@ -1,5 +1,6 @@
 from .Hash import Hash
 from .Grafo import Grafo
+import json
 
 e = Hash()
 g = Grafo()
@@ -23,4 +24,14 @@ class CRUD():
     def detalles_apuntes(self, carnet, cod):
         return e.detalles_apuntes(int(carnet), int(cod))
     
-    
+    def carga_masiva_pensum(self, ruta):
+        file = open(ruta, 'r')
+        datos = json.load(file)
+
+        for i in datos["Cursos"]:
+            if i["Codigo"] == "0101":
+                g.insertar(i["Codigo"], i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
+            else:
+                preq = i["Prerequisitos"].split(",")
+                for j in preq:
+                    g.insertar_adyacente(j, i["Codigo"], i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
