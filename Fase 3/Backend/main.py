@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from werkzeug.wrappers import response
 from Estructuras import CRUD
 import base64
 
@@ -82,6 +83,16 @@ def carga_cursos():
             "Estado": 200,
             "Mensaje": "Se insertaron los cursos"
         }
+
+@app.route("/graficar_grafo", methods = ['GET'])
+def graficar_grafo():
+    if request.method == 'GET':
+        crud.graficar_grafo()
+        b64_str = ""
+        with open("grafo.png", "rb") as img:
+            b64_str = base64.b64encode(img.read())
+        response = jsonify({'response': 'Se grafico Grafo', 'img': str(b64_str.decode('utf-8'))})
+        return response
 
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
