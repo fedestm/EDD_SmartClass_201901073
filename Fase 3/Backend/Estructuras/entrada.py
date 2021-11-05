@@ -45,3 +45,11 @@ class CRUD():
 
         for i in datos["estudiantes"]:
             e.insertar(i["carnet"], i["DPI"], i["nombre"], i["carrera"], i["correo"], i["password"], i["edad"])
+    
+    def carga_masiva_apuntes(self, ruta):
+        file = open(ruta, 'r')
+        datos = json.load(file)
+
+        for i in datos["usuarios"]:
+            for j in i["apuntes"]:
+                e.insertar_apunte(i["carnet"], j["Titulo"], j["Contenido"])
