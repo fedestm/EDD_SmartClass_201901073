@@ -83,10 +83,10 @@ def carga_masiva():
         try:
             if tipo == "curso":
                 crud.carga_masiva_pensum(path)
-            return {
-                "Estado": 200,
-                "Mensaje": "Se insertaron los cursos"
-            }
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron los cursos"
+                }
         except:
             return {
                 "Estado": 404,
