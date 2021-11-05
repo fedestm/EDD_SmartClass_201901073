@@ -74,15 +74,24 @@ def detalles_apunte(carnet, cod):
     if request.method == 'GET':
         return crud.detalles_apuntes(carnet, cod)
 
-@app.route("/carga_cursos", methods = ['POST'])
-def carga_cursos():
+@app.route("/carga_masiva", methods = ['POST'])
+def carga_masiva():
     if request.method == 'POST':
+        tipo = request.json["tipo"]
         path = request.json["path"]
-        crud.carga_masiva_pensum(path)
-        return {
-            "Estado": 200,
-            "Mensaje": "Se insertaron los cursos"
-        }
+
+        try:
+            if tipo == "curso":
+                crud.carga_masiva_pensum(path)
+            return {
+                "Estado": 200,
+                "Mensaje": "Se insertaron los cursos"
+            }
+        except:
+            return {
+                "Estado": 404,
+                "Mensaje": "Error al insertar"
+            }
 
 @app.route("/graficar_grafo", methods = ['GET'])
 def graficar_grafo():
