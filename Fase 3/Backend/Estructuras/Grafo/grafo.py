@@ -71,6 +71,8 @@ class Grafo:
             dot += "n_" + str(temp.codigo) + "[label = \"" + str(temp.codigo) + "\n" + str(temp.curso) + "\"];\n"
             temp = temp.siguiente
         
+        dot += str(self.graficar_enlaces())
+        
         dot += "\n}"
         file = open("grafo.dot", "w+")
         file.write(dot)
