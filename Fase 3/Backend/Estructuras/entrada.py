@@ -38,3 +38,10 @@ class CRUD():
     
     def graficar_grafo(self):
         g.graficar()
+    
+    def carga_masiva_estudiante(self, ruta):
+        file = open(ruta, 'r')
+        datos = json.load(file)
+
+        for i in datos["estudiantes"]:
+            e.insertar(i["carnet"], i["DPI"], i["nombre"], i["carrera"], i["correo"], i["password"], i["edad"])
