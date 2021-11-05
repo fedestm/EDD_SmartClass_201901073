@@ -87,6 +87,18 @@ def carga_masiva():
                     "Estado": 200,
                     "Mensaje": "Se insertaron los cursos"
                 }
+            elif tipo == "estudiantes":
+                crud.carga_masiva_estudiante(path)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron los estudiantes"
+                }
+            elif tipo == "apuntes":
+                crud.carga_masiva_apuntes(path)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron apuntes"
+                }
         except:
             return {
                 "Estado": 404,
