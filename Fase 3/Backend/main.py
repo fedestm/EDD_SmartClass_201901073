@@ -73,7 +73,7 @@ def detalles_apunte(carnet, cod):
     if request.method == 'GET':
         return crud.detalles_apuntes(carnet, cod)
 
-@app.route("/carga_cursos", methods = ['GET'])
+@app.route("/carga_cursos", methods = ['POST'])
 def carga_cursos():
     if request.method == 'POST':
         path = request.json["path"]
