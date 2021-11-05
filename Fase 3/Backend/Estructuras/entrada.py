@@ -35,3 +35,6 @@ class CRUD():
                 preq = i["Prerequisitos"].split(",")
                 for j in preq:
                     g.insertar_adyacente(j, i["Codigo"], i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
+    
+    def graficar_grafo(self):
+        g.graficar()
