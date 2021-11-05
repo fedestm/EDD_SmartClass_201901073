@@ -73,5 +73,15 @@ def detalles_apunte(carnet, cod):
     if request.method == 'GET':
         return crud.detalles_apuntes(carnet, cod)
 
+@app.route("/carga_cursos", methods = ['GET'])
+def carga_cursos():
+    if request.method == 'POST':
+        path = request.json["path"]
+        crud.carga_masiva_pensum(path)
+        return {
+            "Estado": 200,
+            "Mensaje": "Se insertaron los cursos"
+        }
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
