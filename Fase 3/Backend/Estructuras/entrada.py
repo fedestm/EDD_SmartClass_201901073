@@ -1,6 +1,8 @@
 from .Hash import Hash
+from .Grafo import Grafo
 
 e = Hash()
+g = Grafo()
 
 class CRUD():
     def registrar_estudiante(self, carnet, dpi, nombre, carrera, correo, password, edad):
