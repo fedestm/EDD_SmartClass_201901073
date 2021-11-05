@@ -77,4 +77,17 @@ class Grafo:
         file.close()
         os.system("dot -Tpng grafo.dot -o grafo.png")
     
+    def graficar_enlaces(self):
+        dot = ""
+        temp = self.primero
+
+        while temp != None:
+            aux = temp.lista_simple.primero
+            while aux != None:
+                dot += "n_" + str(temp.codigo) + " -> n_" + str(aux.codigo) + "[dir = \"none\" label = \"" + str(aux.creditos) + "\"]\n"
+                aux = aux.siguiente
+            temp = temp.siguiente
+        return dot
+    
+    
 
