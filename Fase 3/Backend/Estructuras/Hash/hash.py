@@ -132,3 +132,10 @@ class Hash:
         temp = self.buscar(carnet)
         if temp != None:
             return temp.lista_apuntes.detalles_apuntes(cod)
+    
+    def insertar_anio(self, carnet, anio):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.insertar(anio)
+    
+    
