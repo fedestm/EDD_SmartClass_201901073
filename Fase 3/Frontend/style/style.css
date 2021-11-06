@@ -1262,3 +1262,84 @@ table td.r, table th.r {
 	font-size: 10px;
 	align-items: center;
 }
+
+.carnet_asignar{
+	padding-bottom: 10px;
+}
+.anio_asignar{
+	padding-bottom: 10px;
+}
+.semestre_asignar{
+	padding-bottom: 10px;
+}
+.codigo_asignar{
+	padding-bottom: 10px;
+}
+.nombre_asignar{
+	padding-bottom: 10px;
+}
+.creditos_asignar{
+	padding-bottom: 10px;
+}
+.prereq_asignar{
+	padding-bottom: 10px;
+}
+.obligatorio_asignar{
+	padding-bottom: 10px;
+}
+#txtcarnet_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtanio_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtsemestre_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtcodigo_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtnombre_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtcreditos_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtprereq_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
+#txtobligatorio_asignar{
+	border: 1px solid rgb(150,150,150);
+	height: 40px;
+	border-radius: 2px;
+	width: 40%;
+	background-color: white;
+}
