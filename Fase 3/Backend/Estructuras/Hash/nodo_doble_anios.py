@@ -5,4 +5,4 @@ class NodoDoble_Anios:
         self.anio = anio
         self.anterior = anterior
         self.siguiente = siguiente
-        self.lista_anios = ListaSimple()
+        self.lista_semestres = ListaSimple()
