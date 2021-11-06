@@ -143,4 +143,9 @@ class Hash:
         if temp != None:
             temp.lista_anios.insertar_semestre(anio, semestre)
     
+    def insertar_cursos(self, carnet, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.insertar_cursos(anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
+    
     
