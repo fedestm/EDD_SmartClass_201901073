@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="style/style.css" />
         <link rel="stylesheet" href="style/style-xlarge.css" />
 	</head>
-	<body>
+	<body onload="storage_usuario_asignar();">
 			<header id="header" class="skel-layers-fixed">
 				<nav id="nav">
 					<ul>
@@ -54,7 +54,7 @@
                         <input required id="txtobligatorio_asignar" type="text" placeholder="Ingrese si es Obligatorio">
                     </div>
                     <div class="btn_asignar">
-                        <button required id="btncrearestudiante" type = "button" onclick="">Asignar Curso</button> 
+                        <button required id="btncrearestudiante" type = "button" onclick="asignar_curso();">Asignar Curso</button> 
                     </div>
                 </form>
 				</div>
@@ -80,6 +80,6 @@
 					</ul>
 				</div>
             </footer>
-		<script src = ""></script>
+		<script src = "js/smartclass.js"></script>
 	</body>
 </html>
