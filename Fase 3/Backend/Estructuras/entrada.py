@@ -66,4 +66,7 @@ class CRUD():
                         e.insertar_semestre(i["Carnet"], j["AÃ±o"], k["Semestre"])
                         e.insertar_cursos(i["Carnet"], j["AÃ±o"], k["Semestre"], int(l["Codigo"]), l["Nombre"], l["Creditos"], l["Prerequisitos"], l["Obligatorio"])
     
+    def graficar_arbolB(self, carnet, anio, semestre):
+        e.graficar_arbolB(carnet, anio, semestre)
+    
     
