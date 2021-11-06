@@ -117,3 +117,23 @@ function asignar_curso(){
     alert(datos.response)
     })
 }
+
+function reporte_arbolB(){
+    var carnet = document.getElementById("txtcarnet_asignar").value
+    var anio = document.getElementById("txtanio_asignar").value
+    var semestre = document.getElementById("txtsemestre_asignar").value
+
+    fetch('http://localhost:3000/graficar_arbolB/' + carnet + '/' + anio + '/' + semestre, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        img = data.img
+        document.getElementById("img").innerHTML = "<img src = \"data:image/png;base64," + img + "\">"
+        console.log(img)
+    })
+}
