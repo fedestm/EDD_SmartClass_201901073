@@ -120,5 +120,20 @@ def graficar_grafo():
         response = jsonify({'response': 'Se grafico Grafo', 'img': str(b64_str.decode('utf-8'))})
         return response
 
+@app.route("/insertar_curso", methods = ['POST'])
+def insertar_curso():
+    if request.method == 'POST':
+        carnet = request.json['carnet']
+        anio = request.json['anio']
+        semestre = request.json['semestre']
+        codigo = request.json['codigo']
+        nombre = request.json['nombre']
+        creditos = request.json['creditos']
+        prerequisitos = request.json['prerequisitos']
+        obligatorio = request.json['obligatorio']
+        crud.crear_cursosEstudiante(carnet, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
+        response = jsonify({'response': 'Se registro el curso'})
+        return response
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
