@@ -1,9 +1,11 @@
 from .Hash import Hash
 from .Grafo import Grafo
+from .Hash import ListaSimple_Pensum
 import json
 
 e = Hash()
 g = Grafo()
+pensum = ListaSimple_Pensum()
 
 class CRUD():
     def registrar_estudiante(self, carnet, dpi, nombre, carrera, correo, password, edad):
@@ -74,4 +76,10 @@ class CRUD():
         e.insertar_semestre(carnet, anio, semestre)
         e.insertar_cursos(carnet, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
     
-    
+    def carga_cursosPensum(self, ruta):
+        file = open(ruta, "r")
+        datos = json.load(file)
+
+        for i in datos["Cursos"]:
+            pensum.insertar("pensum")
+            pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
