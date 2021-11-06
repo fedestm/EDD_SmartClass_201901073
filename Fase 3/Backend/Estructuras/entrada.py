@@ -53,3 +53,17 @@ class CRUD():
         for i in datos["usuarios"]:
             for j in i["apuntes"]:
                 e.insertar_apunte(i["carnet"], j["Titulo"], j["Contenido"])
+    
+    def cursos_estudiantes(self, ruta):
+        file = open(ruta, "r")
+        datos = json.load(file)
+
+        for i in datos["Estudiantes"]:
+            for j in i["AÃ±os"]:
+                for k in j["Semestres"]:
+                    for l in k["Cursos"]:
+                        e.insertar_anio(i["Carnet"], j["AÃ±o"])
+                        e.insertar_semestre(i["Carnet"], j["AÃ±o"], k["Semestre"])
+                        e.insertar_cursos(i["Carnet"], j["AÃ±o"], k["Semestre"], int(l["Codigo"]), l["Nombre"], l["Creditos"], l["Prerequisitos"], l["Obligatorio"])
+    
+    
