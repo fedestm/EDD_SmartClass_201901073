@@ -12,4 +12,4 @@ class Nodo:
         self.password = password
         self.edad = edad
         self.lista_apuntes = ListaSimple()
-        self.lista_doble_anios = ListaDoble_Anios()
+        self.lista_anios = ListaDoble_Anios()
