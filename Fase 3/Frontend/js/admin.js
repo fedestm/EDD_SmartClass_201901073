@@ -58,3 +58,19 @@ function crear_cursoPensum(){
     alert(datos.response)
     })
 }
+
+function reporte_arbolPensum(){
+    fetch('http://localhost:3000/graficar_arbolPensum', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+        img = data.img
+        document.getElementById("img").innerHTML = "<img src = \"data:image/png;base64," + img + "\">"
+        console.log(img)
+    })
+}
