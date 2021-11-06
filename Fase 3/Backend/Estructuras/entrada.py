@@ -87,3 +87,6 @@ class CRUD():
     def crear_cursosPensum(self, codigo, nombre, creditos, prerequisitos, obligatorio):
         pensum.insertar("pensum")
         pensum.insertar_cursos("pensum",codigo, nombre, creditos, prerequisitos, obligatorio)
+    
+    def graficar_arbolPensum(self):
+        pensum.graficar_arbolPensum("pensum")

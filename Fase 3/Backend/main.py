@@ -163,5 +163,15 @@ def insertar_cursoPensum():
         response = jsonify({'response': 'Se registro el curso del pensum'})
         return response
 
+@app.route("/graficar_arbolPensum", methods = ['GET'])
+def graficar_arbolPensum():
+    if request.method == 'GET':
+        crud.graficar_arbolPensum()
+        b64_str = ""
+        with open("arbolB.png", "rb") as img:
+            b64_str = base64.b64encode(img.read())
+        response = jsonify({'response': 'Se grafico Arbol B de Pensum', 'img': str(b64_str.decode('utf-8'))})
+        return response
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
