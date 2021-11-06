@@ -151,5 +151,17 @@ def graficar_arbolB(carnet, anio, semestre):
         response = jsonify({'response': 'Se grafico Arbol B', 'img': str(b64_str.decode('utf-8'))})
         return response
 
+@app.route("/insertar_cursoPensum", methods = ['POST'])
+def insertar_cursoPensum():
+    if request.method == 'POST':
+        codigo = request.json['codigo']
+        nombre = request.json['nombre']
+        creditos = request.json['creditos']
+        prerequisitos = request.json['prerequisitos']
+        obligatorio = request.json['obligatorio']
+        crud.crear_cursosPensum(codigo, nombre, creditos, prerequisitos, obligatorio)
+        response = jsonify({'response': 'Se registro el curso del pensum'})
+        return response
+
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
