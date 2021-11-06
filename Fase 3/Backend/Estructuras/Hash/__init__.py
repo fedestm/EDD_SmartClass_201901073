@@ -4,3 +4,5 @@ from .nodo_doble_anios import NodoDoble_Anios
 from .lista_doble_anios import ListaDoble_Anios
 from .nodo_simple_semestre import Nodo_Simple
 from .lista_simple_semestre import ListaSimple
+from .lista_simple_pensum import ListaSimple_Pensum
+from .lista_simple_pensum import NodoSimple_ArbolB
