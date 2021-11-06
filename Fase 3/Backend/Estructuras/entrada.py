@@ -83,3 +83,10 @@ class CRUD():
         for i in datos["Cursos"]:
             pensum.insertar("pensum")
             pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
+    
+    def crear_cursosPensum(self, entrada_json):
+        datos = entrada_json
+
+        for i in datos["Cursos"]:
+            pensum.insertar("pensum")
+            pensum.insertar_cursos("pensum",int(i["Codigo"]), i["Nombre"], str(i["Creditos"]), i["Prerequisitos"], str(i["Obligatorio"]))
