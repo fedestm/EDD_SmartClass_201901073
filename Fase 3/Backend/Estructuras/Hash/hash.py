@@ -148,4 +148,7 @@ class Hash:
         if temp != None:
             temp.lista_anios.insertar_cursos(anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
     
-    
+    def graficar_arbolB(self, carnet, anio, semestre):
+        temp = self.buscar(carnet)
+        if temp != None:
+            temp.lista_anios.graficar_arbolB(anio, semestre)
