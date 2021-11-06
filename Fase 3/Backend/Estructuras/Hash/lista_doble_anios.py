@@ -24,6 +24,7 @@ class ListaDoble_Anios:
     def buscar_anio(self, anio):
         if self.lista_vacia():
             print("Lista Vacia")
+            return None
         else:
             temp = self.primero
             while temp != None:
