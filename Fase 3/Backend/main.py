@@ -138,7 +138,7 @@ def insertar_curso():
 @app.route("/graficar_arbolB/<carnet>/<anio>/<semestre>", methods = ['GET'])
 def graficar_arbolB(carnet, anio, semestre):
     if request.method == 'GET':
-        crud.graficar_arbolB(carnet, anio, semestre)
+        crud.graficar_arbolB(int(carnet), anio, semestre)
         b64_str = ""
         with open("arbolB.png", "rb") as img:
             b64_str = base64.b64encode(img.read())
