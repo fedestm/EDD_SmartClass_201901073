@@ -69,4 +69,9 @@ class CRUD():
     def graficar_arbolB(self, carnet, anio, semestre):
         e.graficar_arbolB(carnet, anio, semestre)
     
+    def crear_cursosEstudiante(self, carnet, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio):
+        e.insertar_anio(carnet, anio)
+        e.insertar_semestre(carnet, anio, semestre)
+        e.insertar_cursos(carnet, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
+    
     
