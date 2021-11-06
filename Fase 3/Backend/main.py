@@ -146,6 +146,7 @@ def graficar_arbolB():
         with open("arbolB.png", "rb") as img:
             b64_str = base64.b64encode(img.read())
         response = jsonify({'response': 'Se grafico Arbol B', 'img': str(b64_str.decode('utf-8'))})
+        return response
 
 if __name__ == "__main__":
     app.run(debug = True, port = 3000, threaded = True)
