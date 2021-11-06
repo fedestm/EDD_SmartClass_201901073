@@ -93,7 +93,6 @@ class ArbolB:
         file.write(dot)
         file.close()
         os.system("dot -Tpng arbolB.dot -o arbolB.png")
-        os.startfile("arbolB.png")
     
     def graficar_nodos(self, raiz_actual):
         dot = ""

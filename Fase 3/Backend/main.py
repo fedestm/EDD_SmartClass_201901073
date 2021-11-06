@@ -131,7 +131,7 @@ def insertar_curso():
         creditos = request.json['creditos']
         prerequisitos = request.json['prerequisitos']
         obligatorio = request.json['obligatorio']
-        crud.crear_cursosEstudiante(carnet, anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
+        crud.crear_cursosEstudiante(int(carnet), anio, semestre, codigo, nombre, creditos, prerequisitos, obligatorio)
         response = jsonify({'response': 'Se registro el curso'})
         return response
 
