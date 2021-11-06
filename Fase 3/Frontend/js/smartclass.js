@@ -77,3 +77,43 @@ function ver_apunte(){
         document.getElementById("txtcontenido").value = apunte.contenido
     })
 }
+
+function storage_usuario_asignar(){
+    var user = localStorage.getItem("Usuario")
+    document.getElementById("txtcarnet_asignar").value = user
+}
+
+function asignar_curso(){
+    var carnet = document.getElementById("txtcarnet_asignar").value
+    var anio = document.getElementById("txtanio_asignar").value
+    var semestre = document.getElementById("txtsemestre_asignar").value
+    var codigo = document.getElementById("txtcodigo_asignar").value
+    var nombre = document.getElementById("txtnombre_asignar").value
+    var creditos = document.getElementById("txtcreditos_asignar").value
+    var prereq = document.getElementById("txtprereq_asignar").value
+    var obligatorio = document.getElementById("txtobligatorio_asignar").value
+
+    var datos = JSON.stringify({
+        "carnet": carnet,
+        "anio": anio,
+        "semestre": semestre,
+        "codigo": codigo,
+        "nombre": nombre,
+        "creditos": creditos,
+        "prerequisitos": prereq,
+        "obligatorio": obligatorio
+    });
+
+    fetch('http://localhost:3000/insertar_curso', {
+        method: 'post',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: datos
+    })
+    .then(response => response.json())
+    .then(datos => {
+        console.log(datos)
+    alert(datos.response)
+    })
+}
