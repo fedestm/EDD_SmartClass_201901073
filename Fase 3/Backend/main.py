@@ -104,6 +104,12 @@ def carga_masiva():
                     "Estado": 200,
                     "Mensaje": "Se insertaron cursos de estudiante"
                 }
+            elif tipo == "curso_pensum":
+                crud.carga_cursosPensum(path)
+                return {
+                    "Estado": 200,
+                    "Mensaje": "Se insertaron curso de pensum"
+                }
         except:
             return {
                 "Estado": 404,
