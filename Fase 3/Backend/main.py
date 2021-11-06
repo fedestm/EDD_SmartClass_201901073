@@ -135,12 +135,9 @@ def insertar_curso():
         response = jsonify({'response': 'Se registro el curso'})
         return response
 
-@app.route("/graficar_arbolB", methods = ['GET'])
-def graficar_arbolB():
+@app.route("/graficar_arbolB/<carnet>/<anio>/<semestre>", methods = ['GET'])
+def graficar_arbolB(carnet, anio, semestre):
     if request.method == 'GET':
-        carnet = request.json['carnet']
-        anio = request.json['anio']
-        semestre = request.json['semestre']
         crud.graficar_arbolB(carnet, anio, semestre)
         b64_str = ""
         with open("arbolB.png", "rb") as img:
